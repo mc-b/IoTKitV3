@@ -1,0 +1,79 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  # Ubuntu 16.04
+  config.vm.box = "ubuntu/xenial64"
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # Hauptseite
+  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: false    
+  # Mosquitto
+  config.vm.network "forwarded_port", guest: 1883, host: 1883, auto_correct: false
+  # Node RED
+  config.vm.network "forwarded_port", guest: 1880, host: 1880, auto_correct: false
+  # CoAP
+  config.vm.network "forwarded_port", guest: 5683, host: 5683, protocol: "udp", auto_correct: false
+  # openHAB
+  config.vm.network "forwarded_port", guest: 8080, host: 30080, auto_correct: false     
+  # Zeppelin
+  config.vm.network "forwarded_port", guest: 7080, host: 30180, auto_correct: false
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  config.vm.provider "virtualbox" do |vb|
+     # Display the VirtualBox GUI when booting the machine
+     vb.gui = false
+     #
+     # Customize the amount of memory on the VM:
+     vb.memory = "3072"
+     vb.customize ["modifyvm", :id, "--usb", "on"]
+   end
+
+  # provisioning shell script: jq Utiltities 
+   config.vm.provision "shell", inline: <<-SHELL
+  	sudo apt-get update
+  	sudo apt-get install -y wget git python python-pip
+  	pip install -U platformio
+  	pio platform install https://github.com/platformio/platform-freescalekinetis.git#release/v1.4.0
+  	git clone https://github.com/mc-b/IoTKitV2.git
+  	sudo chown -R $(LOGNAME) IoTKitV2
+  	sudo mkdir -p /opt/openhab/addons 
+  	sudo wget -P /opt/openhab/addons https://github.com/mc-b/IoTKit/releases/download/V1.0/ch.iotkit.smarthome.binding.mbedRPC_1.0.0.201511131556.jar
+	sudo apt-get install -y apache2 nmap
+	sudo a2enmod cgi proxy proxy_html proxy_http xml2enc
+	# Reverse Proxy
+	sudo cp /vagrant/apache-proxy/001-reverseproxy.conf /etc/apache2/sites-available/
+	sudo ln -s /etc/apache2/sites-available/001-reverseproxy.conf /etc/apache2/sites-enabled/
+	sudo cp /vagrant/apache-proxy/network /usr/lib/cgi-bin/
+	sudo mkdir -p /var/www/html/download
+	sudo cp /vagrant/apache-proxy/index.html /var/www/html
+	sudo cp -r /vagrant/apache-proxy/base /var/www/html
+	sudo chown $(LOGNAME) /var/www/html/download
+	sudo service apache2 restart  	
+SHELL
+
+
+  # Docker Provisioner
+   config.vm.provision "docker" do |d|
+     # Docker Images
+     d.pull_images "marcel1691/fhem"
+     d.pull_images "marcel1691/apache-rest"
+     d.pull_images "eclipse-mosquitto"
+     d.pull_images "nodered/node-red-docker"
+     d.pull_images "openhab/openhab:2.1.0-amd64"
+     # Docker Builds
+     d.build_image "/vagrant/nodered-coap", args: "--tag nodered" 
+     # d.pull_images "aquila/zeppelin"
+     # Start Docker Container
+     d.run "fhem", image: "marcel1691/fhem", args: "-p 8083:8083"
+     d.run "apache", image: "marcel1691/apache-rest", args: "-p 8000:80"
+     d.run "mosquitto", image: "eclipse-mosquitto", args: "-p 1883:1883"
+     d.run "nodered", image: "nodered", args: "-p 1880:1880 -p 5683:5683/udp"
+     d.run "openhab", image: "openhab/openhab:2.1.0-amd64", args: "-p 8080:8080 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro -v /opt/openhab/addons:/openhab/addons -v /opt/openhab/conf:/openhab/conf -v /opt/openhab/userdata:/openhab/userdata" 
+     # d.run "zeppelin01", image: "aquila/zeppelin", args: "-p 7080:8080"
+   end
+   
+end
