@@ -4,18 +4,18 @@
 
 #include "mbed.h"
 
-DigitalIn   button1( SW2 );         // Rechter Button auf Board
+DigitalIn   button1( USER_BUTTON );         // Rechter Button auf Board
 DigitalOut  led( LED1 );
 
 int main()
 {
-    led = 1;                        // rot (RGB LED arbeiten mit inverter Logik 1 = OFF, 0 = ON)
+    led = 0;                        // auf Board und Shield auf D13, Normale Logik
 
     while ( true )
     {
         if  ( button1 == 0 )        // Button gedrueckt
-            led = 0;
-        else
             led = 1;
+        else
+            led = 0;
     }
 }

@@ -1,11 +1,6 @@
-## DigitalIn auf K64F
+## DigitalIn auf DISCO-L475VG-IOT
 
-![](../../images/BoardButtons.png)
+DigitalIn mit den User-Button auf dem [DISCO-L475VG-IOT](https://developer.mbed.org/platforms/ST-Discovery-L475E-IOT01A/).
 
-- - -
+Beim Drücken das blauen User-Buttons wird LED1 (D13) angeschaltet.
 
-DigitalIn mit den 2 Buttons auf dem [FRDM K64F Board](https://developer.mbed.org/platforms/FRDM-K64F/).
-
-### Links
-
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkitch/code/DigitalIn/)
