@@ -2,7 +2,7 @@
 */
 #include "mbed.h"
 
-PwmOut speaker( D7 );
+PwmOut speaker( D9 );
 
 int main()
 {
