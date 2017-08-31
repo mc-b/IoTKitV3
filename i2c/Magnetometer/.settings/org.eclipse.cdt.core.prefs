@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/0.910961921/PATH/delimiter=;
+environment/project/0.910961921/PATH/operation=replace
+environment/project/0.910961921/PATH/value=C\:\\Users\\mbern\\bin;C\:\\iot\\git\\mingw64\\bin;C\:\\iot\\git\\usr\\local\\bin;C\:\\iot\\git\\usr\\bin;C\:\\iot\\git\\usr\\bin;C\:\\iot\\git\\mingw64\\bin;C\:\\iot\\git\\usr\\bin;C\:\\Users\\mbern\\bin;C\:\\iot\\python27;C\:\\iot\\python27\\bin;C\:\\iot\\python27\\scripts;C\:\\iot\\platformio\\packages\\toolchain-gccarmnoneeabi\\bin;C\:\\Program Files\\Docker\\Docker\\Resources\\bin;C\:\\ProgramData\\Oracle\\Java\\javapath;C\:\\WINDOWS\\system32;C\:\\WINDOWS;C\:\\WINDOWS\\System32\\Wbem;C\:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C\:\\Program Files (x86)\\Calibre2;C\:\\bin\\Vagrant\\bin;C\:\\Program Files\\TortoiseGit\\bin;C\:\\Users\\mbern\\AppData\\Local\\Microsoft\\WindowsApps;C\:\\iot\\git\\usr\\bin\\vendor_perl;C\:\\iot\\git\\usr\\bin\\core_perl
+environment/project/0.910961921/append=true
+environment/project/0.910961921/appendContributed=true
