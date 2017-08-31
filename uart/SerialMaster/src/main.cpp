@@ -3,7 +3,7 @@
 */
 #include "mbed.h"
 
-Serial serial( D1, D0 );
+Serial serial( USBTX, USBRX );
 char *cmd[] = { "red", "green", "blue" };
 char buf[128];
 

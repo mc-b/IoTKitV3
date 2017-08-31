@@ -3,7 +3,7 @@
 #include "mbed.h"
 
 DigitalOut led[] = { DigitalOut( D10, 1 ), DigitalOut( D11, 1 ), DigitalOut( D12, 1 ) };
-Serial serial( D1, D0 );
+Serial serial( USBTX, USBRX );
 char buf[128];
 
 /** eine Zeile vom UART lesen */
