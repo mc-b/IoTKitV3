@@ -5,30 +5,34 @@
 
 // 4 x UART: USB, A2+A3, I2C Bus (Doppelbelegung), Bluetooth Header. PTD6+PTD7 nicht ansprechbar
 Serial usb( USBTX, USBRX );
-Serial modem( A3, A2 );
-Serial i2c( D15, D14 );
-Serial bluetooth( PTC15, PTC14 );
+Serial arduino( D1, D0 );
+Serial serial3( A1, A0 );
+Serial serial2( D10, D4 );
 
-char id[4] [10]  = { "usb", "modem", "i2c", "bluetooth" };
+DigitalOut led( LED2 );
+
+char id[4] [10]  = { "usb", "mbed", "serial3", "serial2" };
 
 int main()
 {
 	usb.printf( "SerialAll auf Serial - %ds\n", id[0] );
-	modem.printf( "SerialAll auf Serial - %ds\n", id[1] );
-	i2c.printf( "SerialAll auf Serial - %ds\n", id[2] );
-	bluetooth.printf( "SerialAll auf Serial - %ds\n", id[3] );
+	arduino.printf( "SerialAll auf Serial - %ds\n", id[1] );
+	serial3.printf( "SerialAll auf Serial - %ds\n", id[2] );
+	serial2.printf( "SerialAll auf Serial - %ds\n", id[3] );
      
     int count = 0;    
     while   ( 1 )
     {
-        for ( int i = 0; i < 4; i++ )
-        {
-            usb.printf( "Counter %d auf Serial %s\n", count, id[i] );
-            modem.printf( "Counter %d auf Serial %s\n", count, id[i] );
-            i2c.printf( "Counter %d auf Serial %s\n", count, id[i] );
-            bluetooth.printf( "Counter %d auf Serial %s\n", count, id[i] );
-        }
-        count++;
-        wait( 2.0 );            
+    	led = 1;
+    	wait( 1.0 );
+
+		usb.printf( "Counter %d auf Serial %s\n", count, id[0] );
+		arduino.printf( "Counter %d auf Serial %s\n", count, id[1] );
+		serial3.printf( "Counter %d auf Serial %s\n", count, id[2] );
+		serial2.printf( "Counter %d auf Serial %s\n", count, id[3] );
+		count++;
+
+        led = 0;
+        wait( 1.0 );
     }
 }                   
