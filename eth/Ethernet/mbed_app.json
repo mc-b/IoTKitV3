@@ -1,0 +1,39 @@
+{
+    "config": {
+        "network-interface": {
+            "help": "options are ETHERNET,WIFI_ESP8266,MESH_LOWPAN_ND,MESH_THREAD",
+            "value": "ETHERNET"
+        },
+        "esp8266-tx": {
+            "help": "Pin used as TX (connects to ESP8266 RX)",
+            "value": "D1"
+        },
+        "esp8266-rx": {
+            "help": "Pin used as RX (connects to ESP8266 TX)",
+            "value": "D0"
+        },
+        "esp8266-debug": {
+            "value": true
+        },  
+        "wifi-ssid": {
+            "value": "\"mcbmobile_2EX\""
+        },
+        "wifi-password": {
+            "value": "\"android%123\""
+        },
+    },
+    "macros": [ "MBED_CONF_LWIP_IPV4_ENABLED=1" ],
+    "target_overrides": {
+        "*": {
+            "target.features_add": ["NANOSTACK", "LOWPAN_ROUTER", "COMMON_PAL"],
+            "mbed-mesh-api.6lowpan-nd-channel-page": 0,
+            "mbed-mesh-api.6lowpan-nd-channel": 12,
+            "mbed-trace.enable": 1
+        },
+        "DISCO_L475VG_IOT01A": {
+            "network-interface": "WIFI_ESP8266",
+            "esp8266-tx": "A1",
+            "esp8266-rx": "A0"
+        }      
+    }
+}

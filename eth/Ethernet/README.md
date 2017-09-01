@@ -10,7 +10,7 @@ Ethernet ist eine Technologie, die Software (Protokolle usw.) und Hardware (Kabe
 
 Die Ethernet-Schnittstelle ermöglicht mbed Mikrocontrollern sich mit einem Ethernet-Netzwerk zu verbinden, um mit anderen Geräten in einem Netzwerk zu kommunizieren, einschliesslich dem Internet, E-Mail oder Web Servern.
 
-Auf dem FRDM-K64F Board ist der Ethernet Anschluss integriert und benötigt die [Ethernet Library](http://developer.mbed.org/users/mbed_official/code/EthernetInterface/) .
+Das Beispiel verwendet [easy-connect](https://github.com/ARMmbed/easy-connect/) welches neben LAN auch WiFi Controller, z.B. ESP8266 unterstützt.
 
 ### Anwendungen 
 
@@ -18,4 +18,4 @@ Auf dem FRDM-K64F Board ist der Ethernet Anschluss integriert und benötigt die 
 
 ### Links
 
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkitch/code/Ethernet/)
+*  [mbed Online Compiler](https://developer.mbed.org/teams/IoTKitV3/code/Ethernet/)

@@ -1,29 +1,21 @@
 /** Ethernet Interface initialisieren
 */
-#include "mbed.h"
-#include "EthernetInterface.h"       
 
-EthernetInterface eth;
-// wird nur benoetigt, damit bei Eclipse/gcc4mbed die Ethernet Libraries richtig gelinkt werden
-TCPSocketConnection sock;
+#include "mbed.h"
+#include "easy-connect.h"
 
 int main()
 {
-    printf("EthernetInterface Setting up...\r\n");
-    if( eth.init() != 0 ) 
-    {                             //for DHCP Server
-        printf("EthernetInterface Initialize Error \r\n");
-        return -1;
-    }
-    if( eth.connect() != 0 ) 
+    // Connect to the network (see mbed_app.json for the connectivity method used)
+    NetworkInterface* network = easy_connect(true);
+    if ( !network )
     {
-        printf("EthernetInterface Connect Error \r\n");
-        return -1;
+        printf("Cannot connect to the network, see serial output");
+        return 1;
     }
-    printf("IP Address is %s\r\n", eth.getIPAddress());
-    printf("NetMask is %s\r\n", eth.getNetworkMask());
-    printf("Gateway Address is %s\r\n", eth.getGateway());
-    printf("MAC Address is %s\r\n", eth.getMACAddress());
+
+    printf("IP Address is %s\r\n", network->get_ip_address());
+    printf("MAC Address is %s\r\n", network->get_mac_address());
     printf("Ethernet Setup OK\r\n");
     
     while   ( 1 )
