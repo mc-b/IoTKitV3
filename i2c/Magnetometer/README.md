@@ -1,6 +1,10 @@
 Magnetometer
 ------------
 
+![](../../images/sensors/Board.png)
+
+- - -
+
 Ein Magnetometer ist ein Sensor zur Messung magnetischer Flussdichten.
 
 ### Anwendung
