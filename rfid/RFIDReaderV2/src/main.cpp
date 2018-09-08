@@ -5,10 +5,10 @@
 #include "OLEDDisplay.h"
 
 // OLED Display
-OLEDDisplay oled;
+OLEDDisplay oled( PTE26, PTE0, PTE1 );
 
 // NFC/RFID Reader (SPI)
-MFRC522    rfidReader( D11, D12, D13, D10, D8 );
+MFRC522    rfidReader( PTA16, PTC7, PTC5, D10, D8 );
 
 int main()
 {

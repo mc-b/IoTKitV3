@@ -5,10 +5,10 @@
 #include "OLEDDisplay.h"
 
 // NFC/RFID Reader (SPI)
-MFRC522    rfidReader( D11, D12, D13, D10, D8 );
-OLEDDisplay oled;
+MFRC522    rfidReader( PTA16, PTC7, PTC5, D10, D8 );
+OLEDDisplay oled( PTE26, PTE0, PTE1 );
 
-DigitalOut led1( D10 );
+DigitalOut led1( D13 );
 
 // erlaubte RFID Tag's
 char ids[4] [4] = {

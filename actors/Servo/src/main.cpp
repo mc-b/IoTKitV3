@@ -1,4 +1,4 @@
-/** Servo am Digital Pin D9.
++/** Servo am Digital Pin D9.
     Das orange Kabel (Signal) ist links.
 */
 #include "mbed.h"
