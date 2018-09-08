@@ -1,11 +1,11 @@
-IoTKitV2
+IoTKitV3
 ========
 
-![](images/shield.png)
+![](images/IoTKit.png)
 
 - - -
 
-IoTKit V2 Beispiele und Dokumentation
+IoTKit V3 Beispiele und Dokumentation
 
 ## Grundlagen
 
