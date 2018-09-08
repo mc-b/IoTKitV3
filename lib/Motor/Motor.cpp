@@ -28,7 +28,7 @@ Motor::Motor(PinName pwm, PinName fwd, PinName rev):
         _pwm(pwm), _fwd(fwd), _rev(rev) {
 
     // Set initial condition of PWM
-    _pwm.period(0.001);
+    _pwm.period( 1.0f / 50000 );
     _pwm = 0;
 
     // Initial condition of output enables
@@ -39,7 +39,7 @@ Motor::Motor(PinName pwm, PinName fwd, PinName rev):
 void Motor::speed(float speed) {
     _fwd = (speed > 0.0);
     _rev = (speed < 0.0);
-    _pwm = (speed > 0) ? speed : speed * -1;
+    _pwm = abs(speed);
 }
 
 
