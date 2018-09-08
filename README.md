@@ -28,13 +28,12 @@ IoTKit V3 Beispiele und Dokumentation
 ### Internet Protokolle
 
 * [Sockets (TCP/UDP)](tcpip/)
-* [HTTP](http/), [mbed RPC](mbedRPC/)
+* [HTTP](http/)
 * [MQTT](mqtt/)
 * [CoAP](coap/)
 
 ## Anwendungen
 
-* [Einführung in REST mit L(inux)A(pache)M(ySQL) Stack](LAM/)
 * [Cloud Dienste](cloud/) wie IFTTT, Yahoo Weather
 * [IoT und Big Data](bigdata/)
 * [Smart Home](smarthome/)
