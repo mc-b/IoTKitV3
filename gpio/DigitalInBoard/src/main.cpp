@@ -1,11 +1,10 @@
 /** 3.1 Neues Programm mittels Assistenten erstellen
- *  Variante b: ohne Shield
 */
 
 #include "mbed.h"
 
-DigitalIn   button1( USER_BUTTON );         // Rechter Button auf Board
-DigitalOut  led( LED1 );
+DigitalIn   button1( PTC13 );         // Rechter Button auf Board
+DigitalOut  led( D10 );
 
 int main()
 {
