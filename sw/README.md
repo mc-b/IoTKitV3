@@ -35,6 +35,8 @@ Mittels den untereren Buttons (Pfeil nach links) kann das Programm compiliert un
 	
 Anschliessend ist der Reset Button auf dem Board zu drücken.
 
+**ACHTUNG**: Vor dem ersten Aufruf des Compilier sind die `lib` Unterverzeichnisse nach `<PlatformIO-Installation>/platformio/lib` zu kopieren.
+
 ### Serielle Console
 
 Die PlatformIO IDE beinhaltet ein Terminalprogramm um die Ausgabe via Serieller Schnittstelle des mbed Boards auszugeben.
