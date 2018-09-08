@@ -4,7 +4,6 @@
 #include <time.h>
 
 DigitalOut led[] =  { DigitalOut( D10 ), DigitalOut( D11 ), DigitalOut( D12 ), DigitalOut( D13 ) };
-AnalogIn poti( A0 );
 
 int main()
 {
@@ -22,6 +21,6 @@ int main()
             led[i] = ( (r % (i+2) ) != 0 ) ? 1 : 0;
         }
             
-        wait( poti.read() );          
+        wait( 0.2f );          
     }
 }

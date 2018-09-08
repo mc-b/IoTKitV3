@@ -3,7 +3,7 @@
 */ 
 #include "mbed.h"
 
-DigitalIn button( A0, PullUp );
+DigitalIn button( PTC13 , PullUp );
 DigitalOut door( D5 );
 
 int main()

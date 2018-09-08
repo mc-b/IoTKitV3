@@ -4,6 +4,7 @@
 #include "mbed.h"
 #include "Servo.h"
 
+// Servo's an Pin D9 - D12 moeglich
 Servo servo( D9 );
 
 int main()
