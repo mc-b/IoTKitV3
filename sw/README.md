@@ -31,7 +31,7 @@ Zu Testzwecken kann das Programm `gpio/DigitalOut` verwendet werden.
 
 Dazu muss der **PIO Home** Tab geöffnet werden und mittels **Open Project** das Verzeichnis `gpio/DigitalOut` der Workspace hinzugefügt werden.
 
-Mittels den untereren Buttons kann das Programm compiliert und auf das Board uploadet werden.
+Mittels den untereren Buttons (Pfeil nach links) kann das Programm compiliert und auf das Board uploadet werden.
 	
 Anschliessend ist der Reset Button auf dem Board zu drücken.
 
@@ -39,4 +39,4 @@ Anschliessend ist der Reset Button auf dem Board zu drücken.
 
 Die PlatformIO IDE beinhaltet ein Terminalprogramm um die Ausgabe via Serieller Schnittstelle des mbed Boards auszugeben.
 
-Die entsprechende Anwahl ist unten auf der Statusleiste.
+Der Serial Monitor Button (Steckersymbol) ist unten auf der Statusleiste.
