@@ -1,79 +1,130 @@
 /** MQTT Publish von Sensordaten */
 #include "mbed.h"
-#include "MQTTEthernet.h"
+#include "HTS221Sensor.h"
+#include "easy-connect.h"
+#include "MQTTNetwork.h"
+#include "MQTTmbed.h"
 #include "MQTTClient.h"
+#include "OLEDDisplay.h"
+
+static DevI2C devI2c(PTE0,PTE1);
+static HTS221Sensor hum_temp(&devI2c);
+AnalogIn hallSensor( PTC0 );
 
 // Topic's
-char* topicLight = "mbed/k64f/iotkit/light";
-char* topicPoti = "mbed/k64f/iotkit/poti";
+char* topicTEMP =  "iotkit/sensor";
+char* topicALERT = "iotkit/alert";
 // MQTT Brocker
-char* hostname = "iot.eclipse.org";
-int port = 1883;
+char* hostname = "192.168.178.60";
+int port = 31883;
 // MQTT Message
 MQTT::Message message;
 // I/O Buffer
 char buf[100];
+
+// Klassifikation 
+char cls[3][10] = { "low", "middle", "high" };
+int type = 0;
+
 // UI
-DigitalOut led1( LED1 );
-// Poti
-AnalogIn   poti( A0 );
-// Lichtsensor
-AnalogIn   light( A1 );
+OLEDDisplay oled( PTE26, PTE0, PTE1);
+DigitalOut led1( D10 );
+DigitalOut alert( D13 );
 
 /** Hilfsfunktion zum Publizieren auf MQTT Broker */
-void publish( MQTTEthernet &ipstack, MQTT::Client<MQTTEthernet, Countdown> &client )
+void publish( MQTTNetwork &mqttNetwork, MQTT::Client<MQTTNetwork, Countdown> &client, char* topic )
 {
-    printf("Connecting to %s:%d\n", hostname, port);
-    int rc = ipstack.connect(hostname, port);
-    if ( rc != 0 )
-        printf("rc from TCP connect is %d\n", rc);
+    led1 = 1;
+    printf("Connecting to %s:%d\r\n", hostname, port);
+    
+    int rc = mqttNetwork.connect(hostname, port);
+    if (rc != 0)
+        printf("rc from TCP connect is %d\r\n", rc);
 
-    // mit MQTT Broker verbinden
     MQTTPacket_connectData data = MQTTPacket_connectData_initializer;
     data.MQTTVersion = 3;
     data.clientID.cstring = "mbed-sample";
     data.username.cstring = "testuser";
     data.password.cstring = "testpassword";
-    if ( (rc = client.connect(data)) != 0 )
-        printf("rc from MQTT connect is %d\n", rc);
+    if ((rc = client.connect(data)) != 0)
+        printf("rc from MQTT connect is %d\r\n", rc);
 
-    // Message als JSON aufbereiten und senden
-    sprintf( buf, "%f", light.read() );
-    printf( "Publish: %s\n", buf );
-    message.qos = MQTT::QOS0;
-    message.retained = false;
-    message.dup = false;
-    message.payload = (void*) buf;
-    message.payloadlen = strlen(buf)+1;
-    client.publish( topicLight, message);
+    MQTT::Message message;    
     
-    // Message als JSON aufbereiten und senden
-    sprintf( buf, "%f", poti.read() );
-    printf( "Publish: %s\n", buf );
+    oled.cursor( 2, 0 );
+    oled.printf( "Topi: %s\n", topic );
+    oled.cursor( 3, 0 );    
+    oled.printf( "Push: %s\n", buf );
     message.qos = MQTT::QOS0;
     message.retained = false;
     message.dup = false;
     message.payload = (void*) buf;
     message.payloadlen = strlen(buf)+1;
-    client.publish( topicPoti, message);    
+    client.publish( topic, message);  
     
     // Verbindung beenden, ansonsten ist nach 4x Schluss
-    client.disconnect();
-    ipstack.disconnect();
+    if ((rc = client.disconnect()) != 0)
+        printf("rc from disconnect was %d\r\n", rc);
+
+    mqttNetwork.disconnect();
+    led1 = 0;
 }
 
 /** Hauptprogramm */
 int main()
 {
-    // Ethernet und MQTT initialisieren (muss in main erfolgen)
-    MQTTEthernet ipstack = MQTTEthernet();
-    MQTT::Client<MQTTEthernet, Countdown> client = MQTT::Client<MQTTEthernet, Countdown>(ipstack);
+    uint8_t id;
+    float temp, hum;
+    alert = 0;
+    
+    oled.clear();
+    oled.printf( "MQTTPublish\r\n" );
+    oled.printf( "host: %s:%s\r\n", hostname, port );
+
+    NetworkInterface* network = easy_connect(true);
+    if (!network) 
+        return -1;
+
+    // TCP/IP und MQTT initialisieren (muss in main erfolgen)
+    MQTTNetwork mqttNetwork(network);
+    MQTT::Client<MQTTNetwork, Countdown> client(mqttNetwork);
+    
+    /* Init all sensors with default params */
+    hum_temp.init(NULL);
+    hum_temp.enable();    
 
     while   ( 1 ) 
     {
-        led1 = 1;
-        publish( ipstack, client );
-        led1 = 0;
-        wait    ( 2.0 );
+        // Temperator und Luftfeuchtigkeit
+        hum_temp.read_id(&id);
+        hum_temp.get_temperature(&temp);
+        hum_temp.get_humidity(&hum);    
+        if  ( type == 0 )
+            temp -= 5.0f;
+        else if  ( type == 2 )
+            temp += 5.0f;
+        sprintf( buf, "0x%X,%2.2f,%2.1f,%s", id, temp, hum, cls[type] ); 
+        type++;
+        if  ( type > 2 )
+            type = 0;       
+        publish( mqttNetwork, client, topicTEMP );
+        
+        // alert Tuer offen 
+        printf( "Hall %4.4f, alert %d\n", hallSensor.read(), alert.read() );
+        if  ( hallSensor.read() > 0.6f )
+        {
+            // nur einmal Melden!, bis Reset
+            if  ( alert.read() == 0 )
+            {
+                sprintf( buf, "alert: hall" );
+                message.payload = (void*) buf;
+                message.payloadlen = strlen(buf)+1;
+                publish( mqttNetwork, client, topicALERT );
+                alert = 1;
+            }
+        }
+        else
+            alert = 0;
+        wait    ( 2.0f );
     }
 }
