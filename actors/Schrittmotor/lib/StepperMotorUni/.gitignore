@@ -1,0 +1,7 @@
+.pioenvs
+.piolibdeps
+.vscode/.BROWSE.C_CPP.DB*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/.browse.c_cpp.db*
+BUILD
