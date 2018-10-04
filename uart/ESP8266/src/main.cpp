@@ -5,9 +5,9 @@
 #include "mbed.h"
 
 RawSerial  pc( USBTX, USBRX );
-RawSerial  dev( A1, A0 );
+RawSerial  dev( PTC15, PTC14 );
 // Reset Modem
-DigitalOut rst( D10 );
+DigitalOut rst( PTA19 );
 DigitalOut led1( D11 );
 DigitalOut led4( D12 );
 

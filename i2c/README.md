@@ -28,8 +28,6 @@ Das Protokoll des I²C-Bus ist von der Definition her recht einfach, aber physik
 
 ### Beispiele
 
-* [Temperatursensor](TMP75), [Low Level Implementierung](TMP75LowLevel/)
-* [6 Lage Sensor](FXOS8700Q/)
 * [mbed - Arduino Kommunikation](mbed2Arduino/)
 * [Sensorenausgabe auf Display](Sensoren/)
 * [Fitness Tracker](FitnessTrackerV2/)
