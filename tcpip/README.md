@@ -111,13 +111,13 @@ Es kann auch ohne DNS gearbeitet werden, dann sind die Namen der verfügbaren Ge
 
 ![](../images/TCPSocket.png)
 
-[Ablauf TCP Socket Kommunikation](https://developer.mbed.org/handbook/Socket)
+[Ablauf TCP Socket Kommunikation](https://os.mbed.com/handbook/Socket)
 
 - - -
 
 ![](../images/UDPSocket.png) |
 
-[Ablauf UDP Socket Kommunikation](https://developer.mbed.org/handbook/Socket)
+[Ablauf UDP Socket Kommunikation](https://os.mbed.com/handbook/Socket)
 
 - - -
 
@@ -125,29 +125,16 @@ Ein [Socket](http://de.wikipedia.org/wiki/Socket_(Software)) (abgeleitet von eng
 
 Generell kann man unterscheiden zwischen [TCP](http://de.wikipedia.org/wiki/Transmission_Control_Protocol) (Stream) Sockets und [UDP](http://de.wikipedia.org/wiki/User_Datagram_Protocol) (Datagram) Sockets.
 
-Die [Ethernet Library](http://developer.mbed.org/users/mbed_official/code/EthernetInterface/) verwendet das [BSD (Berkeley Software Distribution) Sockets API](http://en.wikipedia.org/wiki/Berkeley_sockets).
-
-
 ### Anwendungen 
 
 *   Fixe Zuteilung eines Port für einen Dienst oder Protokoll. Z.B. Port 80 für einen HTTP Server oder Port 25 für das Simple Mail Transfer Protocol (SMTP).
 *   Öffnen eines weiteren Ports, z.B. von einem Browser, um eine Datei downzuladen.
 *   Bidirektionale Kommunikation mit dem anderen Geräten, Anwendern, Servern etc., via TCP/IP
 
-### Beispiele (mbed OS V2.x - ca. V5.3)
-
-* [TCP Socket](TCPSocket_HelloWorld/)
-* TCP Socket [Server](TCPEchoServer/) und [Client](TCPEchoClient/)
-* [UDP Socket](UDPSocket_HelloWorld/)
-* UCP Socket [Server](UDPEchoServer/) und [Client](UDPEchoClient/)
-* UDP Broadcast [Empfangen](BroadcastReceive/) und [Senden](BroadcastSend/)
-* [Mail verschicken](TCPSocket_Mail/)
-* [MyLight System](UDPMyLightClient/)
-
 ### Beispiele (ab mbed OS V5.x)
 
 * [Network Sockets on developer.mbed.org](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/communication/network_sockets/)
-* [Websockets on developer.mbed.org](https://developer.mbed.org/cookbook/Websockets-Server)
+* [Websockets on developer.mbed.org](https://os.mbed.com/cookbook/Websockets-Server)
 
 
 

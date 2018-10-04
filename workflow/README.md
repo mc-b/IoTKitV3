@@ -36,7 +36,7 @@ Mittels [Node-RED](https://nodered.org/) lassen sich einfache Workflows realisie
     * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
     * Programm mittels `Deploy` veröffentlichen.
 * mbed Teil
-    * [MQTT on developer.mbed.org](https://developer.mbed.org/teams/mqtt/code/HelloMQTT/) Beispiel in mbed Compiler importieren und ca. auf Zeile 80 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
+    * [MQTT on developer.mbed.org](https://os.mbed.com/teams/mqtt/code/HelloMQTT/) Beispiel in mbed Compiler importieren und ca. auf Zeile 80 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
     * Programm Compilieren und auf Board laden.
 
 

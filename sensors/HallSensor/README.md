@@ -18,4 +18,4 @@ Der auf dem Shield verwendetete Hall Sensor (A1202LH) kann zur Lage Erfassung ei
 
 ### Links
 
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkitch/code/HallSensor/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensor/)

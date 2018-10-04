@@ -12,7 +12,7 @@ Im allgemeinen Sprachgebrauch bezeichnet NTP sowohl das Protokoll als auch die S
 
 NTP nutzt ein hierarchisches System verschiedener Strata (Plural von Stratum). Als Stratum 0 bezeichnet man das Zeitnormal, beispielsweise eine Atomuhr oder eine Funkuhr (genauer: Zeitzeichenempfänger) (GNSS, DCF77). Die unmittelbar mit ihm gekoppelten NTP-Server heißen Stratum 1. Jede weitere abhängige Einheit erhält bei der Bezeichnung eine höhere Nummer (Stratum 2, Stratum 3 …).
 
-Das Network Time Protocol ist in der [NTP Library](https://developer.mbed.org/users/donatien/code/NTPClient/) abgebildet.
+Das Network Time Protocol ist in der [NTP Library](https://os.mbed.com/users/donatien/code/NTPClient/) abgebildet.
 
 ### Anwendungen 
 

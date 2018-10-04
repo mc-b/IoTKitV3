@@ -72,4 +72,4 @@ AT+INIT
 
 ### Links
 
-*  [mbed OS V2 Variante](https://developer.mbed.org/teams/smdiotkit1ch/code/Bluetooth_HC-06/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/teams/IoTKitV3/code/Bluetooth_HC-06/)

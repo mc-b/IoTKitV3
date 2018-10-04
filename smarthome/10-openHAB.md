@@ -47,4 +47,4 @@ Anschliessend das IoTKit Bindings holen und in Addons Verzeichnis kopieren.
 *   Zuerst "IoTKit SMD Shield Ethernet gateway" mit IP des mbed Boards einrichten
 *   Anschliessend die IoTKit Sensoren, Aktoren etc.
 
-Das komplettes Beispiel in C++ und Java, welches für die /ch/open Workshoptage 2015 entstanden ist, findet man [hier](https://developer.mbed.org/teams/ch-open-wstage2015/wiki/SmartHome).
+Das komplettes Beispiel in C++ und Java, welches für die /ch/open Workshoptage 2015 entstanden ist, findet man [hier](https://os.mbed.com/teams/ch-open-wstage2015/wiki/SmartHome).

@@ -34,19 +34,13 @@ Ein weiteres wichtiges Konzept sind die drei Servicequalitäten bei der Datenüb
 ### Links 
 
 *   [Ausführlicher Artikel auf heise.de](http://www.heise.de/developer/artikel/MQTT-Protokoll-fuer-das-Internet-der-Dinge-2168152.html)
-*   [MQTT Team auf mbed.org](https://developer.mbed.org/teams/mqtt/)
+*   [MQTT Team auf mbed.org](https://os.mbed.com/teams/mqtt/)
 *   [MQTT JavaScript Client Library für node.js und Browser](https://github.com/mqttjs/MQTT.js)
 *   [Eclipse Paho, Client Libraries für Verschiedene Sprachen](http://www.eclipse.org/paho/)
 *   [Practical MQTT with Paho](http://www.infoq.com/articles/practical-mqtt-with-paho)
 *   [Paho UI Utilities für MQTT](https://wiki.eclipse.org/Paho/GUI_Utility)
 
-### Beispiele (mbed OS V2.x - ca. V5.3)
-
-* [MQTT Publish](MQTTPublish/)
-* [MQTT Subcribe](MQTTSubscribe/)
-* [MQTT Publish and Subcribe](MQTTPublishSubcribe/)
-* [Kitchen Helper - MQTT Version](MQTTKitchenHelperV2/)
-
 ### Beispiele (ab mbed OS V5.x)
 
-* [MQTT on developer.mbed.org](https://developer.mbed.org/teams/mqtt/code/HelloMQTT/)
+* [MQTT on os.mbed.org](https://os.mbed.com/teams/mqtt/code/HelloMQTT/)
+* [MQTT Publish](MQTTPublish/)

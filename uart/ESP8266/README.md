@@ -15,7 +15,7 @@ Dazu gibt es zwei Möglichkeiten:
 *   Einstecken auf dem IoTKit Shield in der Mitte oben. Das Modem ist mit den Pin A2 und A3 (UART3) verbunden.
 *   Manuelles verbinden der Stecker (oben) mit dem Serial Stecker (obere zwei Pin&#039;s). Das Modem ist mit den Pin D0 und D1 (USBTX, USBRX))) verbunden.
 
-Weitere nützliche Informationen zum ESP8266 sind in diesem [Blog](https://orxor.wordpress.com/2015/01/30/esp8266-intro/) zu finden. Ausserdem existiert eine [ESP8266 Gruppe](https://developer.mbed.org/teams/ESP8266/).
+Weitere nützliche Informationen zum ESP8266 sind in diesem [Blog](https://orxor.wordpress.com/2015/01/30/esp8266-intro/) zu finden. Ausserdem existiert eine [ESP8266 Gruppe](https://os.mbed.com/teams/ESP8266/).
 
 Wenn das Modem nicht reagiert, Board 5 - 10 Sekunden vom USB und Strom trennen.
 
@@ -86,4 +86,4 @@ Beispiel Konfigurationsdatei `mbed_app.json` für ESP8266 für [Easy Connect](ht
 * [Verzeichnis AT Commandos.](https://room-15.github.io/blog/2015/03/26/esp8266-at-command-reference/)
 * [Chip Hersteller](https://espressif.com/en)
 * [Auführliche Beschreibung](https://playground.boxtec.ch/doku.php/wireless/esp8266)
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkit1ch/code/ESP8266/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/ESP8266/)

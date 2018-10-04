@@ -29,7 +29,7 @@ An die [SPI-1 und SPI-2 Anschlüsse](../../../images/smdkit/spi.png), auf dem SM
 ### Anwendungen 
 
 *   Zugriff auf [SD Karten](http://de.wikipedia.org/wiki/SD-Karte), [RFID Reader](http://de.wikipedia.org/wiki/RFID)
-*   Ansteuerung von [LED Strip&#039;s](https://developer.mbed.org/components/Pololu-Addressable-RGB-LED-Strip/), [LCD Display&#039;s](http://developer.mbed.org/users/dreschpe/code/SPI_TFT_ILI9341/)
+*   Ansteuerung von [LED Strip&#039;s](https://os.mbed.com/components/Pololu-Addressable-RGB-LED-Strip/), [LCD Display&#039;s](http://developer.mbed.org/users/dreschpe/code/SPI_TFT_ILI9341/)
 
 ### Beispiele
 

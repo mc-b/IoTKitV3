@@ -18,7 +18,7 @@ LED Strips werden in Laufmetern mit einer definierten Anzahl von RGB LED&#039;s 
 
 Es gibt unterschiedliche Arten der Ansteuerung, alle LED einer Farbe, jedes RGB LED einzeln.
 
-Im aktuellen Beispiel verwenden wird ein 12V LED Strip mit einem Anschluss pro Farbe. Diese brauchen einen Verstärker, z.B. [MOSFET](http://de.wikipedia.org/wiki/Metall-Oxid-Halbleiter-Feldeffekttransistor).
+Im aktuellen Beispiel verwenden wird ein 5V LED Strip mit einem Anschluss pro Farbe. Diese brauchen einen Verstärker, z.B. [MOSFET](http://de.wikipedia.org/wiki/Metall-Oxid-Halbleiter-Feldeffekttransistor).
 
 Die LED Strip wird an den FET D5-D7) Header (+ ist oben) angeschlossen und benötigen für jede Farbe ein DigitalOut (An/Aus) oder PwmOut (Dimming).
 
@@ -29,4 +29,4 @@ Die LED Strip wird an den FET D5-D7) Header (+ ist oben) angeschlossen und benö
 
 ### Links
 
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkit1ch/code/RGBLEDStrip/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RGBLEDStrip/)

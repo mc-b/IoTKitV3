@@ -20,7 +20,7 @@ Zur erstmaligen Positionierung wird, in der Regel, ein Endstop Schalter verwende
 
 Ein unipolarer Schrittmotor benötigt die [Schrittmotor Library](http://developer.mbed.org/users/okano/code/StepperMotorUni/) und einen IC Treiber (wie [ULN2803N](http://www.mikrocontroller.net/part/ULN2803)) und 4 Digitale Pin&#039;s.
 
-Ein bipolarer Schrittmotor kann mittels der H-Brücke angesprochen werden, siehe Gleichstrom Motor und [Stepper bipolar](https://developer.mbed.org/components/Stepper-motor-bipolar/)
+Ein bipolarer Schrittmotor kann mittels der H-Brücke angesprochen werden, siehe Gleichstrom Motor und [Stepper bipolar](https://os.mbed.com/components/Stepper-motor-bipolar/)
 
 ### Anwendungen 
 
@@ -28,4 +28,4 @@ Ein bipolarer Schrittmotor kann mittels der H-Brücke angesprochen werden, siehe
 
 ### Links
 
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkit1ch/code/Stepper/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/Stepper/)

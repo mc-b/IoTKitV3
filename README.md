@@ -21,9 +21,9 @@ IoTKit V3 Beispiele und Dokumentation
 * [I²C/TWI](i2c/)
 * [SPI](spi/)
 
-## Internet 
+## Internet / WLAN
 
-* [Ethernet Anbindung](eth/)
+* [Internet Anbindung](wlan/)
 
 ### Internet Protokolle
 

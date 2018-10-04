@@ -13,12 +13,12 @@ nRF Connect App Printscreen
 
 **Material:**
 * mbed Bluetooth kompatibles Board wie
-    * [micro:bit](https://developer.mbed.org/platforms/Microbit/)
-    * [Seeed Arch BLE](https://developer.mbed.org/platforms/Seeed-Arch-BLE/)
+    * [micro:bit](https://os.mbed.com/platforms/Microbit/)
+    * [Seeed Arch BLE](https://os.mbed.com/platforms/Seeed-Arch-BLE/)
 * Smartphone mit nRF Connect App
 
 **Installation**
-* mbed Programm [BLE_HeartRate ](https://developer.mbed.org/teams/Bluetooth-Low-Energy/code/BLE_HeartRate/) auf mbed Board laden.
+* mbed Programm [BLE_HeartRate ](https://os.mbed.com/teams/Bluetooth-Low-Energy/code/BLE_HeartRate/) auf mbed Board laden.
 * nRF Connect App auf Smartphone starten und nRF Connect App starten.
 * Nach neuen Geräten scannen.
 * `HRM1` Gerät Verbinden und Herzfrequenz auslesen. 
@@ -35,4 +35,4 @@ nRF Connect App Printscreen
 
 ### Links
 
-* [mbed Bluetooth Team](https://developer.mbed.org/teams/Bluetooth-Low-Energy/)
+* [mbed Bluetooth Team](https://os.mbed.com/teams/Bluetooth-Low-Energy/)

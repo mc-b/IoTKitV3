@@ -18,7 +18,7 @@ Servo haben einen Stellmoment bzw. die Stellkraft, z.B. 9 Gramm, welche nicht ü
 
 Servo benötigt die [Servo Library](http://developer.mbed.org/users/simon/code/Servo/). Diese Steuert einen Servo mittels PWM Signal an.
 
-Servo müssen in der mbed Plattform einmalig kalibriert werden, ansonsten wird nicht der volle 180° Winkel benützt. Ein gutes Programm dazu ist [ServoProgram](https://developer.mbed.org/users/simon/code/ServoProgram/) von Simon Ford.
+Servo müssen in der mbed Plattform einmalig kalibriert werden, ansonsten wird nicht der volle 180° Winkel benützt. Ein gutes Programm dazu ist [ServoProgram](https://os.mbed.com/users/simon/code/ServoProgram/) von Simon Ford.
 
 Weitere Informationen und eine Ausführliche Einführung in Englisch [An Introduction to RC Servos](http://developer.mbed.org/users/4180_1/notebook/an-introduction-to-servos/)
 
@@ -34,4 +34,4 @@ Der Servo wird mit 5V betrieben und kann direkt auf einen der G/V/S Header geste
 
 ### Links
 
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkit1ch/code/Servo/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/Servo/)

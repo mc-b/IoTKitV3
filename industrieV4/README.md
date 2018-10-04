@@ -11,15 +11,15 @@ Das Ziel von [Industrie 4.0](http://de.wikipedia.org/wiki/Industrie_4.0) ist die
 
 ### mbed CoAP Beispiel (mbed OS 5)
 
-* [mbed Account erstellen](https://developer.mbed.org/).
-* [mbed Compiler](https://developer.mbed.org/compiler/) aufrufen.
+* [mbed Account erstellen](https://os.mbed.com/).
+* [mbed Compiler](https://os.mbed.com/compiler/) aufrufen.
 * Mittels rechter Maustaste `Import Program` -> `Import URL` [mbed OS Client](https://github.com/ARMmbed/mbed-os-example-client/) importieren.
 * [mbed Connector](https://connector.mbed.com/) und `Security Credentials` Datei erstellen. 
-* In [mbed Compiler](https://developer.mbed.org/compiler/): Inhalt von `security.h` mit Erstellen Inhalt ersetzen.
+* In [mbed Compiler](https://os.mbed.com/compiler/): Inhalt von `security.h` mit Erstellen Inhalt ersetzen.
 * In [mbed Connector](https://connector.mbed.com/): `Connected Devices` überprüfen, es muss 1 Gerät sichtbar sein.
 * In der `API Console` Werte mittels UI abfragen.  
 
-Ein Alternatives Beispiel ist [simple-mbed-client-example/](https://developer.mbed.org/teams/sandbox/code/simple-mbed-client-example/). Das Vorgehen ist das Gleiche bis auf den Import.
+Ein Alternatives Beispiel ist [simple-mbed-client-example/](https://os.mbed.com/teams/sandbox/code/simple-mbed-client-example/). Das Vorgehen ist das Gleiche bis auf den Import.
 
 ### Links
 

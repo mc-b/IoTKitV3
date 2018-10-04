@@ -14,4 +14,4 @@ Siehe auch: [mbed Handbook DigitalOut](https://docs.mbed.com/docs/mbed-os-api-re
 
 ### Links
 
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkitch/code/DigitalOut/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DigitalOut/)

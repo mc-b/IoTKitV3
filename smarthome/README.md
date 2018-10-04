@@ -5,7 +5,7 @@ Unter diesen Begriff fällt sowohl die Vernetzung von Haustechnik und Haushaltsg
 
 ### Beispiele
 
-* [CH Open Workshoptage 2015](https://developer.mbed.org/teams/ch-open-wstage2015/wiki/SmartHome)
+* [CH Open Workshoptage 2015](https://os.mbed.com/teams/ch-open-wstage2015/wiki/SmartHome)
 * [Hausautomation und IFTTT](../cloud/HouseAutomation/)
 * [Kitchen Helper - HTTP Version](../mbedRPC/RPCHTTPServerKitchenHelperV2/)
 * [Kitchen Helper - MQTT Version](../mqtt/MQTTKitchenHelperV2/)

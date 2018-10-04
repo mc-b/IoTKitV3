@@ -23,4 +23,4 @@ Programm compilieren und auf das Board downloaden. Unter **Private View** sollte
 *   [Website](https://thingspeak.com/)
 *   [Einführung in ThingSpeak](http://www.codeproject.com/Articles/845538/An-Introduction-to-ThingSpeak)
 *   [ThingSpeak im Praxistest](http://blog.zuehlke.com/die-iot-plattform-thingspeak-im-praxistest/)
-*  [mbed OS V2 Variante](https://developer.mbed.org/compiler/#import:/teams/smdiotkit2ch/code/HTTP_POST_ThinkSpeak/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HTTP_POST_ThinkSpeak/)

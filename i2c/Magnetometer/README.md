@@ -14,4 +14,4 @@ Anwendung finden die 3-ACHS-MAGNETOMETER unter anderem bei der Messung und Aufze
 
 ### Links
 
-*  [Online Compiler Variante](https://developer.mbed.org/teams/Disco-L475VG-IOT/code/Magnetometer/)
+*  [Online Compiler Variante](https://os.mbed.com/teams/Disco-L475VG-IOT/code/Magnetometer/)

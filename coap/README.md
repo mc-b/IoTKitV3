@@ -37,7 +37,7 @@ Komplettes Verzeichnis: [OMNA Lightweight M2M (LWM2M) Object & Resource Registry
 * 	[ARM CoAP YouTube Tutorial](https://www.youtube.com/watch?v=4bSr5x5gKvA&list=PLgyFKd2HIZlZNsrWXyE4kgLDo_tyLpvDW&index=7)
 * 	[Eclipse Leshan YoutTube Tutorial](https://www.youtube.com/watch?v=KZEi-Q7_EL0)
 *   [ARM CoAP Tutorial](http://community.arm.com/servlet/JiveServlet/previewBody/8633-102-2-15471/ARM%20CoAP%20Tutorial%20April%2030%202014.pdf)
-*   [mbed CoAP Beispiel (mbed V2)](https://developer.mbed.org/components/Nanoservice/)
+*   [mbed CoAP Beispiel (mbed V2)](https://os.mbed.com/components/Nanoservice/)
 *   [mbed Client (mbed OS V5)](https://www.mbed.com/en/platform/mbed-client/)
 *   [RFC 7252- COAP](https://tools.ietf.org/html/rfc7252)
 *   [RFC 6690 - Constrained RESTful Environments (CoRE) Link Format](https://tools.ietf.org/html/rfc6690)
@@ -47,7 +47,7 @@ Komplettes Verzeichnis: [OMNA Lightweight M2M (LWM2M) Object & Resource Registry
 
 ### Beispiele (ab mbed OS V5.x)
 
-* [CoAP Example on developer.mbed.org](https://developer.mbed.org/teams/sandbox/code/coap-example/)
+* [CoAP Example on developer.mbed.org](https://os.mbed.com/teams/sandbox/code/coap-example/)
 * [Getting started with mbed Client on mbed OS](https://github.com/ARMmbed/mbed-os-example-client)
 * [Building an internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
 
