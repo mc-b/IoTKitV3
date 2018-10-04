@@ -35,8 +35,6 @@ IoTKit V3 Beispiele und Dokumentation
 ## Anwendungen
 
 * [Cloud Dienste](cloud/) wie IFTTT, Yahoo Weather
-* [IoT und Big Data](bigdata/)
-* [Smart Home](smarthome/)
 * [Industrie V4.0](industrieV4/)
 * [Wearables](wearables/)
 * [Roboter](roboter/)

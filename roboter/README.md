@@ -13,7 +13,6 @@ Einen kleinen Roboter mit Hilfe eines Mikroprozessors zu steuern ist ganz einfac
 
 * [Roboter Arm mittels Buttons bewegen](RoboterButton/)
 * [Automatische Steuerung Roboter Arm](Roboter/)
-* [Roboter Arm via HTTP Aufrufen steuern](RoboterRPC/)
 
 ### Links
 
