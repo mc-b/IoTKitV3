@@ -9,17 +9,17 @@ ARM mbed OS ist ein Open-Source-Embedded-Betriebssystem, das speziell für die "
 
 Es enthält alle Funktionen, die benötigt werden, um ein angeschlossenes Produkt auf Basis eines ARM Cortex-M Mikrocontrollers zu entwickeln, einschliesslich Sicherheit, Konnektivität, RTOS und Treiber für Sensoren und E / A-Geräte.
 
-## Compiler
+## Entwicklungsumgebung
 
-Als Entwicklungsumgebung wird [Visual Studio Code](https://code.visualstudio.com/) mit der [PlatformIO](https://platformio.org/) Erweiterungen verwendet.
+Als Entwicklungsumgebung kann
+* der [Arm Mbed Online Compiler (empfohlen)](https://os.mbed.com/compiler/)
+* das [mbed CLI](https://github.com/ARMmbed/mbed-cli)
+* [PlatformIO](https://docs.platformio.org/en/latest/frameworks/mbed.html) mit [Visual Studio Code](https://code.visualstudio.com/) 
+verwendet werden.
 
-PlatformIO unterstützt neben mbed eine Vielzahl von weiteren Boards und hat den Vorteil, dass die weiteren Komponenten wie
-* C/C++ Compiler
-* mbed Libraries
+Wird der [Arm Mbed Online Compiler](https://os.mbed.com/compiler/) verwendet, ist der Sourcecode bzw. Link unten an der jeweiligen Seite, gekennzeichnet mit **Arm Mbed Online Compiler**, zu verwenden.
 
-automatisch, bei der ersten Compilierung, installiert werden.
-
-**Installation und Quick Start **
+### Installation und Quick Start PlatformIO 
 
 Siehe:
 * [PlatformIO IDE for VSCode](https://platformio.org/install/ide?install=vscode)
@@ -37,7 +37,7 @@ Anschliessend ist der Reset Button auf dem Board zu drücken.
 
 **ACHTUNG**: Vor dem ersten Aufruf des Compilier sind die `lib` Unterverzeichnisse nach `<PlatformIO-Installation>/platformio/lib` zu kopieren.
 
-### Serielle Console
+#### Serielle Console
 
 Die PlatformIO IDE beinhaltet ein Terminalprogramm um die Ausgabe via Serieller Schnittstelle des mbed Boards auszugeben.
 
