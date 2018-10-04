@@ -1,33 +1,40 @@
-+/** Servo am Digital Pin D9.
+/** Servo am Digital Pin D3.
     Das orange Kabel (Signal) ist links.
 */
+
 #include "mbed.h"
-#include "Servo.h"
 
-// Servo's an Pin D9 - D12 moeglich
-Servo servo( D9 );
+//Program to 'sweep' test a 'standard RC type servo
+//Define some parameters using compiler directive '#define'
+//Check Servo DATA if 0.75ms to 2.25ms then use min=750 and max=2250
+//NB be values in microseconds (Following are generic values)
 
-int main()
-{
-    // Servo kalibrieren, damit er die vollen 180° verwendet.
-    servo.calibrate ( 0.0009, 180.0);
+#define MID         1500
+#define MIN          750
+#define MAX         2250
+#define STEP          25
+//Time delay between steps in milliseconds
+#define TIME         100
+
+PwmOut myServo( D9 );
+
+int main() {
     
-    while   ( 1 ) 
+    myServo.period_ms(20);
+    myServo.pulsewidth_us(MID); //NB in microseconds
+
+    while(true)
     {
-        // Servo langsam bewegen (immer in der Mitte Anfangen mit Tests, sonst besteht die Gefahr von Schäden)
-        for ( float p = 0.2f; p <= 0.8f; p += 0.0001f )
+        for (int i=MIN;i<=MAX;i+=STEP)
         {
-            servo = p;
-            wait(0.001);
+            myServo.pulsewidth_us(i);
+            wait_ms(TIME);
         }
-        wait( 1.0 );  
-        // und die andere Seite          
-        for ( float p = 0.8f; p >= 0.2f; p -= 0.0001f )
+        for (int i=MAX;i>=MIN;i-=STEP)
         {
-            servo = p;
-            wait(0.001);
-        } 
-        wait( 1.0 );            
+            myServo.pulsewidth_us(i);
+            wait_ms(TIME);
+        }
     }
 }                                       
   
