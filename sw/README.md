@@ -19,6 +19,62 @@ verwendet werden.
 
 Wird der [Arm Mbed Online Compiler](https://os.mbed.com/compiler/) verwendet, ist der Sourcecode bzw. Link unten an der jeweiligen Seite, gekennzeichnet mit **Arm Mbed Online Compiler**, zu verwenden.
 
+### Installation und Quick Start mbed-cli und Eclipse
+
+[mbed cli](https://github.com/ARMmbed/mbed-cli) mit allen Abhängigkeiten (Python, GCC_ARM) wie unter [Installation](https://github.com/ARMmbed/mbed-cli#installation) beschrieben, installieren.
+
+Globale Konfigurationen für Board und Compiler setzen.
+
+	mbed config --global TARGET K64F
+	mbed config --global TOOLCHAIN GCC_ARM
+
+Verzeichnis mbed erstellen, Projekt initialisieren und benötigte Libraries clonen:
+
+	mkdir -p mbed
+	cd mbed
+	mbed new .
+	 
+	mbed add http://developer.mbed.org/users/AtomX/code/MFRC522/ 
+	mbed add http://developer.mbed.org/teams/smdiotkitch/code/OLEDDisplay/
+	mbed add https://mbed.org/teams/mqtt/code/MQTT/
+	mbed add https://os.mbed.com/teams/IoTKitV3/code/HTS221lib/
+	mbed add https://os.mbed.com/teams/IoTKitV3/code/QEI/
+	mbed add https://developer.mbed.org/teams/Bluetooth-Low-Energy/code/BLE_API/
+	mbed add https://mbed.org/teams/Nordic-Semiconductor/code/nRF51822/
+	mbed add http://developer.mbed.org/users/highroads/code/VL6180x/
+	
+Wechsel auf mbed-os-5.9.7. Diese mbed Version beinhaltet keinen ESP8266 Driver. Deshalb ist dieser zu Klonen und Patchen ESP8266 Driver:
+ 	
+	cd mbed-os; git checkout refs/tags/mbed-os-5.9.7; cd ..
+	mbed add https://github.com/ARMmbed/esp8266-driver.git	
+	sed -i -e"s/ESP8266_SDK_VERSION 2000000/ESP8266_SDK_VERSION 1000000/" esp8266-driver/ESP8266/ESP8266.h
+
+Anschliessend eine Statische Library für mbed-os und alle obigen Libraries erstellen:
+
+	mbed compile --library --no-archive --source=mbed-os --source MFRC522 --source esp8266-driver --source OLEDDisplay --source MQTT --source HTS221lib \
+	             --source QEI --source BLE_API --source nRF51822 --source VL6180x --build=../mbed-os
+	
+Zum Schluss IoTKitV3 Beispiele clonen
+
+	git clone https://github.com/mc-b/IoTKitV3.git
+	
+Die jeweiligen Beispiele können dann wie folgt compiliert werden, z.B. DigitalOut
+
+	cd IoTKitV3/gpio/DigitalOut
+	mbed compile --source ../../../../mbed-os/ --source . --build BUILD
+
+Das compilierte Programm ist im Verzeichnis `BUILD` mit der Endung `.bin`, hier `BUILD/DigitalOut.bin` und kann einfach mittels Drag&Drop auf das Board bzw. dessen Laufwerk kopiert werden. `Reset`-Button drücken - fertig.
+
+**Optional** Beispiele für Eclipse aufbereiten
+
+	mbed export -i eclipse_gcc_arm
+	
+Anschliessend mittels File -> Import -> Existing Projects `mbed` Projekt in Workspace importieren.	
+
+**Hinweise**:
+* Da die Libraries statisch Compiliert sind, sind die Einträge in `mbed_app.json` bereits im Sourcecode aufgelöst und Änderungen haben evtl. keinen Einfluss mehr. Lösung: evtl. `mbed_app.json` in den Libraries vor dem Compilieren der statischen Libraries entsprechend anpassen.
+
+
 ### Installation und Quick Start PlatformIO 
 
 Siehe:
