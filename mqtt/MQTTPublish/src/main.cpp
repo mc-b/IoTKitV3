@@ -1,11 +1,14 @@
 /** MQTT Publish von Sensordaten */
 #include "mbed.h"
 #include "HTS221Sensor.h"
-#include "easy-connect.h"
 #include "MQTTNetwork.h"
 #include "MQTTmbed.h"
 #include "MQTTClient.h"
 #include "OLEDDisplay.h"
+#include "Motor.h"
+
+#include "ESP8266Interface.h"
+ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
 
 static DevI2C devI2c(PTE0,PTE1);
 static HTS221Sensor hum_temp(&devI2c);
@@ -15,8 +18,8 @@ AnalogIn hallSensor( PTC0 );
 char* topicTEMP =  "iotkit/sensor";
 char* topicALERT = "iotkit/alert";
 // MQTT Brocker
-char* hostname = "192.168.178.60";
-int port = 31883;
+char* hostname = "iot.eclipse.org";
+int port = 1883;
 // MQTT Message
 MQTT::Message message;
 // I/O Buffer
@@ -30,6 +33,10 @@ int type = 0;
 OLEDDisplay oled( PTE26, PTE0, PTE1);
 DigitalOut led1( D10 );
 DigitalOut alert( D13 );
+
+// Aktore(n)
+Motor m1(D3, D2, D4); // PWM, Vorwaerts, Rueckwarts
+PwmOut speaker( D12 );
 
 /** Hilfsfunktion zum Publizieren auf MQTT Broker */
 void publish( MQTTNetwork &mqttNetwork, MQTT::Client<MQTTNetwork, Countdown> &client, char* topic )
@@ -81,12 +88,16 @@ int main()
     oled.printf( "MQTTPublish\r\n" );
     oled.printf( "host: %s:%s\r\n", hostname, port );
 
-    NetworkInterface* network = easy_connect(true);
-    if (!network) 
+    printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
+    oled.printf( "SSID: %s\r\n", MBED_CONF_APP_WIFI_SSID );
+    int ret = wifi.connect(MBED_CONF_APP_WIFI_SSID, MBED_CONF_APP_WIFI_PASSWORD, NSAPI_SECURITY_WPA_WPA2);
+    if (ret != 0) {
+        printf("\nConnection error: %d\n", ret);
         return -1;
+    }
 
     // TCP/IP und MQTT initialisieren (muss in main erfolgen)
-    MQTTNetwork mqttNetwork(network);
+    MQTTNetwork mqttNetwork( &wifi );
     MQTT::Client<MQTTNetwork, Countdown> client(mqttNetwork);
     
     /* Init all sensors with default params */
@@ -100,9 +111,19 @@ int main()
         hum_temp.get_temperature(&temp);
         hum_temp.get_humidity(&hum);    
         if  ( type == 0 )
+        {
             temp -= 5.0f;
+            m1.speed( 0.0f );
+        }
         else if  ( type == 2 )
+        {
             temp += 5.0f;
+            m1.speed( 1.0f );
+        }
+        else
+        {
+            m1.speed( 0.75f );
+        }
         sprintf( buf, "0x%X,%2.2f,%2.1f,%s", id, temp, hum, cls[type] ); 
         type++;
         if  ( type > 2 )
@@ -122,9 +143,17 @@ int main()
                 publish( mqttNetwork, client, topicALERT );
                 alert = 1;
             }
+            speaker.period( 1.0 / 3969.0 );      // 3969 = Tonfrequenz in Hz
+            speaker = 0.5f;
+            wait( 0.5f );
+            speaker.period( 1.0 / 2800.0 );
+            wait( 0.5f );
         }
         else
+        {
             alert = 0;
+            speaker = 0.0f;
+        }
         wait    ( 2.0f );
     }
 }

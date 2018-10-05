@@ -1,69 +1,49 @@
 {
     "config": {
-        "network-interface":{
-            "help": "options are ETHERNET, WIFI_ESP8266, WIFI_ODIN, WIFI_RTW, MESH_LOWPAN_ND, MESH_THREAD, CELLULAR_ONBOARD",
+        "wifi-shield": {
+            "help": "Options are internal, WIFI_ESP8266, WIFI_ISM43362, WIFI_IDW0XX1",
             "value": "WIFI_ESP8266"
         },
-        "mesh_radio_type": {
-            "help": "options are ATMEL, MCR20",
-            "value": "ATMEL"
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"mcbmobile_2EX\""
         },
-        "esp8266-tx": {
-            "help": "Pin used as TX (connects to ESP8266 RX)",
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"android%123\""
+        },
+        "wifi-tx": {
+            "help": "TX pin for serial connection to external device",
             "value": "PTC15"
         },
-        "esp8266-rx": {
-            "help": "Pin used as RX (connects to ESP8266 TX)",
+        "wifi-rx": {
+            "help": "RX pin for serial connection to external device",
             "value": "PTC14"
         },
-        "esp8266-ssid": {
-            "value": "\"McB\""
-        },
-        "esp8266-password": {
-            "value": "\"Moseskapitel1\""
-        },
-        "esp8266-debug": {
-            "value": false
-        },
-        "lcd-mosi": {
-            "value": "D11",
-            "macro_name": "LCD_MOSI"
-        },
-        "lcd-sck": {
-            "value": "D13",
-            "macro_name": "LCD_SCK"
-        },
-        "lcd-miso": {
-            "value": "D12",
-            "macro_name": "LCD_MISO"
-        },
-        "lcd-a0": {
-            "value": "D7",
-            "macro_name": "LCD_A0"
-        },
-        "lcd-ncs": {
-            "value": "D10",
-            "macro_name": "LCD_NCS"
+        "wifi-debug": {
+            "value": true
         }
     },
     "target_overrides": {
         "*": {
-            "target.features_add": ["NANOSTACK", "LOWPAN_ROUTER", "COMMON_PAL"],
-            "mbed-mesh-api.6lowpan-nd-channel-page": 0,
-            "mbed-mesh-api.6lowpan-nd-channel": 12,
-            "mbed-trace.enable": 0
+            "platform.stdio-convert-newlines": true
         },
-        "HEXIWEAR": {
-            "esp8266-tx": "PTD3",
-            "esp8266-rx": "PTD2"
+        "UBLOX_EVK_ODIN_W2": {
+            "target.device_has": ["EMAC"]
+        },
+        "DISCO_F413ZH": {
+            "wifi-shield": "WIFI_ISM43362"
+        },
+        "DISCO_L475VG_IOT01A": {
+            "wifi-shield": "WIFI_ISM43362"
+        },
+        "NUCLEO_L476RG": {
+            "wifi-tx": "D8",
+            "wifi-rx": "D2"
         },
         "NUCLEO_F401RE": {
-            "esp8266-tx": "D8",
-            "esp8266-rx": "D2"
-        },
-        "NUCLEO_F411RE": {
-            "esp8266-tx": "D8",
-            "esp8266-rx": "D2"
+            "wifi-tx": "D8",
+            "wifi-rx": "D2"
         }
     }
 }
