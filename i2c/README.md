@@ -31,3 +31,11 @@ Das Protokoll des I²C-Bus ist von der Definition her recht einfach, aber physik
 * [mbed - Arduino Kommunikation](mbed2Arduino/)
 * [Sensorenausgabe auf Display](Sensoren/)
 * [Fitness Tracker](FitnessTrackerV2/)
+
+* [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](../i2c/)
+* [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](../i2c/)
+* [Hall Sensor](../sensors/HallSensor/)
+* [NFC/RFID Reader](../rfid/)
+* [Capacitive digital sensor for relative humidity and temperature (HTS221)](../i2c/)
+* [High-performance 3-axis magnetometer (LIS3MDL)](../i2c/)
+* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c/)
