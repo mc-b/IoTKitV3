@@ -19,6 +19,8 @@ verwendet werden.
 
 Wird der [Arm Mbed Online Compiler](https://os.mbed.com/compiler/) verwendet, ist der Sourcecode bzw. Link unten an der jeweiligen Seite, gekennzeichnet mit **Arm Mbed Online Compiler**, zu verwenden.
 
+**ACHTUNG**: kann der IoTKit V3 nicht mehr Programmiert werden, Upload endet sofort und es erscheint eine Datei `FAIL.TXT`, ist leicht am Encoder zu drehen und das Board ein- und auszustecken.
+
 ### Installation und Quick Start mbed-cli und Eclipse
 
 [mbed cli](https://github.com/ARMmbed/mbed-cli) mit allen Abhängigkeiten (Python, GCC_ARM) wie unter [Installation](https://github.com/ARMmbed/mbed-cli#installation) beschrieben, installieren.
