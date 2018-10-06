@@ -43,15 +43,9 @@ Verzeichnis mbed erstellen, Projekt initialisieren und benötigte Libraries clon
 	mbed add https://mbed.org/teams/Nordic-Semiconductor/code/nRF51822/
 	mbed add http://developer.mbed.org/users/highroads/code/VL6180x/
 	
-Wechsel auf mbed-os-5.9.7. Diese mbed Version beinhaltet keinen ESP8266 Driver. Deshalb ist dieser zu Klonen und Patchen ESP8266 Driver:
- 	
-	cd mbed-os; git checkout refs/tags/mbed-os-5.9.7; cd ..
-	mbed add https://github.com/ARMmbed/esp8266-driver.git	
-	sed -i -e"s/ESP8266_SDK_VERSION 2000000/ESP8266_SDK_VERSION 1000000/" esp8266-driver/ESP8266/ESP8266.h
-
 Anschliessend eine Statische Library für mbed-os und alle obigen Libraries erstellen:
 
-	mbed compile --library --no-archive --source=mbed-os --source MFRC522 --source esp8266-driver --source OLEDDisplay --source MQTT --source HTS221lib \
+	mbed compile --library --no-archive --source=mbed-os --source MFRC522 --source OLEDDisplay --source MQTT --source HTS221lib \
 	             --source QEI --source BLE_API --source nRF51822 --source VL6180x --build=../mbed-os
 	
 Zum Schluss IoTKitV3 Beispiele clonen
@@ -73,7 +67,8 @@ Anschliessend mittels File -> Import -> Existing Projects `mbed` Projekt in Work
 
 **Hinweise**:
 * Da die Libraries statisch Compiliert sind, sind die Einträge in `mbed_app.json` bereits im Sourcecode aufgelöst und Änderungen haben evtl. keinen Einfluss mehr. Lösung: evtl. `mbed_app.json` in den Libraries vor dem Compilieren der statischen Libraries entsprechend anpassen.
-
+* Ab mbed OS V5.10 ist die ESP8266 Driver Library Bestandteil von mbed OS.
+* Als Nachteil für das schnellere Compilieren, ist zu Erwähnen, dass die Programme grösser sind als normal, weil alle Libraries mit verlinkt werden.
 
 ### Installation und Quick Start PlatformIO 
 
