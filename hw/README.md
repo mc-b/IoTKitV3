@@ -52,7 +52,7 @@ Entstanden ist das Board durch die Kombination des [NXP FRDM-K64F Board](https:/
 * [GND/5V/Signal Arduino Pins A0 - A5](../gpio/)
 * [UART Header](../uart/)
 
-* [Encoder](../gpio)
+* [Encoder Switch](../gpio)
 
 ## Zubehör
 

@@ -9,3 +9,4 @@ Mittels folgender Grundklassen kann den GPIO Pins ein Zweck vorgegeben werden:
 * [DigitalIn](DigitalIn/) 
 * [AnalogIn](AnalogIn/)
 * [PwmOut](PwmOut/) und [PwmOutPeriod](PwmOutPeriod/)
+* [Encoder Switch](EncoderSwitch/)
