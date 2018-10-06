@@ -35,20 +35,27 @@ Verzeichnis mbed erstellen, Projekt initialisieren und benötigte Libraries clon
 	mkdir -p mbed
 	cd mbed
 	mbed new .
-	 
-	mbed add http://developer.mbed.org/users/AtomX/code/MFRC522/ 
+	
+	# UI 
 	mbed add http://developer.mbed.org/teams/smdiotkitch/code/OLEDDisplay/
+	# Communication
 	mbed add https://mbed.org/teams/mqtt/code/MQTT/
-	mbed add https://os.mbed.com/teams/IoTKitV3/code/HTS221lib/
-	mbed add https://os.mbed.com/teams/IoTKitV3/code/QEI/
+	# Bluetooth
 	mbed add https://developer.mbed.org/teams/Bluetooth-Low-Energy/code/BLE_API/
 	mbed add https://mbed.org/teams/Nordic-Semiconductor/code/nRF51822/
+	# Sensoren
 	mbed add http://developer.mbed.org/users/highroads/code/VL6180x/
+	mbed add http://mbed.org/users/frankvnk/code/ISL29125/
+	mbed add http://developer.mbed.org/users/AtomX/code/MFRC522/ 
+	mbed add https://os.mbed.com/teams/IoTKitV3/code/HTS221lib/
+	mbed add https://developer.mbed.org/teams/ST/code/LIS3MDL/
+	mbed add https://developer.mbed.org/teams/ST/code/LSM6DSL/
+	mbed add https://os.mbed.com/teams/IoTKitV3/code/QEI/
 	
 Anschliessend eine Statische Library für mbed-os und alle obigen Libraries erstellen:
 
 	mbed compile --library --no-archive --source=mbed-os --source MFRC522 --source OLEDDisplay --source MQTT --source HTS221lib \
-	             --source QEI --source BLE_API --source nRF51822 --source VL6180x --build=../mbed-os
+	             --source QEI --source BLE_API --source nRF51822 --source VL6180x --source ISL29125 --source LIS3MDL --source LSM6DSL --build=../mbed-os
 	
 Zum Schluss IoTKitV3 Beispiele clonen
 
