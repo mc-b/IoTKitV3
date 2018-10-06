@@ -16,6 +16,44 @@ Entstanden ist das Board durch die Kombination des [NXP FRDM-K64F Board](https:/
 
 * [Schaltplan](IoTKitV3.pdf) 
 
+#### Board features
+
+* [Bluetooth® V4.1 module (SPBTLE-RF)](../wearables/)
+* [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](../i2c/)
+* [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](../i2c/)
+* [Hall Sensor](../sensors/HallSensor/)
+* [NFC/RFID Reader](../rfid/)
+* [Capacitive digital sensor for relative humidity and temperature (HTS221)](../i2c/)
+* [High-performance 3-axis magnetometer (LIS3MDL)](../i2c/)
+* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c/)
+* [Wi-Fi® module ESP8266](../wlan)
+
+
+* OpenSDA USB Debug and Programming adapter
+* Reset Button
+* [SPI Header](../spi/)
+* [GND/5V/Signal Arduino Pins D13 - D2](../gpio/)
+* [I2C Header](../i2c/)
+* [MOSFet](../actors)
+* Expansion connectors: Arduino™ Uno V3
+* [SWDAP](https://os.mbed.com/teams/mbed/wiki/SWDAP)
+* [ARM Cortex M4 K64F MCU](https://www.nxp.com/products/processors-and-microcontrollers/arm-based-processors-and-mcus/kinetis-cortex-m-mcus/k-seriesperformancem4/k6x-ethernet/kinetis-k64-120-mhz-256kb-sram-microcontrollers-mcus-based-on-arm-cortex-m4-core:K64_120)
+* [Grove Header](http://wiki.seeedstudio.com/Grove_System/)
+* [OLED Display](../i2c/OLEDDisplayTest/)
+
+
+* [H-Bridge](../actors/)
+* [Buzzer](../gpio/PwmOutPeriod/)
+* [Stepper Driver](../actors/)
+
+
+* 12 Volt Power Supply
+* Charger 5V from batt.
+* [GND/5V/Signal Arduino Pins A0 - A5](../gpio/)
+* [UART Header](../uart/)
+
+* [Encoder](../gpio)
+
 ## Zubehör
 
 *   **Sensoren** RFID Reader (MFRC-522), PIR Sensor (SR501), Ultrasonic Wave Detector Ranging Module (HC-SR04), Digital Temperature and Humidity Sensor (DHT11), Microswitch Limit Switch: [AliExpress](http://www.aliexpress.com/), [EBay](http://www.ebay.ch/), [Conrad](http://www.conrad.ch/) (teilweise)
