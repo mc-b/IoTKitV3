@@ -1,7 +1,9 @@
 Wearables
 ---------
 
-(Tragbare Computer), z.B. Armbanduhren, die ständig den Puls messen, Brillen, deren Innenseiten als Bildschirm dienen oder Kleidungsstücke, in die elektronische Hilfsmittel zur Kommunikation und Musikwiedergabe eingearbeitet sind.
+Wearables (Tragbare Computer), z.B. Armbanduhren, die ständig den Puls messen, Brillen, deren Innenseiten als Bildschirm dienen oder Kleidungsstücke, in die elektronische Hilfsmittel zur Kommunikation und Musikwiedergabe eingearbeitet sind.
+
+Diese Wearables verwenden sehr oft das Bluetooth Protokoll. Auf dem IoTKit V3 befindet sich ein Bluetooth Modem, um ein Wearable zu simulieren.
 
 ### Beispiel Herzfrequenzmesser
 
@@ -26,7 +28,6 @@ nRF Connect App Printscreen
 
 #### Code Anpassungen für IoTKit V3
 
-Auf dem IoTKit V3 befindet sich ein Bluetooth Modem. 
 
 Um dieses Verwenden zu können, müssen im Ordner `shields/TARGET_ST_BLUENRG/x-nucleo-idb0xa1` in der Datei `x_nucleo_idb0xa1_targets.h` die Pin's wie folgt angepasst werden:
 
