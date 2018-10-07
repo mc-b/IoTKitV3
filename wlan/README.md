@@ -20,6 +20,7 @@ Ab mbed OS V5.10 ist der ESP8266 Driver Bestandteil von mbed und keine separate 
 * [WiFi](../uart/wifi/)
 * [ESP8266 via AT-Befehlssatz ansprechen](../uart/ESP8266/)
 * [NTP - Zeit setzen via Internet](NTPV2/)
+* [Gegenüberstellung HTTP, MQTT, CoAP](https://os.mbed.com/blog/entry/Using-HTTP-HTTPS-MQTT-and-CoAP-from-mbed/)
 
 ### Konfiguration
 

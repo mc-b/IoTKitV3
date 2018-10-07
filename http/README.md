@@ -49,7 +49,8 @@ Die Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache), abgek
 
 HTML-Dokumente sind die Grundlage des World Wide Web und werden von Webbrowsern dargestellt.
 
-### Beispiele (ab mbed OS V5.x)
+### Beispiele (ab mbed OS V5.10)
 
 * [HTTP and HTTPS on os.mbed.com](https://os.mbed.com/teams/sandbox/code/http-example/)
+* [Einfaches HTTP Beispiel](http-example/)
 
