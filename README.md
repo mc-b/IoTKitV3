@@ -21,11 +21,12 @@ IoTKit V3 Beispiele und Dokumentation
 * [I²C/TWI](i2c/)
 * [SPI](spi/)
 
-## Internet / WLAN
+## WLAN (WiFi) / Bluetooth
 
-* [Internet Anbindung](wlan/)
+* [WLAN (WiFi)](wlan/)
+* [Bluetooth](bluetooth/)
 
-### Internet Protokolle
+### Internet IoT Protokolle
 
 * [Sockets (TCP/UDP)](tcpip/)
 * [HTTP](http/)
@@ -36,7 +37,6 @@ IoTKit V3 Beispiele und Dokumentation
 
 * [Cloud Dienste](cloud/) wie IFTTT, Yahoo Weather
 * [Industrie V4.0](industrieV4/)
-* [Wearables](wearables/)
 * [Roboter](roboter/)
 * [NFC / RFID](rfid/)
 * [Workflow](workflow/)
