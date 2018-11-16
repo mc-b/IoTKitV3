@@ -30,3 +30,5 @@ Die LED Strip wird an den FET D5-D7) Header (+ ist oben) angeschlossen und benö
 ### Links
 
 *  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RGBLEDStrip/)
+* [DiiA: The global industry alliance for DALI lighting control](https://www.digitalilluminationinterface.org/)
+* [Zhaga](https://www.zhagastandard.org/)

@@ -1,4 +1,4 @@
-## ![IDevice Icon](../../base/images/icon_glossary.gif) XML (Extensible Markup Language)
+## XML (Extensible Markup Language)
 
 
 ```xml
@@ -39,4 +39,4 @@ Mittels der [spxml (Simple Plain Xml parser)](http://developer.mbed.org/users/hl
 
 ### Links
 
-*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/XMLParser/)
+*  [Arm Mbed Online Compiler](https://developer.mbed.org/compiler/#import:/teams/smdiotkit2ch/code/XMLParser/)
