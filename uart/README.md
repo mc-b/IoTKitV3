@@ -16,13 +16,26 @@ Die Daten werden als serieller digitaler Datenstrom mit einem fixen Rahmen über
 
 Um den [CMOS-UART bzw. TTL-UART](http://de.wikipedia.org/wiki/Logikpegel) Pegel für den USB Bus verfügbar zu machen, kann ein [USB Serial Adapter](http://arduino.cc/en/Main/USBSerial) verwendet werden. Boards haben diesen, in der Regel, integriert (mbed - Ja, Arduino UNO - Ja, [Arduino Mini - Nein](http://www.arduino.cc/en/Main/ArduinoBoardMini) )
 
+Die Standardeinstellungen für den Seriellen Port (USB) sind 9600 baud, 8 bits, 1 stop bit, no parity (aka 9600-8-N-1).
+
+Um Daten auf die Serielle Schnittstelle auszugeben, sind keine zusätzlichen Objekte erforderlich. Die Serielle Schnittstelle wird automatisch geöffnet und Daten können mittels [printf](http://www.cplusplus.com/reference/cstdio/printf/) ausgegeben und mittels [scanf](http://www.cplusplus.com/reference/cstdio/scanf/) ausgelesen werden.
+
 ### Anwendungen 
 
-*   Board - PC Kommunikation
-*   Ansprechen von Modems wie [Bluetooth](http://developer.mbed.org/platforms/FRDM-K64F/#features), [WLAN](https://os.mbed.com/questions/4993/How-to-interface-esp8266-wifi-module/), [GPS](http://developer.mbed.org/cookbook/GlobalSat-EM-406-GPS-Module)
+* Ausgabe von Debug Informationen
+* Fernsteuerung des Gerätes z.B. wie bei 3D Druckern
+* Board - PC Kommunikation
+* Ansprechen von Modems wie [Bluetooth](http://developer.mbed.org/platforms/FRDM-K64F/#features), [WLAN](https://os.mbed.com/questions/4993/How-to-interface-esp8266-wifi-module/), [GPS](http://developer.mbed.org/cookbook/GlobalSat-EM-406-GPS-Module)
 
 ### Beispiele
 
 * [Serielle Schnittstelle](SerialAll/), [Serial Master](SerialMaster/), [Serial Slave](SerialSlave/)
 * [WLAN Modem ESP8266 lowlevel](ESP8266/)
 * [WLAN Modem ESP8266 ](wifi/)
+
+### Links
+
+* Terminalemulations Programme: [Windows](http://sourceforge.jp/projects/ttssh2/releases/), [Mac](http://freeware.the-meiers.org/), [Linux](http://manpages.ubuntu.com/manpages/vivid/man8/picocom.8.html)
+* [PC Driver (nur Windows)](https://os.mbed.com/handbook/Windows-serial-configuration)
+* [printf Reference](http://www.cplusplus.com/reference/cstdio/printf/)
+* [scanf Reference](http://www.cplusplus.com/reference/cstdio/scanf/)
