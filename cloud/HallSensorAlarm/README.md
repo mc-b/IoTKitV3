@@ -56,4 +56,4 @@ gesteuert werden und selber Aktionen auslösen.
 
 ### Links
 
-*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensorAlarm/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/Disco-L475VG-IOT/code/HallSensorAlarm/)
