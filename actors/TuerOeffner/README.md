@@ -14,7 +14,7 @@
 
 Türöffner gibt es auch als elektrisches Bauteil. Der Riegel wird durch einen elektromagnetischen Magnet geöffnet.
 
-Ein Türöffner braucht eine höhere Spannung (12 Volt) als das Board zur Verfügung stellen kann. Deshalb ist eine Leistungsstufe, z.B. [MOSFET](http://de.wikipedia.org/wiki/Metall-Oxid-Halbleiter-Feldeffekttransistor), vorzuschalten.
+Damit genug Leistung vorhanden ist, wird eine Leistungsstufe, z.B. [MOSFET](http://de.wikipedia.org/wiki/Metall-Oxid-Halbleiter-Feldeffekttransistor), vorgeschaltet.
 
 Der Türöffner wird an den FET(D5-D7) Header (oben) angeschlossen und mittels DigitalOut angesprochen.
 

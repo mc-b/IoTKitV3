@@ -2,7 +2,7 @@
 */
 #include "mbed.h"
 
-SPI spi(D11, NC, D13); // mosi, miso, sclk
+SPI spi( PTD6, NC, PTD5 ); // mosi, miso, sclk
 
 /** 3 x 3 Werte */
 unsigned int strip[9];

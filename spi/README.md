@@ -24,7 +24,7 @@ Die Datenleitungen werden manchmal auch SDO (englisch Serial Data Out) und SDI (
 
 Je nach Anordnung der Slaves wird eine (bei Kaskadierung) oder mehrere (bei Stern) Chip-Select-Leitungen, welche alle vom Master gesteuert werden, benötigt. Diese Leitungen werden unterschiedlich mit Bezeichnungen wie SS, CS oder STE für Slave Select, Chip Select oder Slave Transmit Enable bezeichnet.
 
-An die [SPI-1 und SPI-2 Anschlüsse](../../../images/smdkit/spi.png), auf dem SMD Shield, können zwei SPI Geräte in Stern Anordnung angeschlossen werden.ACHTUNG: beim SPI-1 Header statt D8, z.B. A5 Pin verwenden.
+**Anders auf der Unterseite des Boards Beschriftet, teilen sich die SPI-1 und SPI-2 Anschlüsse die Pins MISO (PTD6), MISO (PTD7) und SLCK (PTD5), Unterscheiden jedoch SPI-1 SS (PTD4) und SPI-2 SS (PTE6). Damit können zwei Geräte an den gleichen SPI Bus angeschlossen, aber unterschiedlich, mittels dem SS Pin, angesprochen werden.** 
 
 ### Anwendungen 
 

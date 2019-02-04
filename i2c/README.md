@@ -18,7 +18,9 @@ Eine **Standard-I²C-Adresse ist das erste vom Master gesendete Byte**, wobei di
 
 Das Protokoll des I²C-Bus ist von der Definition her recht einfach, aber physikalisch auch recht störanfällig. Auch ist er **ungeeignet zur Überbrückung größerer Entfernungen**. Der Bus kann jedoch mit speziellen Treibern auf ein höheres Strom- und/oder Spannungslevel umgesetzt werden, wodurch der Störabstand und die mögliche Leitungslänge steigen.
 
-**Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je nach Länge der Kabel, siehe 6-Achsen-Sensor) und alle Geräte müssen an der gleichen Ground Leitung angeschlossen sein.**
+Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je nach Länge der Kabel, siehe 6-Achsen-Sensor) und alle Geräte müssen an der gleichen Ground Leitung angeschlossen sein.
+
+**Die I2C Sensoren und Aktoren auf dem Board sind anhand der Hexadecimalen Nummer, z.B. 0x78 neben dem OLED Display, zu erkennen.**
 
 ### Anwendungen 
 
@@ -33,7 +35,6 @@ Das Protokoll des I²C-Bus ist von der Definition her recht einfach, aber physik
 * [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](VL6180X/)
 * [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](ISL29125/)
 * [Hall Sensor](../sensors/HallSensor/)
-* [NFC/RFID Reader](../rfid/)
 * [Capacitive digital sensor for relative humidity and temperature (HTS221)](HTS221/)
 * [High-performance 3-axis magnetometer (LIS3MDL)](LIS3MDL/)
 * [3D accelerometer and 3D gyroscope (LSM6DSL)](LSM6DSL/)
