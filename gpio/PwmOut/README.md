@@ -2,6 +2,10 @@
 
 ![](../../images/PWMOut.png)
 
+Sinnbildliche Darstellung eines PWM Signals
+
+- - -
+
 [Pulsweitenmodulation](http://de.wikipedia.org/wiki/Pulsweitenmodulation) (kurz PWM), ist eine Modulationsart, bei der die elektrische Spannung zwischen Ground (0 Volt) und 3.3 Volt wechselt.
 
 Die relative Länge des Pulses wird Tastgrad (englisch duty cycle) genannt.
@@ -10,7 +14,7 @@ Der Abstand zwischen dem Startpunkt zwei aufeinanderfolgender Pulse wird "Period
 
 PwmOut kann nur mit Pins verwendet werden, welche mit PWM bezeichnet sind.
 
-Das Beispiel dimmt die LED D13 langsam auf.
+Das [Beispiel PWMOut](src/main.cpp) dimmt die LED D13 langsam auf und das [Beispiel PwmOutPeriod](../PwmOutPeriod/src/main.cpp) emuliert eine Polizeisierene mit dem Buzzer (Summer).
 
 ### Anwendungen 
 

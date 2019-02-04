@@ -2,9 +2,13 @@
 
 ![](../../images/DigitalOut.png)
 
+Sinnbildliche Darstellung für den Anschluss eines LEDs. Der Name des Pins ist entsprechend Anzupassen.
+
+- - -
+
 Mittels DigitalOut kann ein Pin zwischen 0 (0 Volt) und 1 (3.3 Volt) hin und her geschaltet werden.
 
-Das Beispiel steuert die LEDs D10 - D13 nacheinnander an.
+Das [Beispiel](src/main.cpp) steuert die LEDs D10 - D13 nacheinnander an.
 
 ### Anwendungen 
 

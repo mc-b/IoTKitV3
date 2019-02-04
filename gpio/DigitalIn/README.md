@@ -2,6 +2,7 @@
 
 ![](../../images/DigitalIn.png)
 
+Schematische Darstellung: Anschluss eines Buttons
 - - -
 
 DigitalIn liest den Status eines Pins (als Input Bezeichnet) aus.
@@ -10,7 +11,7 @@ DigitalIn liefert je nach Spannung: 0 Volt eine 0 oder 3.3 - 5 Volt eine 1.
 
 Damit Eindeutig zwischen 0 und 1 unterschieden werden kann, wird in der Regel mit PullUp Widerständen gearbeitet. Dies kann durch den internen PullUp Widerstand (zweiter Parameter bei DigitalIn, Default = ON) oder wie beim FRDM-K64F Board (SW2 und SW3), extern erfolgen (siehe unten).
 
-Das Beispiel frägt den Taster vom Encoder ab.
+Das [Beispiel](src/main.cpp) frägt den Taster vom Encoder ab.
 
 ### Anwendungen 
 
