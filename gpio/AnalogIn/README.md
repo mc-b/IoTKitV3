@@ -10,6 +10,8 @@ In der Elektronik erfolgt die Umsetzung eines elektrischen Analogsignals in ein 
 
 Die Pins A0 - A5 haben integrierte Analog-Digital-Umsetzer. AnalogIn macht sich das zunutze und liefert die aktuelle analoge Spannung in Prozent (0.0 - 1.0) oder als short (0 - 65535).
 
+Das Beispiel frägt den Hallsensor (zur Ermittelung des Nord- oder Südpols eines Magneten) ab und bringt bei entsprechendem Pol die LED D10 zum leuchten.
+
 ### Anwendungen
 
 *   Auslesen eines Sensorwertes, z.B. Lichtintensität

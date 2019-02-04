@@ -10,6 +10,8 @@ Der Abstand zwischen dem Startpunkt zwei aufeinanderfolgender Pulse wird "Period
 
 PwmOut kann nur mit Pins verwendet werden, welche mit PWM bezeichnet sind.
 
+Das Beispiel dimmt die LED D13 langsam auf.
+
 ### Anwendungen 
 
 *   Licht dimmen

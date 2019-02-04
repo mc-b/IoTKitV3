@@ -40,6 +40,7 @@ Entstanden ist das Board durch die Kombination des [NXP FRDM-K64F Board](https:/
 * [ARM Cortex M4 K64F MCU](https://www.nxp.com/products/processors-and-microcontrollers/arm-based-processors-and-mcus/kinetis-cortex-m-mcus/k-seriesperformancem4/k6x-ethernet/kinetis-k64-120-mhz-256kb-sram-microcontrollers-mcus-based-on-arm-cortex-m4-core:K64_120)
 * [Grove Header](http://wiki.seeedstudio.com/Grove_System/)
 * [OLED Display](../i2c/OLEDDisplayTest/)
+* [4 LED an GPIO D10 - D13](../gpio/DigitalOut/)
 
 
 * [H-Bridge](../actors/)

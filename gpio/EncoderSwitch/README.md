@@ -1,7 +1,7 @@
 Encoder Switch
 --------------
 
-Ein Encoder Switch - zaehlt die Impulse am Encoder und schalter Zaehler vor und zurueck
+Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vor und zurück
 
 ### Links
 
