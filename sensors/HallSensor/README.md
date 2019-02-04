@@ -9,6 +9,12 @@ Ein [Hall Sensor](http://de.wikipedia.org/wiki/Hall-Sensor) (auch Hall-Sonde ode
 
 Der auf dem Shield verwendetete Hall Sensor (A1202LH) kann zur Lage Erfassung eines Permanentmagnetes genutzt werden, d.h. es kann der Nordpol oder Südpol des Magneten bestimmt werden.
 
+Die einte Pol schaltet das Signal auf > 0.9 und der andere Pol setzt das Signal wieder zurück.
+
+Das [Beispiel](src/main.cpp) bringt, je nach Signal, LED D10 oder D11 zum Leuchten.
+
+**Achtung**: der DIP-Switch, neben dem Hall Sensor, muss nach oben (on) zeigen.
+
 ### Anwendungen
 
 *   Alarmanlagen, z.B. zum Sichern von Fenstern.
