@@ -15,6 +15,11 @@ Weitere nützliche Informationen zum ESP8266 sind in diesem [Blog](https://orxor
 
 Ab mbed OS V5.10 ist der ESP8266 Driver Bestandteil von mbed und keine separate Library mehr. 
 
+Um auf die neuste Version von mbed OS zu updaten ist wie folgt Vorzugehen:
+* mbed-os - Library im Projekt löschen
+* Mittels rechter Maustaste `Import Library ...` -> `From URL ...` anwählen
+* Als URL [https://github.com/ARMmbed/mbed-os.git](https://github.com/ARMmbed/mbed-os.git) eintragen und Library importieren.
+
 ### Beispiele
 
 * [WiFi](../uart/wifi/)
