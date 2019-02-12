@@ -11,37 +11,19 @@ IFTTT ermöglicht Benutzern "Applets" nach dem Motto "If this then that" ("Wenn 
 *   Der "this"-Teil eines Applets wird "Trigger"
 *   Der "that"-Teil eines Applets wird Aktion genannt.
 
-Mittels DO Button können Aktionen, z.B. via Smartphone ausgelöst werden.
-
 Die eigentlichen Geräte / Dienste werden als **Services** bezeichnet.
-
-### Button Widget Service
-
-Das [Button Widget](https://ifttt.com/do_button) ist eine App, welche es ermöglicht Aktionen via Smartphone auszulösen.
 
 ### Webhook Service 
 
-Der [Webhook Service](https://ifttt.com/maker_webhooks) ermöglicht es, IFTTT mit persönlichen Projekten zu verbinden.
+Der [Webhook Service](https://ifttt.com/maker_webhooks) ermöglicht es, IFTTT mit dem IoTKit zu verbinden.
 
-Mit dem Webhook Service können HTTP Aufrufe empfangen (Triggers) und ausgelöst (Actions) werden.
-
-Mittels Kombination [Button Widget](https://ifttt.com/do_button) und [Webhook](https://ifttt.com/maker_webhooks) Services können IoT-Geräte
-gesteuert werden und selber Aktionen auslösen.
+Mit dem Webhook Service kann die IFTTT Plattform HTTP Aufrufe empfangen (Triggers) und Aktionen (Actions) auslösen.
 
 ### IFTTT einrichten und Applet erstellen 
 
-* Account auf [http://ifttt.com](http://ifttt.com) einrichten.
-* `New Applet` anwählen und auf `Build on the platform` wechseln.
-
-**Um eine Aktion mittels `Do App` Button auf Smartphone auslösen:**
-
-* `New Applet` anwählen
-* **if**: `Button Widget` und `Button press` wählen
-* **then**: `Add action`, `Webhooks` und `make a web request` wählen, URL etc. ausfüllen
-* Name vergeben und speichern.
-* **Auf dem Smartphone**: Do Widget Button erstellen und mit Applet verknüpfen.
-
 **Um eine Aktion mittels Web Request auslösen:**
+
+In dieser Variante löst das IoTKit einen Event mittels `HTTP GET` aus, welcher z.B. weiter an ein Smartphone geleitet wird um Musik abzuspielen.
 
 * `New Applet` anwählen
 * **if:** `Webhooks` und `receive a web request` wählen und Event-Name erfassen.
@@ -53,6 +35,9 @@ gesteuert werden und selber Aktionen auslösen.
 ```cpp
 	curl https://maker.ifttt.com/trigger/<Event-Name>/with/key/<your key>
 ```
+
+Nach dem Ersetzen des Event-Names, durch den oben erfassten Event-Name, kann der URL 1:1 in das main.cpp in die Variable `finishMsg` übertragen werden.
+Das Programm compilieren. Wird nun ein Magnet über den Hall-Sensor geführt, wird der Alarm ausgelöst, ein HTTP an die IFTTT Plattform gesendet welche diese weiter an die Aktion leitet.
 
 ### Links
 
