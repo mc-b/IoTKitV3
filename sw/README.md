@@ -57,7 +57,7 @@ Verzeichnis mbed erstellen, Projekt initialisieren und benötigte Libraries clon
 Anschliessend eine Statische Library für mbed-os und alle obigen Libraries erstellen:
 
 	mbed compile --library --no-archive --source=mbed-os --source OLEDDisplay --source QEI \
-	             --source MQTT --source ntp-client --source mbed-http \
+	             --source MQTT --source mbed-http \
 	             --source BLE_API --source nRF51822 \
 	             --source HTS221lib --source VL6180x --source ISL29125 --source MFRC522 --source LIS3MDL --source LSM6DSL \
 	             --build=../mbed-os
