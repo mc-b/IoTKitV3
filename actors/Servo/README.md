@@ -34,4 +34,4 @@ Der Servo wird mit 5V betrieben und kann direkt auf einen der G/V/S Header geste
 
 ### Links
 
-*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/Servo/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/Servos/)
