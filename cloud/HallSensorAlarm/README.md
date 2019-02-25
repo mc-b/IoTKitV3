@@ -41,4 +41,4 @@ Das Programm compilieren. Wird nun ein Magnet über den Hall-Sensor geführt, wi
 
 ### Links
 
-*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/Disco-L475VG-IOT/code/HallSensorAlarm/)
+*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensorAlarm/)
