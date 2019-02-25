@@ -43,7 +43,7 @@ int main()
             oled.cursor( 1, 0 );
             oled.printf( "scharf      " );
             float value = hallSensor.read();
-            if  ( value < 0.4f || value > 0.6f )
+            if  ( value > 0.6f )
             {
                 oled.cursor( 1, 0 );
                 oled.printf( "ALARM !!!" );
