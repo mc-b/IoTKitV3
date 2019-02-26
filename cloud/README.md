@@ -28,6 +28,7 @@ Die gebräuchlichsten Format sind HTML, [XML](http://de.wikipedia.org/wiki/Exten
 
 * [Yahoo Weather](YahooWeather/) 
 * [Sunrise Sunset](SunriseSunset/)
+* [ThinkSpeak](ThinkSpeak/)
 
 **IFTTT**
 

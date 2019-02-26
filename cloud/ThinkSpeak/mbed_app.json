@@ -1,0 +1,32 @@
+{
+    "config": {
+        "wifi-shield": {
+            "help": "Options are internal, WIFI_ESP8266, WIFI_ISM43362, WIFI_IDW0XX1",
+            "value": "WIFI_ESP8266"
+        },
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"LERNKUBE\""
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"l3rnk4b3\""
+        },
+        "wifi-tx": {
+            "help": "TX pin for serial connection to external device",
+            "value": "PTC15"
+        },
+        "wifi-rx": {
+            "help": "RX pin for serial connection to external device",
+            "value": "PTC14"
+        },
+        "wifi-debug": {
+            "value": true
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true
+        }
+    }
+}
