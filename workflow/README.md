@@ -16,12 +16,13 @@ Mittels [Node-RED](https://nodered.org/) lassen sich einfache Workflows realisie
 * [Node-RED](https://nodered.org/) installieren.
 * In Node-RED
     * `http` Input Node auf Flow 1 platzieren, mit als Methode `POST` und als URL `post` eintragen.
-    * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
+    * `debug` Output Node auf Flow 1 platzieren, Output auf "complete msg.object" ändern und mit Input Node verbinden.
     * Programm mittels `Deploy` veröffentlichen.
 * mbed Teil
-    * [HTTP POST](../http/HTTP_POST/) Beispiel (main.cpp) editieren und ca. auf Zeile 34 die URL mit dem Server ersetzen wo Node-RED läuft, z.B. `http://192.168.178.52:1880/post`. Port und Path nicht vergessen!
+    * [HTTP ThingSpeak](../cloud/ThinkSpeak/) Beispiel (main.cpp) editieren, ca. auf Zeile 16 die URL mit dem Server ersetzen wo Node-RED läuft, z.B. `http://192.168.178.200:1880/post` und ca. auf Zeile 58 HTTP Methode auf HTTP_POST setzen.
     * Programm Compilieren und auf Board laden.
-    
+
+Im Node-RED Fenster auf der Node `debug`, sollten jetzt alle 10 Sekunden neue Meldungen vom IoTKitV3 erscheinen.   
 
 ### Node-RED MQTT Workflow
 
@@ -32,11 +33,11 @@ Mittels [Node-RED](https://nodered.org/) lassen sich einfache Workflows realisie
 * [Mosquitto](https://mosquitto.org/) installieren.
 * [Node-RED](https://nodered.org/) installieren.
 * In Node-RED
-    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `mbed-sample` eintragen.
+    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit` eintragen.
     * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
     * Programm mittels `Deploy` veröffentlichen.
 * mbed Teil
-    * [MQTT on developer.mbed.org](https://os.mbed.com/teams/mqtt/code/HelloMQTT/) Beispiel in mbed Compiler importieren und ca. auf Zeile 80 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
+    * [MQTTPublish](../mqtt/MQTTPublish) Beispiel in mbed Compiler importieren und ca. auf Zeile 21 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
     * Programm Compilieren und auf Board laden.
 
 
