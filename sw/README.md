@@ -53,12 +53,37 @@ Verzeichnis mbed erstellen, Projekt initialisieren und benötigte Libraries clon
 	mbed add https://developer.mbed.org/teams/ST/code/LIS3MDL/
 	mbed add https://developer.mbed.org/teams/ST/code/LSM6DSL/
 	mbed add https://os.mbed.com/teams/IoTKitV3/code/QEI/
+	mbed add https://github.com/ARMmbed/ble-x-nucleo-idb0xa1/
+	
+Damit die Bluetooth Beispiele funktionieren muss die Datei `mbed_lib.json` im Verzeichnis `ble-x-nucleo-idb0xa1` um die IoTKit V3 Bluetooth K64F Modem Pin Angaben erweitert werden:
+
+	{
+	    "name": "bluenrg",
+	    "target_overrides": {
+	        "K64F": {
+	            "target.macros_add": ["BLUENRG_PIN_SPI_MOSI=PTA16",
+	                                  "BLUENRG_PIN_SPI_MISO=PTC7",
+	                                  "BLUENRG_PIN_SPI_nCS=PTA14",
+	                                  "BLUENRG_PIN_SPI_RESET=PTA12",
+	                                  "BLUENRG_PIN_SPI_IRQ=PTA13",
+	                                  "BLUENRG_PIN_SPI_SCK=PTC5"]            
+	        },
+	        "DISCO_L475VG_IOT01A": {
+	            "target.macros_add": ["BLUENRG_PIN_SPI_MOSI=PC_12",
+	                                  "BLUENRG_PIN_SPI_MISO=PC_11",
+	                                  "BLUENRG_PIN_SPI_nCS=PD_13",
+	                                  "BLUENRG_PIN_SPI_RESET=PA_8",
+	                                  "BLUENRG_PIN_SPI_IRQ=PE_6",
+	                                  "BLUENRG_PIN_SPI_SCK=PC_10"]
+	        }
+	    }
+	}
 	
 Anschliessend eine Statische Library für mbed-os und alle obigen Libraries erstellen:
 
 	mbed compile --library --no-archive --source=mbed-os --source OLEDDisplay --source QEI \
 	             --source MQTT --source mbed-http \
-	             --source BLE_API --source nRF51822 \
+	             --source BLE_API --source nRF51822 --source ble-x-nucleo-idb0xa1 \
 	             --source HTS221lib --source VL6180x --source ISL29125 --source MFRC522 --source LIS3MDL --source LSM6DSL \
 	             --build=../mbed-os
 	
