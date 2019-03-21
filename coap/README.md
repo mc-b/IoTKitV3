@@ -34,8 +34,9 @@ Komplettes Verzeichnis: [OMNA Lightweight M2M (LWM2M) Object & Resource Registry
 
 ### Links 
 
+*   [Office Hours - Pelion Device Management - Connect Service](https://www.youtube.com/watch?v=HUJcAscT5-s)
 * 	[ARM CoAP YouTube Tutorial](https://www.youtube.com/watch?v=4bSr5x5gKvA&list=PLgyFKd2HIZlZNsrWXyE4kgLDo_tyLpvDW&index=7)
-* 	[Eclipse Leshan YoutTube Tutorial](https://www.youtube.com/watch?v=KZEi-Q7_EL0)
+* 	[Eclipse Leshan YouTube Tutorial](https://www.youtube.com/watch?v=KZEi-Q7_EL0)
 *   [ARM CoAP Tutorial](http://community.arm.com/servlet/JiveServlet/previewBody/8633-102-2-15471/ARM%20CoAP%20Tutorial%20April%2030%202014.pdf)
 *   [mbed CoAP Beispiel (mbed V2)](https://os.mbed.com/components/Nanoservice/)
 *   [mbed Client (mbed OS V5)](https://www.mbed.com/en/platform/mbed-client/)

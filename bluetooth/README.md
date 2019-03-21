@@ -46,3 +46,4 @@ Die Pins entsprechen dem SPI0 auf dem IoTKit V3.
 * Weitere Beispiele (rechts unten) auf [Board Overview Site](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/). Müssen, wie oben Beschrieben, angepasst werden.
 * [mbed Bluetooth Team](https://os.mbed.com/teams/Bluetooth-Low-Energy/)
 * [Bluetooth Home Page](https://www.bluetooth.com/)
+* [YouTube Mbed Office Hours - Bluetooth Low Energy](https://www.youtube.com/watch?v=j5RJ6UfkylA)
