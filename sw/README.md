@@ -36,9 +36,11 @@ Globale Konfigurationen für Board und Compiler setzen.
 	cd template
 	mbed compile
 	
-Das compilierte Programm befindet sich im Verzeichnis `BUILD/K64F/GCC_ARM` mit Namen `template.bin`. Dieses ist auf das Laufwerk `DAPLINK` zu kopieren. `Reset`-Button drücken - fertig.
+Das compilierte Programm befindet sich im Verzeichnis `BUILD/K64F/GCC_ARM` mit Namen `template.bin`. Dieses ist auf das Laufwerk `DAPLINK` zu kopieren und der `Reset`-Button zu drücken.
+
+Das Compilierte Programm baut eine Verbindung mit dem Internet auf (WLAN Einstellungen siehe `mbed_app.json`) und zeigt die aktuelle Zeit auf dem OLED Display an.
 	
-Z.B. in PowerShell, wenn das Laufwerk DAPLINK D: ist.
+Kopieren in z.B. in PowerShell, wenn das Laufwerk DAPLINK D: ist.
 	
 	copy BUILD\K64F\GCC_ARM\template.bin D:\
 
