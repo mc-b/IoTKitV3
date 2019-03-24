@@ -26,7 +26,7 @@ nRF Connect App Printscreen
 * Nach neuen Geräten scannen.
 * `HRM...` Gerät Verbinden und Herzfrequenz auslesen. 
 
-#### Code Anpassungen für IoTKit V3
+#### Code Anpassungen für IoTKit V3 (nur mbed Online Compiler)
 
 Um dieses Verwenden zu können, müssen im Ordner `shields/TARGET_ST_BLUENRG/` in der Datei `mbed_lib.json` die Pin's wie folgt ergänzt werden:
 
@@ -44,6 +44,7 @@ Die Pins entsprechen dem SPI0 auf dem IoTKit V3.
 ### Links
 
 * Weitere Beispiele (rechts unten) auf [Board Overview Site](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/). Müssen, wie oben Beschrieben, angepasst werden.
+* [Beacon Beispiel](Beacon/)
 * [mbed Bluetooth Team](https://os.mbed.com/teams/Bluetooth-Low-Energy/)
 * [Bluetooth Home Page](https://www.bluetooth.com/)
 * [YouTube Mbed Office Hours - Bluetooth Low Energy](https://www.youtube.com/watch?v=j5RJ6UfkylA)
