@@ -24,4 +24,11 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>mbed-os</name>
+			<type>2</type>
+			<locationURI>WORKSPACE_LOC/k64f/template</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

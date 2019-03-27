@@ -43,6 +43,12 @@ IoTKit V3 Beispiele und Dokumentation
 * [Workflow](workflow/)
 * [Built with Mbed](https://www.mbed.com/built-with-mbed/)
 
+## Erweiterungen
+
+Für die nachfolgenden Erweiterten Beispiele wird evtl. zusätzliche HW, wie z.B. ein Data Logging Shield, benötigt.
+
+* [Speicher APIs](storage/)
+
 ## Links
 
 * [ARM mbed](https://www.mbed.com)
