@@ -6,19 +6,27 @@
 #include "MQTTClient.h"
 #include "OLEDDisplay.h"
 #include "Motor.h"
+#include "QEI.h"
+
 
 #include "ESP8266Interface.h"
 ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
 
+// Sensoren wo Daten fuer Topics produzieren
 static DevI2C devI2c(PTE0,PTE1);
 static HTS221Sensor hum_temp(&devI2c);
 AnalogIn hallSensor( PTC0 );
+DigitalIn button( PTC13 );
+//Use X2 encoding by default.
+QEI wheel (PTC6, PTA4, NC, 624);
 
 // Topic's
 char* topicTEMP =  "iotkit/sensor";
 char* topicALERT = "iotkit/alert";
+char* topicBUTTON = "iotkit/button";
+char* topicENCODER = "iotkit/encoder";
 // MQTT Brocker
-char* hostname = "iot.eclipse.org";
+char* hostname = "broker.hivemq.com";
 int port = 1883;
 // MQTT Message
 MQTT::Message message;
@@ -82,6 +90,7 @@ int main()
 {
     uint8_t id;
     float temp, hum;
+    int encoder;
     alert = 0;
     
     oled.clear();
@@ -154,6 +163,19 @@ int main()
             alert = 0;
             speaker = 0.0f;
         }
+
+        // Button (nur wenn gedrueckt)
+        if	( button == 0 )
+        {
+        	sprintf( buf, "ON" );
+            publish( mqttNetwork, client, topicBUTTON );
+        }
+
+        // Encoder
+        encoder = wheel.getPulses();
+        sprintf( buf, "%d", encoder );
+        publish( mqttNetwork, client, topicENCODER );
+
         wait    ( 2.0f );
     }
 }
