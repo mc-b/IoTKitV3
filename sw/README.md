@@ -59,11 +59,11 @@ Z.B. in der PowerShell
 Die jeweiligen Beispiele können dann wie folgt compiliert werden, z.B. DigitalOut, HallSensorAlarm
 
 	cd template
-	mbed compile --source . --source ../IoTKitV3/gpio/DigitalOut/src
+	mbed compile --source . --source ../IoTKitV3/gpio/DigitalOut/
 	
 oder 
 	
-	mbed compile --source . --source ../IoTKitV3/cloud/HallSensorAlarm/src
+	mbed compile --source . --source ../IoTKitV3/cloud/HallSensorAlarm/
 	
 Und dann wie, oben beschrieben, auf das Board zu kopieren und dieses zu Resetten.
 

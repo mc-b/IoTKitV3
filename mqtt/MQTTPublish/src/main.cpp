@@ -7,7 +7,10 @@
 #include "OLEDDisplay.h"
 #include "Motor.h"
 #include "QEI.h"
+#include "MFRC522.h"
 
+// NFC/RFID Reader (SPI)
+MFRC522    rfidReader( PTA16, PTC7, PTC5, D10, D8 ); // PTD2 statt PTA16
 
 #include "ESP8266Interface.h"
 ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
@@ -25,6 +28,7 @@ char* topicTEMP =  "iotkit/sensor";
 char* topicALERT = "iotkit/alert";
 char* topicBUTTON = "iotkit/button";
 char* topicENCODER = "iotkit/encoder";
+char* topicRFID = "iotkit/rfid";
 // MQTT Brocker
 char* hostname = "broker.hivemq.com";
 int port = 1883;
@@ -95,7 +99,7 @@ int main()
     
     oled.clear();
     oled.printf( "MQTTPublish\r\n" );
-    oled.printf( "host: %s:%d\r\n", hostname, port );
+    oled.printf( "host: %s:%s\r\n", hostname, port );
 
     printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
     oled.printf( "SSID: %s\r\n", MBED_CONF_APP_WIFI_SSID );
@@ -111,7 +115,10 @@ int main()
     
     /* Init all sensors with default params */
     hum_temp.init(NULL);
-    hum_temp.enable();    
+    hum_temp.enable();
+
+    // RFID Reader initialisieren
+    rfidReader.PCD_Init();
 
     while   ( 1 ) 
     {
@@ -165,9 +172,9 @@ int main()
         }
 
         // Button (nur wenn gedrueckt)
-        if	( button == 0 )
+        if  ( button == 0 )
         {
-        	sprintf( buf, "ON" );
+            sprintf( buf, "ON" );
             publish( mqttNetwork, client, topicBUTTON );
         }
 
@@ -175,6 +182,25 @@ int main()
         encoder = wheel.getPulses();
         sprintf( buf, "%d", encoder );
         publish( mqttNetwork, client, topicENCODER );
+
+        // RFID Reader
+        if ( rfidReader.PICC_IsNewCardPresent())
+            if ( rfidReader.PICC_ReadCardSerial())
+            {
+                // Print Card UID (2-stellig mit Vornullen, Hexadecimal)
+                printf("Card UID: ");
+                for ( int i = 0; i < rfidReader.uid.size; i++ )
+                    printf("%02X:", rfidReader.uid.uidByte[i]);
+                printf("\n");
+
+                // Print Card type
+                int piccType = rfidReader.PICC_GetType(rfidReader.uid.sak);
+                printf("PICC Type: %s \n", rfidReader.PICC_GetTypeName(piccType) );
+
+                sprintf( buf, "%02X:%02X:%02X:%02X:", rfidReader.uid.uidByte[0], rfidReader.uid.uidByte[1], rfidReader.uid.uidByte[2], rfidReader.uid.uidByte[3] );
+                publish( mqttNetwork, client, topicRFID );
+
+            }
 
         wait    ( 2.0f );
     }
