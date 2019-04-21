@@ -27,3 +27,4 @@ Siehe auch: [mbed Handbook PwmOut](https://docs.mbed.com/docs/mbed-os-api-refere
 ### Links
 
 *  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/PwmOut/)
+*  [Arm Mbed Online Compiler - Polizeisirene](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/PwmOutPeriod/)
