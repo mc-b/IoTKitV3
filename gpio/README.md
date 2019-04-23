@@ -182,3 +182,25 @@ Siehe auch: [mbed Handbook](https://os.mbed.com/docs/mbed-os/latest/apis/pwmout.
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/PwmOutPeriod` |
 
 
+## Encoder Switch
+***
+
+> [⇧ **Nach oben**](#gpio)
+
+Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vor und zurück
+
+### Anwendungen
+
+* Wert hoch- und runterzählen, z.B. um einen Motor zu Steuern, eine Lautstärke einzustellen etc.
+
+### Beispiel(e)
+
+* Das Beispiel [EncoderSwitch](EncoderSwitch/src/main.cpp) gibt die Anzahl Pulse auf dem Display aus.
+
+### Compilieren
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [EncoderSwitch](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/EncoderSwitch/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/EncoderSwitch; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/EncoderSwitch` |
