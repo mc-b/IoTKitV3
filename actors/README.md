@@ -12,8 +12,8 @@ Aktoren setzen elektrische Signale in mechanische Bewegung um.
 ### Beispiele
 
 * [Servo](#Servo) 
-* [DC Motor](#Motors) 
-* [Schrittmotor](#Steppers)
+* [DC Motor](#Gleichstrom-Motor) 
+* [Schrittmotor](#Schrittmotor)
 * [Türöffner](#türöffner)
 * [RGB LED Streifen - 5 Volt](#RGB-LED-Streifen)
 * [Fernsehsimulator](#FernsehSimulatorLED)
@@ -59,7 +59,7 @@ Das [Beispiel](Servos/src/main.cpp) bewegt 4 Servos.
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/Servos;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/Servos` |
 
-## Gleichstrom Motor (Aktor) 
+## Gleichstrom Motor
 ***
 
 > [⇧ **Nach oben**](#beispiele)
@@ -83,7 +83,7 @@ Sourcecode aus Motor.cpp
     // Set initial condition of PWM
     _pwm.period( 1.0f / 50000 );
 
-Ein Motor benötigt die [Motor Library](http://developer.mbed.org/users/simon/code/Motor/) und eine Verstärkerschaltung, wie z.B. eine [H-Brücke](http://de.wikipedia.org/wiki/Br%C3%BCckenschaltung). Eine H-Brücke braucht einen PWM Pin und zwei beliebige Digital Pins pro Motor. Es können zwei Motoren an den DCMOT (D2-D7) Header angeschlossen werden.
+Ein Motor benötigt die [Motor Library](http://developer.mbed.org/users/simon/code/Motor/) und eine Verstärkerschaltung, wie z.B. eine [H-Brücke](http://de.wikipedia.org/wiki/Br%C3%BCckenschaltung). Eine H-Brücke braucht einen PWM Pin und zwei beliebige Digital Pins pro Motor. Es können zwei Motoren an die H-Bridge **M1** und **M2**  Header angeschlossen werden.
 
 Für Feintuning des Fahrverhaltens, Geschwindigkeitkennlinien etc. siehe [Digital Decoder](http://www.esu.eu/download/betriebsanleitungen/digitaldecoder/) bei der Modelleisenbahn.
 
@@ -114,7 +114,7 @@ Das [Beispiel](Motors/src/main.cpp) bewegt 2 DC Motoren vorwärts und rückwärt
 
 - - - 
 
-![](../../images/actors/StepperWiring.png)
+![](../images/actors/StepperWiring.png)
 
 Ansteuerung Schrittmotor
 
@@ -126,7 +126,7 @@ Ein Schrittmotor hat eine fixe Schrittanzahl pro Umdrehung. Beim verwendeten [28
 
 Zur erstmaligen Positionierung wird, in der Regel, ein Endstop Schalter verwendet. [CNC Maschinen](http://de.wikipedia.org/wiki/CNC-Maschine) besitzen zusätzlich, wegen der Verletzungsgefahr einen Notstopp Schalter mit Einrastfunktion.
 
-Ein unipolarer Schrittmotor benötigt die [Schrittmotor Library](http://developer.mbed.org/users/okano/code/StepperMotorUni/) und einen IC Treiber (wie [ULN2803N](http://www.mikrocontroller.net/part/ULN2803)) und 4 Digitale Pin&#039;s.
+Ein unipolarer Schrittmotor benötigt einen IC Treiber (wie [ULN2803N](http://www.mikrocontroller.net/part/ULN2803)) und 4 Digitale Pins. Es kann je ein Schrittmotore an den Header **Stepper1** oder **Stepper2** angeschlossen werden.
 
 Ein bipolarer Schrittmotor kann mittels der H-Brücke angesprochen werden, siehe Gleichstrom Motor und [Stepper bipolar](https://os.mbed.com/components/Stepper-motor-bipolar/)
 
@@ -168,7 +168,7 @@ Türöffner gibt es auch als elektrisches Bauteil. Der Riegel wird durch einen e
 
 Damit genug Leistung vorhanden ist, wird eine Leistungsstufe, z.B. [MOSFET](http://de.wikipedia.org/wiki/Metall-Oxid-Halbleiter-Feldeffekttransistor), vorgeschaltet.
 
-Der Türöffner wird an den MOSFET oder Schrittmotor Leistungsstufe (beim DISCO_L475VG_IOT01A Shield) angeschlossen und mittels DigitalOut angesprochen.
+Der Türöffner wird an den MOSFET (Header **MOSFETs**) oder Schrittmotor Leistungsstufe (Header **STEPPER1** beim DISCO_L475VG_IOT01A Shield) angeschlossen und mittels DigitalOut angesprochen.
 
 ### Anwendungen 
 
@@ -213,7 +213,7 @@ Es gibt unterschiedliche Arten der Ansteuerung, alle LED einer Farbe, jedes RGB 
 
 Im aktuellen Beispiel verwenden wird ein 5V LED Strip mit einem Anschluss pro Farbe. Diese brauchen einen Verstärker, z.B. [MOSFET](http://de.wikipedia.org/wiki/Metall-Oxid-Halbleiter-Feldeffekttransistor).
 
-Die LED Strip wird an den MOSFETs Header (+ ist oben) oder an die Stepper Leistungsstufe (DISCO_L475VG_IOT01A Shield) angeschlossen und benötigen für jede Farbe ein DigitalOut (An/Aus) oder PwmOut (Dimming).
+Die LED Strip wird an den MOSFETs Header (+ ist oben) oder an die Stepper Leistungsstufe (Header **STEPPER1** beim DISCO_L475VG_IOT01A Shield) angeschlossen und benötigen für jede Farbe ein DigitalOut (An/Aus) oder PwmOut (Dimming).
 
 ### Anwendungen 
 
