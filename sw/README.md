@@ -83,7 +83,7 @@ Globale Konfigurationen für Board und Compiler setzen.
 	cd template
 	mbed compile
 	
-Für das DISCO_L475VG_IOT01A ist der letzte Befehl durch `mbed compile -M DISCO_L475VG_IOT01A -f` zu ersetzen.	Das Kopieren des Programm und der Reset des Boards erfolgt automatisch.
+Für das DISCO_L475VG_IOT01A ist der letzte Befehl durch `mbed compile -m DISCO_L475VG_IOT01A -f` zu ersetzen.	Das Kopieren des Programm und der Reset des Boards erfolgt automatisch.
 
 Nur **IoTKitV3 K64F**: 
 * Das compiliertes Beispiel Programm befindet sich im Verzeichnis `BUILD/K64F/GCC_ARM` mit Namen `template.bin`. 
