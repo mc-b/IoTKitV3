@@ -11,10 +11,10 @@ Aktoren setzen elektrische Signale in mechanische Bewegung um.
 
 ### Beispiele
 
-* [Servo](Servo/) 
+* [Servo](Servos/) 
 * [DC Motor](Motor/) 
-* [Schrittmotor](Schrittmotor/)
-* [Türöffner](TuerOeffner/)
+* [Schrittmotor](Steppers/)
+* [Türöffner](DoorOpener/)
 * [RGB LED Streifen - 5 Volt](RGBLEDStrip/)
 * [Fernsehsimulator mit LED](FernsehSimulatorLED/)
 

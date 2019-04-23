@@ -4,16 +4,16 @@
 #include "mbed.h"
 
 // Stepper 1
-DigitalOut s1( PTB20 );
-DigitalOut s2( PTB21 );
-DigitalOut s3( PTB1 );
-DigitalOut s4( PTB0 );
+DigitalOut s1( MBED_CONF_IOTKIT_STEPPER1_1 );
+DigitalOut s2( MBED_CONF_IOTKIT_STEPPER1_2 );
+DigitalOut s3( MBED_CONF_IOTKIT_STEPPER1_3 );
+DigitalOut s4( MBED_CONF_IOTKIT_STEPPER1_4 );
 
 // Stepper 2
-DigitalOut s5( PTB18 );
-DigitalOut s6( PTB19 );
-DigitalOut s7( PTC8 );
-DigitalOut s8( PTC9 );
+DigitalOut s5( MBED_CONF_IOTKIT_STEPPER2_1 );
+DigitalOut s6( MBED_CONF_IOTKIT_STEPPER2_2 );
+DigitalOut s7( MBED_CONF_IOTKIT_STEPPER2_3 );
+DigitalOut s8( MBED_CONF_IOTKIT_STEPPER2_4 );
 
 static float s = 0.005f;
 

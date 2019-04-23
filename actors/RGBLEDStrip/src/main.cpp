@@ -1,10 +1,10 @@
-/** Beispiel RGB LED Strip 12 Volt Variante mit einer Leitung pro Farbe
+/** Beispiel RGB LED Strip 5 Volt Variante mit einer Leitung pro Farbe
 */
 #include "mbed.h"
 
-PwmOut green( D5 );
-PwmOut red( D6 );
-PwmOut blue( D7 );
+PwmOut green( MBED_CONF_IOTKIT_MOSFET1 );
+PwmOut red( MBED_CONF_IOTKIT_MOSFET2 );
+PwmOut blue( MBED_CONF_IOTKIT_MOSFET3 );
 
 void off()
 {

@@ -3,7 +3,7 @@
 #include "mbed.h"
 #include <time.h>
 
-DigitalOut led[] =  { DigitalOut( D10 ), DigitalOut( D11 ), DigitalOut( D12 ), DigitalOut( D13 ) };
+DigitalOut led[] =  { DigitalOut( MBED_CONF_IOTKIT_LED1 ), DigitalOut( MBED_CONF_IOTKIT_LED2 ), DigitalOut( MBED_CONF_IOTKIT_LED3 ), DigitalOut( MBED_CONF_IOTKIT_LED4 ) };
 
 int main()
 {

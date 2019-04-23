@@ -17,16 +17,7 @@ Daneben sind  Pin mit Ground (**GND**) und +5 Volt (**+5V**) vorhanden um die Ve
 **Weitere Beispiele**
 
 * [Encoder Switch](#encoder-switch) - zählt die Impulse am Encoder und schaltet einen Zähler vor und zurück.
-
-**Übungen**
-
-| Übung                     | Lösung       |
-| ------------------------- | ------------ |
-| **DigitalIn, DigitalOut, if, wait** <br>Schreibt ein Programm welches eine der vier LED's bei Druck einer Taste 3 lang Sekunden aufleuchten lässt. <br>**Anwendung**: Licht Treppenhaus. | [Lösung](01-Uebung/src/main.cpp) |
-| **DigitalOut, for Verschachtelt, wait, Array's**<br>Erstellt eine Array welche die 4 LED anhand einer Pseudo Melodie aufleuchten lässt.<br>**Anwendung**: Fernseher Simulation um Einbrecher abzuschrecken. | [Lösung](02-Uebung/src/main.cpp) |
-| **Adaptieren bestehender Beispiele - Melodie abspielen**<br>Baut das [Using a Speaker for Audio Output Beispiel](https://os.mbed.com/users/4180_1/notebook/using-a-speaker-for-audio-output/) auf den Summer um.<br>**Anwendung**: Türglocke, Alarmanlage, Polizeihorn. | [Lösung](03-Uebung/src/main.cpp) | 
-
-**Tip Online Compiler**: Um zu Compilieren, main.cpp Inhalt kopieren und in bestehendes Programm im [Online Compiler](https://ide.mbed.com/compiler/) einfügen. 
+* [Übungen](#Übungen)
 
 ## DigitalOut
 ***
@@ -217,3 +208,22 @@ Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vo
 | Online Compiler | [EncoderSwitch](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/EncoderSwitch/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/EncoderSwitch; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/EncoderSwitch` |
+
+## Übungen
+***
+
+| Übung                     | Lösung       |
+| ------------------------- | ------------ |
+| **DigitalIn, DigitalOut, if, wait** <br>Schreibt ein Programm welches eine der vier LED's bei Druck einer Taste 3 lang Sekunden aufleuchten lässt. <br>**Anwendung**: Licht Treppenhaus. | [Lösung](01-Uebung/src/main.cpp) |
+| **DigitalOut, for Verschachtelt, wait, Array's**<br>Erstellt eine Array welche die 4 LED anhand einer Pseudo Melodie aufleuchten lässt.<br>**Anwendung**: Fernseher Simulation um Einbrecher abzuschrecken. | [Lösung](02-Uebung/src/main.cpp) |
+| **Adaptieren bestehender Beispiele - Melodie abspielen**<br>Baut das [Using a Speaker for Audio Output Beispiel](https://os.mbed.com/users/4180_1/notebook/using-a-speaker-for-audio-output/) auf den Summer um.<br>**Anwendung**: Türglocke, Alarmanlage, Polizeihorn. | [Lösung](03-Uebung/src/main.cpp) | 
+
+### Compilieren
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | main.cpp Inhalt kopieren und in bestehendes Programm einfügen |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/01-Uebung` |
+
+* *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.
