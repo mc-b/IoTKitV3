@@ -16,7 +16,7 @@ Aktoren setzen elektrische Signale in mechanische Bewegung um.
 * [Schrittmotor](#Schrittmotor)
 * [Türöffner](#türöffner)
 * [RGB LED Streifen - 5 Volt](#RGB-LED-Streifen)
-* [Fernsehsimulator](#FernsehSimulator)
+* [Fernseh Simulator](#Fernseh-Simulator)
 
 ## Servo 
 ***
