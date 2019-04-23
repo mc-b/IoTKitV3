@@ -1,7 +1,16 @@
 Software
 --------
+***
+
+> [⇧ **Home**](../README.md)
 
 ## Betriebssystem
+**
+
+![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed_OS_diagram_for_intro.png)
+
+Architekturdiagramm mbed OS
+- - -
 
 Der IoTKit V3 verwendet [ARM mbed OS](https://www.mbed.com/en/platform/mbed-os/).
 
@@ -10,21 +19,43 @@ ARM mbed OS ist ein Open-Source-Embedded-Betriebssystem, das speziell für die "
 Es enthält alle Funktionen, die benötigt werden, um ein angeschlossenes Produkt auf Basis eines ARM Cortex-M Mikrocontrollers zu entwickeln, einschliesslich Sicherheit, Konnektivität, RTOS und Treiber für Sensoren und E / A-Geräte.
 
 ## Entwicklungsumgebung
+**
 
-Als Entwicklungsumgebung kann
+Als Entwicklungsumgebung können folgende Produkte verwendet werden:
 * der [Arm Mbed Online Compiler (empfohlen)](https://os.mbed.com/compiler/)
 * das [mbed CLI](https://github.com/ARMmbed/mbed-cli)
 
-Wird der [Arm Mbed Online Compiler](https://os.mbed.com/compiler/) verwendet, ist der Sourcecode bzw. Link unten an der jeweiligen Seite, gekennzeichnet mit **Arm Mbed Online Compiler**, zu verwenden.
+Eine Tabelle unterhalb jedes Beispiels enthält einen Link auf die Online Version oder zeigt an, wie das Programm für das jeweilige Board zu compilieren ist.
 
-Ist kein Link **Arm Mbed Online Compiler** vorhanden, kann das [IoTKit V3 Template](https://os.mbed.com/teams/IoTKitV3/code/template/) verwendet werden. Dabei ist der Inhalt von `main.cpp` mit dem Inhalt des Beispiels zu ersetzen.
+**Beispiel** [DigitalOut](../gpio#digitalout)
 
-**ACHTUNG**: kann der IoTKit V3 nicht mehr Programmiert werden, Upload endet sofort und es erscheint eine Datei `FAIL.TXT`, ist leicht am Encoder zu drehen und das Board ein- und auszustecken.
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [DigitalOut](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DigitalOut/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/DigitalOut; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/DigitalOut` |
+
+Die Tabelle ist wie folgt zu lesen:
+* **Online Compiler** verweist in der Spalte *Link/Befehl* auf einen Link welcher den [Arm Mbed Online Compiler (empfohlen)](https://os.mbed.com/compiler/) öffnet mit einem Dialog um da Beispiel zu importieren.
+* **CLI (IoTKit K64F)** zeigt die Befehle in der Spalte *Link/Befehl*, welche benötigt werden um das Beipiel, mittels [mbed CLI](https://github.com/ARMmbed/mbed-cli), zu Compilieren und das fertige Programm auf das IoTKit K64F Board zu kopieren. 
+* **CLI (DISCO_L475VG_IOT01A)** zeigt den Befehl in der Spalte *Link/Befehle*, welcher benötigt wird um das Beispiel, mittels [mbed CLI](https://github.com/ARMmbed/mbed-cli), zu Compilieren und das fertige Programm auf das DISCO_L475VG_IOT01A Board zu kopieren.
+
+Bei beiden **CLI** Varianten wird vorausgesetzt das, dass [mbed CLI](https://github.com/ARMmbed/mbed-cli) wie unten Installiert wurde wir uns in der *Bash* Shell im Verzeichnis `template` befinden. 
+
+Bei der **CLI (IoTKit K64F)** Variante muss zusätzlich das Laufwerk mittels der Umgebungsvariable `DAPLINK` gesetzt sein, z.B. `EXPORT DAPLINK=/d` für das Laufwerk D:.
+
+Ist kein Link **Online Compiler** vorhanden, kann das [IoTKit V3 Template](https://os.mbed.com/teams/IoTKitV3/code/template/) verwendet werden. Dabei ist der Inhalt von `main.cpp` mit dem Inhalt des Beispiels zu ersetzen.
+
+**ACHTUNG**: kann der IoTKit V3 K64F nicht mehr Programmiert werden, Upload endet sofort und es erscheint eine Datei `FAIL.TXT`, ist leicht am Encoder zu drehen und das Board ein- und auszustecken.
 
 ### Installation und Quick Start mbed-cli 
 
 [mbed cli](https://github.com/ARMmbed/mbed-cli) mit allen Abhängigkeiten (Python, GCC_ARM) wie unter [Installation](https://github.com/ARMmbed/mbed-cli#installation) beschrieben, installieren.
 
+*Bash* Shell starten und in ein Verzeichnis, wo die Beispiele abgelegt werden sollen wechseln, z.B.
+
+    cd /c/
+    
 Globale Konfigurationen für Board und Compiler setzen.
 
 	mbed config --global TARGET K64F
@@ -36,23 +67,17 @@ Globale Konfigurationen für Board und Compiler setzen.
 	cd template
 	mbed compile
 	
-Das compilierte Programm befindet sich im Verzeichnis `BUILD/K64F/GCC_ARM` mit Namen `template.bin`. Dieses ist auf das Laufwerk `DAPLINK` zu kopieren und der `Reset`-Button zu drücken.
+Für das DISCO_L475VG_IOT01A ist der letzte Befehl durch `mbed compile -M DISCO_L475VG_IOT01A -f` zu ersetzen.	Das Kopieren des Programm und der Reset des Boards erfolgt automatisch.
+
+Nur **IoTKitV3 K64F**: 
+* Das compiliertes Beispiel Programm befindet sich im Verzeichnis `BUILD/K64F/GCC_ARM` mit Namen `template.bin`. 
+* Dieses ist auf das Laufwerk mit Namen `DAPLINK` zu kopieren und der `Reset`-Button zu drücken, z.B. `cp BUILD/K64F/GCC_ARM/template.bin /d/`
 
 Das Compilierte Programm baut eine Verbindung mit dem Internet auf (WLAN Einstellungen siehe `mbed_app.json`) und zeigt die aktuelle Zeit auf dem OLED Display an.
 	
-Kopieren in z.B. in PowerShell, wenn das Laufwerk DAPLINK D: ist.
-	
-	copy BUILD\K64F\GCC_ARM\template.bin D:\
-
-Oder in der Git/Bash unter Windows
-
-	cp BUILD/K64F/GCC_ARM/template.bin /d/
-	
 Um die IoTKitV3 Beispiele zu compilieren ist das `src` Verzeichnis im `template` Verzeichnis wegzulöschen (wegen Fehler doppelter `main`) und das IoTKitV3 Repository zu clonen.
 
-Z.B. in der PowerShell
-
-	del src
+	rm -rf src
 	cd ..
 	git clone https://github.com/mc-b/IoTKitV3.git
 	
@@ -65,7 +90,7 @@ oder
 	
 	mbed compile --source . --source ../IoTKitV3/cloud/HallSensorAlarm/
 	
-Und dann wie, oben beschrieben, auf das Board zu kopieren und dieses zu Resetten.
+Und dann wie, oben beschrieben, auf das Board zu kopieren und dieses zu Reseten.
 
 **Optional** Beispiele für Eclipse aufbereiten
 
