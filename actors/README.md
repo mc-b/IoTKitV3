@@ -280,6 +280,11 @@ Ein paar der Übungen funktionieren nur mit dem IoTKitV3 K64F, weil der Encoder 
 | ------------------------- | ------------ |
 |  **Servo** nach links oder rechts bewegen mittels Encoder.<br>Anwendung: Roboterarm bewegen.| [Lösung](01-Uebung/src/main.cpp) |
 |  **Motor** mittels Encoder vor-, rückwärts Laufen lassen und zu stoppen.| [Lösung](02-Uebung/src/main.cpp) |
+| Kombiniert den **Motor** mit **Abstandsmesser** (Ultraschall Sensor), damit der Motor vor einen Hindernis abstellt. | | 
+|  **Schrittmotor** jeweils um 90° vor- und zurück bewegen.|  |
+
+
+
 
 ### Compilieren
 
