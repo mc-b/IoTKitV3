@@ -22,10 +22,11 @@ Daneben sind  Pin mit Ground (**GND**) und +5 Volt (**+5V**) vorhanden um die Ve
 
 | Übung                     | Lösung       |
 | ------------------------- | ------------ |
-| **DigitalIn, DigitalOut, if, wait** <br>Schreibt ein Programm welches eine der vier LED's bei Druck einer Taste 3 lang Sekunden aufleuchten lässt. <br>**Anwendung**: Licht Treppenhaus. | [01-Uebung/src/main.cpp] |
-| **DigitalOut, for Verschachtelt, wait, Array's**<br>Erstellt eine Array welche die 4 LED anhand einer Pseudo Melodie aufleuchten lässt.<br>**Anwendung**: Fernseher Simulation um Einbrecher abzuschrecken. | [02-Uebung/src/main.cpp |
-| **Adaptieren bestehender Beispiele - Melodie abspielen**<br>Baut das [Using a Speaker for Audio Output Beispiel](https://os.mbed.com/users/4180_1/notebook/using-a-speaker-for-audio-output/) auf den Summer um.<br>**Anwendung**: Türglocke, Alarmanlage, Polizeihorn. | [03-Uebung/src/main.cpp | 
+| **DigitalIn, DigitalOut, if, wait** <br>Schreibt ein Programm welches eine der vier LED's bei Druck einer Taste 3 lang Sekunden aufleuchten lässt. <br>**Anwendung**: Licht Treppenhaus. | [Lösung](01-Uebung/src/main.cpp) |
+| **DigitalOut, for Verschachtelt, wait, Array's**<br>Erstellt eine Array welche die 4 LED anhand einer Pseudo Melodie aufleuchten lässt.<br>**Anwendung**: Fernseher Simulation um Einbrecher abzuschrecken. | [Lösung](02-Uebung/src/main.cpp) |
+| **Adaptieren bestehender Beispiele - Melodie abspielen**<br>Baut das [Using a Speaker for Audio Output Beispiel](https://os.mbed.com/users/4180_1/notebook/using-a-speaker-for-audio-output/) auf den Summer um.<br>**Anwendung**: Türglocke, Alarmanlage, Polizeihorn. | [Lösung](03-Uebung/src/main.cpp) | 
 
+**Tip Online Compiler**: Um zu Compilieren, main.cpp Inhalt kopieren und in bestehendes Programm im [Online Compiler](https://ide.mbed.com/compiler/) einfügen. 
 
 ## DigitalOut
 ***
