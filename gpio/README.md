@@ -18,6 +18,8 @@ Daneben sind  Pin mit Ground (**GND**) und +5 Volt (**+5V**) vorhanden um die Ve
 ## DigitalOut
 ***
 
+> [⇧ **Nach oben**](#gpio)
+
 ![](../images/DigitalOut.png)
 
 Sinnbildliche Darstellung für den Anschluss eines LEDs. Der Name des Pins ist entsprechend Anzupassen.
@@ -58,12 +60,16 @@ Das Beispiel [DigitalOut](DigitalOut/src/main.cpp) steuert die LEDs D10 - D13 na
 
 **Compilieren**
 
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
 | Online Compiler | [DigitalOut](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DigitalOut/) |
-| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/DigitalOut; cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/DigitalOut; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/DigitalOut` |
 
 ## DigitalIn
 ***
+
+> [⇧ **Nach oben**](#gpio)
 
 ![](../images/DigitalIn.png)
 
@@ -89,12 +95,16 @@ Das [Beispiel](DigitalIn/src/main.cpp) frägt den Taster vom Encoder ab.
 
 ### Compilieren
 
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
 | Online Compiler | [DigitalIn](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DigitalIn/) |
-| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/DigitalIn; cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/DigitalIn; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/DigitalIn` |
 
 ## AnalogIn
 ***
+
+> [⇧ **Nach oben**](#gpio)
 
 ![](../images/AnalogIn.png)
 
@@ -121,13 +131,17 @@ Das [Beispiel](AnalogIn/src/main.cpp) frägt den Hallsensor (zur Ermittelung des
 
 ### Compilieren
 
-| Online Compiler | [AnalogIn](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/AnalogIn/) |
-| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/AnalogIn; cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler           | [AnalogIn](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/AnalogIn/) |
+| CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/AnalogIn;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/AnalogIn` |
 
 
 ## PwmOut - Pulsweitenmodulation
 ***
+
+> [⇧ **Nach oben**](#gpio)
 
 ![](../images/PWMOut.png)
 
@@ -158,12 +172,13 @@ Siehe auch: [mbed Handbook](https://os.mbed.com/docs/mbed-os/latest/apis/pwmout.
 
 ### Compilieren
 
-
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
 | Online Compiler | [PwmOut](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/PwmOut/) |
-| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/PwmOut; cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/PwmOut; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/PwmOut` |
 | Online Compiler | [PwmOutPeriod](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/PwmOutPeriod/) |
-| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/PwmOutPeriod; cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/PwmOutPeriod; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/PwmOutPeriod` |
 
 
