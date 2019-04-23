@@ -1,5 +1,8 @@
 Aktoren
 -------
+***
+
+> [⇧ **Home**](..)
 
 Aktoren setzen elektrische Signale in mechanische Bewegung um.
 
@@ -17,6 +20,9 @@ Aktoren setzen elektrische Signale in mechanische Bewegung um.
 * [Türöffner](#türöffner)
 * [RGB LED Streifen - 5 Volt](#RGB-LED-Streifen)
 * [Fernseh Simulator](#Fernseh-Simulator)
+
+
+* [Übungen](#Übungen)
 
 ## Servo 
 ***
@@ -255,10 +261,32 @@ Das [Beispiel](FernsehSimulatorLED/src/main.cpp) verwendet die Verbauten LEDs un
 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
-| Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp überschreiben |
+| Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Beispielcode überschreiben |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/FernsehSimulatorLED;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/FernsehSimulatorLED` |
 
 ### Links
 
 * [Kommerzielle Produkte](https://www.pearl.ch/ch-kw-1-fernseh+simulator.shtml) 
+
+## Übungen
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Ein paar der Übungen funktionieren nur mit dem IoTKitV3 K64F, weil der Encoder benötigt wird.
+
+| Übung                     | Lösung       |
+| ------------------------- | ------------ |
+|  **Servo** nach links oder rechts bewegen mittels Encoder.<br>Anwendung: Roboterarm bewegen.| [Lösung](01-Uebung/src/main.cpp) |
+|  **Motor** mittels Encoder vor-, rückwärts Laufen lassen und zu stoppen.| [Lösung](02-Uebung/src/main.cpp) |
+
+### Compilieren
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp Übungscode überschreiben |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/01-Uebung` |
+
+* *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.

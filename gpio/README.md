@@ -2,6 +2,8 @@ GPIO
 ----
 ***
 
+> [⇧ **Home**](..)
+
 Allzweckeingabe/-ausgabe (engl. GPIO - General Purpose Input/Output) ist ein allgemeiner Kontaktstift (Pin) an einem Mikrocontroller, dessen Verhalten, unabhängig, ob als Eingabe- oder Ausgabekontakt, durch logische Programmierung frei bestimmbar ist. GPIO-Kontakten ist kein Zweck vorgegeben, sie sind daher standardmäßig unbelegt.
 
 Mittels folgender Grundklassen kann den GPIO Pins ein Zweck vorgegeben werden:
@@ -224,7 +226,7 @@ Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vo
 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
-| Online Compiler | main.cpp Inhalt kopieren und in bestehendes Programm einfügen |
+| Online Compiler | m[template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Übungscode überschreiben |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/01-Uebung` |
 
