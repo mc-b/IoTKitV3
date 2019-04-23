@@ -1,8 +1,9 @@
 /** Pulsweitenmodulation - Generieren eines x Hz Tones mittels PWM
+ *  Dip Switch SW4 aktivieren (nach oben)
 */
 #include "mbed.h"
 
-PwmOut speaker( D12 );
+PwmOut speaker( MBED_CONF_IOTKIT_BUZZER );
 
 int main()
 {

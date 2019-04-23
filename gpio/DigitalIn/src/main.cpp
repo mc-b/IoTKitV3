@@ -1,9 +1,9 @@
 /** DigitalIn liest den Status eines Pins aus.
 */
-#include <mbed.h>
+#include "mbed.h"
 
-DigitalIn button1( PTC13, PullUp );
-DigitalOut led1( D10 );
+DigitalIn button1( MBED_CONF_IOTKIT_BUTTON1, PullUp );
+DigitalOut led1( MBED_CONF_IOTKIT_LED2 );
 
 int main()
 {

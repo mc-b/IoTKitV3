@@ -2,7 +2,7 @@
 */
 #include "mbed.h"
 
-PwmOut led( D13 );
+PwmOut led( MBED_CONF_IOTKIT_LED4 );
 
 int main()
 {
