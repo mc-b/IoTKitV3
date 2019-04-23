@@ -47,8 +47,8 @@ Eine Tabelle unterhalb jedes Beispiels enthält einen Link auf die Online Versio
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/DigitalOut` |
 
 Die Tabelle ist wie folgt zu lesen:
-* **Online Compiler** verweist in der Spalte *Link/Befehl* auf einen Link welcher den [Arm Mbed Online Compiler (empfohlen)](https://os.mbed.com/compiler/) öffnet mit einem Dialog um da Beispiel zu importieren.
-* **CLI (IoTKit K64F)** zeigt die Befehle in der Spalte *Link/Befehl*, welche benötigt werden um das Beipiel, mittels [mbed CLI](https://github.com/ARMmbed/mbed-cli), zu Compilieren und das fertige Programm auf das IoTKit K64F Board zu kopieren. 
+* **Online Compiler** verweist in der Spalte *Link/Befehl* auf einen Link welcher den [Arm Mbed Online Compiler](https://os.mbed.com/compiler/) öffnet mit einem Dialog um da Beispiel zu importieren.
+* **CLI (IoTKit K64F)** zeigt die Befehle in der Spalte *Link/Befehl*, welche benötigt werden um das Beispiel, mittels [mbed CLI](https://github.com/ARMmbed/mbed-cli), zu Compilieren und das fertige Programm auf das IoTKit K64F Board zu kopieren. 
 * **CLI (DISCO_L475VG_IOT01A)** zeigt den Befehl in der Spalte *Link/Befehle*, welcher benötigt wird um das Beispiel, mittels [mbed CLI](https://github.com/ARMmbed/mbed-cli), zu Compilieren und das fertige Programm auf das DISCO_L475VG_IOT01A Board zu kopieren.
 
 Bei beiden **CLI** Varianten wird vorausgesetzt das, dass [mbed CLI](https://github.com/ARMmbed/mbed-cli) wie unten Installiert wurde wir uns in der *Bash* Shell im Verzeichnis `template` befinden. 
