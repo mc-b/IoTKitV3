@@ -1,4 +1,4 @@
-## Kleine C/C++ Einführung
+Kleine C/C++ Einführung
 ----------------------------
 ***
 
