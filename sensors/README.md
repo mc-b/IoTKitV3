@@ -10,7 +10,7 @@ Sensoren sind technische Bauteile, die Eigenschaften der Umgebung (z. B.: Wärme
 
 * [Hall Sensor](#Hall-Sensor)
 * [PIR Sensor](#PIR-Sensor/)
-* [Ultraschall Abstandsmesser](#Ultraschall-Sensor)
+* [Ultraschall Abstandsmesser](#Ultraschall-Abstandsmesser)
 * [Übungen](#Übungen)
 
 ## Hall Sensor 
@@ -55,7 +55,7 @@ Das [Beispiel](HallSensor/src/main.cpp) bringt je nach Pool eine LED zu leuchten
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/HallSensor;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/HallSensor` |
 
-## [PIR Sensor (Bewegungsmelder)](http://de.wikipedia.org/wiki/Bewegungsmelder) 
+## PIR Sensor 
 ***
 
 > [⇧ **Nach oben**](#beispiele)
@@ -86,7 +86,7 @@ Anschlüsse
 
 Ein Bewegungsmelder ist ein elektronischer Sensor, der Bewegungen in seiner näheren Umgebung erkennt und dadurch als elektrischer Schalter arbeiten kann. Ein Bewegungsmelder kann aktiv mit elektromagnetischen Wellen (HF oder Doppelradar), mit Ultraschall (Ultraschall-Bewegungsmelder) oder passiv anhand der Infrarotstrahlung der Umgebung arbeiten; es gibt auch Kombinationen davon.
 
-Der PIR-Sensor (englisch passive infrared) ist der am häufigsten eingesetzte Typ von Bewegungsmeldern. Er reagiert optimal auf Winkeländerungen, wenn also eine Person am Sensor vorbeigeht. Der PIR Sensor wird mittels 3-adrigen Kabel mit dem Shield verbunden.
+Der [PIR Sensor (Bewegungsmelder)](http://de.wikipedia.org/wiki/Bewegungsmelder) (englisch passive infrared) ist der am häufigsten eingesetzte Typ von Bewegungsmeldern. Er reagiert optimal auf Winkeländerungen, wenn also eine Person am Sensor vorbeigeht. Der PIR Sensor wird mittels 3-adrigen Kabel mit dem Shield verbunden.
 
 ### Anwendungen
 
@@ -187,7 +187,7 @@ Ein paar der Übungen funktionieren nur mit dem IoTKitV3 K64F, weil der Encoder 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp Übungscode überschreiben |
-| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
-| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/01-Uebung` |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/sensors/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/01-Uebung` |
 
 * *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.
