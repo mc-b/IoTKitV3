@@ -67,7 +67,7 @@ Beispiel Klassen und Programmbibliotheken (Libraries)
 ![](../images/ObjectLibrary.png) 
 
 * [mbed-os](https://github.com/ARMmbed/mbed-os/) ist eine Programmbibliothek (Library) welche die Grundklassen der mbed Plattform beinhaltet
-* [IoTKit](https://os.mbed.com/teams/IoTKitV3/code/IoTKit/) ist die Programbibliothek des IoTKits mit u.a. Definiton der [IoTKits-Pins](https://os.mbed.com/teams/IoTKitV3/code/IoTKit/file/4bf5081be024/mbed_lib.json/).
+* [IoTKit](https://os.mbed.com/teams/IoTKitV3/code/IoTKit/) ist die Programbibliothek des IoTKits mit u.a. Definition der [IoTKits-Pins](https://os.mbed.com/teams/IoTKitV3/code/IoTKit/file/4bf5081be024/mbed_lib.json/).
 * [AnalogIn](https://os.mbed.com/docs/mbed-os/latest/apis/analogin.html), [DigitalOut](https://os.mbed.com/docs/mbed-os/latest/apis/digitalout.html) etc. sind Klassen.
 
 Weitere Beispiele siehe [mbed Komponenten Verzeichnis](http://developer.mbed.org/components/)
