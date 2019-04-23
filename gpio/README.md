@@ -133,7 +133,7 @@ Das [Beispiel](AnalogIn/src/main.cpp) frägt den Hallsensor (zur Ermittelung des
 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
-| Online Compiler           | [AnalogIn](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/AnalogIn/) |
+| Online Compiler           | [AnalogIn](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensor/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/AnalogIn;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/AnalogIn` |
 
