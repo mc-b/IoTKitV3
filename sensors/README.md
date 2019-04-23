@@ -9,7 +9,7 @@ Sensoren sind technische Bauteile, die Eigenschaften der Umgebung (z. B.: Wärme
 ### Beispiele
 
 * [Hall Sensor](#Hall-Sensor)
-* [PIR Sensor](#PIR-Sensor/)
+* [PIR Sensor](#PIR-Sensor)
 * [Ultraschall Abstandsmesser](#Ultraschall-Abstandsmesser)
 * [Übungen](#Übungen)
 
