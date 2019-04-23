@@ -212,6 +212,8 @@ Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vo
 ## Übungen
 ***
 
+> [⇧ **Nach oben**](#gpio)
+
 | Übung                     | Lösung       |
 | ------------------------- | ------------ |
 | **DigitalIn, DigitalOut, if, wait** <br>Schreibt ein Programm welches eine der vier LED's bei Druck einer Taste 3 lang Sekunden aufleuchten lässt. <br>**Anwendung**: Licht Treppenhaus. | [Lösung](01-Uebung/src/main.cpp) |
