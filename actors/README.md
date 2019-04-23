@@ -2,7 +2,7 @@ Aktoren
 -------
 ***
 
-> [⇧ **Home**](..)
+> [⇧ **Home**](../README.md)
 
 Aktoren setzen elektrische Signale in mechanische Bewegung um.
 
