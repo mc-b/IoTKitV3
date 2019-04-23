@@ -113,8 +113,7 @@ Das [Beispiel](PIRSensor/src/main.cpp) bei Erkennung einer Bewegung wird eine LE
 
 ### Links 
 
-*   [Arduino HC-SR501 Motion Sensor Tutorial](http://henrysbench.capnfatz.com/henrys-bench/arduino-sensors-and-input/arduino-hc-sr501-motion-sensor-tutorial/#attachment wp-att-2120/0/)
-
+* [Arduino HC-SR501 Motion Sensor Tutorial](http://henrysbench.capnfatz.com/henrys-bench/arduino-sensors-and-input/arduino-hc-sr501-motion-sensor-tutorial/#attachment wp-att-2120/0/)
 
 ## Ultraschall Abstandsmesser 
 ***
