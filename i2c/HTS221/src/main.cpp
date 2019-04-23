@@ -3,27 +3,27 @@
 #include "OLEDDisplay.h"
 
 // UI
-OLEDDisplay oled( PTE26, PTE0, PTE1);
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
-static DevI2C devI2c(PTE0,PTE1);
+static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
 static HTS221Sensor hum_temp(&devI2c);
 
 int main()
 {
     uint8_t id;
     float value1, value2;
-
+    
     oled.clear();
     oled.printf( "Temp/Hum Sensor\n" );
-
+    
     /* Init all sensors with default params */
     hum_temp.init(NULL);
     hum_temp.enable();
-
+    
     hum_temp.read_id(&id);
     printf("HTS221  humidity & temperature    = 0x%X\r\n", id);
 
-    while (true)
+    while (true) 
     {
         hum_temp.get_temperature(&value1);
         hum_temp.get_humidity(&value2);

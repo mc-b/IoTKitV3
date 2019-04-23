@@ -1,18 +1,18 @@
-/** IoTKit Roboter mittels Button gesteuert
+/** IoTKit Roboter mittels Button gesteuert - braucht ein Steckplatine mit 3 Tastern
 */
 
 #include "mbed.h"
 #include "ServoRobot.h"
 
 // Servos
-ServoRobot foot( D6, 0.25f, 0.75f);
-ServoRobot base( D7, 0.275f, 0.65f );
-ServoRobot arm( D9, 0.275f, 0.6f );
-ServoRobot pincer( D10, 0.04f, 0.3f );
+ServoRobot foot( MBED_CONF_IOTKIT_SERVO1, 0.25f, 0.75f);
+ServoRobot base( MBED_CONF_IOTKIT_SERVO2, 0.275f, 0.65f );
+ServoRobot arm( MBED_CONF_IOTKIT_SERVO3, 0.275f, 0.6f );
+ServoRobot pincer( MBED_CONF_IOTKIT_SERVO4, 0.04f, 0.3f );
 
-DigitalIn buttonFoot( A0 );
-DigitalIn buttonBase( A1 );
-DigitalIn buttonPincer( A2 );
+DigitalIn buttonFoot( MBED_CONF_IOTKIT_BUTTON1 );
+DigitalIn buttonBase( MBED_CONF_IOTKIT_BUTTON2 );
+DigitalIn buttonPincer( MBED_CONF_IOTKIT_BUTTON3 );
 
 /** Hauptprogramm */
 int main()

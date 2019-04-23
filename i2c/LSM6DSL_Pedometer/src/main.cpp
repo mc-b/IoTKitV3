@@ -11,8 +11,8 @@
 OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
 static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
-static LSM6DSLSensor acc_gyro( &devI2c, LSM6DSL_ACC_GYRO_I2C_ADDRESS_LOW ); // low address
-uint16_t tap_count = 0;
+static LSM6DSLSensor acc_gyro(&devI2c,LSM6DSL_ACC_GYRO_I2C_ADDRESS_LOW); // low address
+uint16_t step_count = 0;
 
 int main()
 {
@@ -20,24 +20,25 @@ int main()
     LSM6DSL_Event_Status_t status;
 
     oled.clear();
-    oled.printf( "Schlagen\n" );
+    oled.printf( "Pedometer\n" );
 
     acc_gyro.init(NULL);
-    acc_gyro.enable_x();    
-    acc_gyro.enable_g();
-    acc_gyro.enable_single_tap_detection();
+    acc_gyro.enable_x();
+    acc_gyro.enable_pedometer();
 
     acc_gyro.read_id(&id);
     printf("LSM6DSL accelerometer & gyroscope = 0x%X\r\n", id);
 
-    while (true) {
+    while (true) 
+    {
         acc_gyro.get_event_status( &status );
-        if  ( status.TapStatus ) {
-            tap_count++;
+        if  ( status.StepStatus )
+        {
+            step_count++;
             oled.cursor( 1, 0 );
-            oled.printf( "tap %6d\n", tap_count );
-            printf( "tap %6d\n", tap_count );
+            
+            oled.printf( "steps %6d\n", step_count );
         }
-        wait( 0.1f );
+        wait( 1.0f );
     }
 }

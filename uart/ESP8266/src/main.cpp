@@ -63,7 +63,7 @@ int main()
     //send( "AT+CWLAP" );     // List AP - optional
     //wait( 10.0f );     
     
-    send( "AT+CWJAP=\"mcbmobile_2EX\",\"android%123\"" );  // Verbindung AP (SSID, PW)
+    send( "AT+CWJAP=\"LERNKUBE\",\"l3rnk4b3\"" );  // Verbindung AP (SSID, PW)
     wait( 10.0f );    
     
     send( "AT+CIFSR" );  // Ausgabe IP-Adresse
@@ -73,7 +73,7 @@ int main()
     send( "AT+CIPMUX=1" );  // Mehrere Verbindungen aktivieren
     wait( 1.0f );    
     
-    send( "AT+CIPSTART=4,\"TCP\",\"google.com\",80" );  // Socket zu google.com oeffnen
+    send( "AT+CIPSTART=4,\"TCP\",\"www.sunrise.ch\",80" );  // Socket zu google.com oeffnen
     wait( 1.0f ); 
     
     send( "AT+CIPSEND=4,18" );  // 18 Zeichen senden

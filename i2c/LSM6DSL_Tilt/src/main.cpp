@@ -8,10 +8,9 @@
 #include "LSM6DSLSensor.h"
 
 // UI
-//Serial oled( USBTX, USBRX );
-OLEDDisplay oled( PTE26, PTE0, PTE1);
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
-static DevI2C devI2c(PTE0,PTE1);
+static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
 static LSM6DSLSensor acc_gyro( &devI2c, LSM6DSL_ACC_GYRO_I2C_ADDRESS_LOW ); // low address
 uint16_t tap_count = 0;
 uint16_t tilt_count = 0;
@@ -25,7 +24,7 @@ int main()
     oled.printf( "Schieflage\n" );
 
     acc_gyro.init(NULL);
-    acc_gyro.enable_x();
+    acc_gyro.enable_x();    
     acc_gyro.enable_g();
     //acc_gyro.enable_single_tap_detection();
     acc_gyro.enable_tilt_detection();

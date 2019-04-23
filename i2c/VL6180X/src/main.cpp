@@ -6,10 +6,6 @@
 
 #include "mbed.h"
 #include <VL6180x.h>
-#include "OLEDDisplay.h"
-
-// UI
-OLEDDisplay oled( PTE26, PTE0, PTE1);
 
 #define VL6180X_ADDRESS 0x52
 
@@ -49,9 +45,6 @@ void printIdentification(struct VL6180xIdentification *temp)
 }
 int main()
 {
-    oled.clear();
-    oled.printf( "FlightSense\n" );
-
     sensor_ce = 1;
     sensor.getIdentification(&identification); // Retrieve manufacture info from device memory
     printIdentification(&identification); // Helper function to print all the Module information
@@ -63,7 +56,7 @@ int main()
 
     wait_ms(1000); // delay 1s
 
-    while(1)
+    while(1) 
     {
         //Get Ambient Light level and report in LUX
         printf("Ambient Light Level (Lux) = %f\n",sensor.getAmbientLight(GAIN_1) );
@@ -72,10 +65,10 @@ int main()
         printf("Distance measured (mm) = %d\n", sensor.getDistance() );
 
         wait( 0.5f );
-
-        oled.cursor( 1, 0 );
-        oled.printf( "Lux: %3.2f\nmm : %5d\n", sensor.getAmbientLight(GAIN_1), sensor.getDistance() );
-
-        wait( 0.5f );
     }
 }
+
+
+
+
+

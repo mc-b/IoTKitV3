@@ -5,15 +5,20 @@
 #include "network-helper.h"
 #include "MbedJSONValue.h"
 #include <string>
+#include "OLEDDisplay.h"
 
+// UI
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 // I/O Buffer
 char message[6000];
 
-DigitalOut myled( D10 );
+DigitalOut myled( MBED_CONF_IOTKIT_LED1 );
 
 int main()
 {
-    printf("\tSunriseSunset Cloud Dienst\n");
+    oled.clear();
+    
+    oled.printf("Sunrise Sunset\n");
     // Connect to the network with the default networking interface
     // if you use WiFi: see mbed_app.json for the credentials
     NetworkInterface* network = connect_to_default_network_interface();
@@ -49,7 +54,8 @@ int main()
             sscanf( sunrise.c_str(), "%d:%d:%d AM", &rh, &rm, &rs );
             sscanf( sunset .c_str(), "%d:%d:%d PM", &sh, &sm, &ss );
             
-            printf( "Sonnenauf- %02d.%02d.%02d und untergang %02d.%02d.%02d\n", rh+2, rm, rs, sh+2+12, sm, ss );
+            oled.cursor( 1, 0 );
+            oled.printf( "auf   %02d.%02d.%02d\nunter %02d.%02d.%02d\n", rh+2, rm, rs, sh+2+12, sm, ss );
         }
         // Error
         else

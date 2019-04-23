@@ -6,16 +6,16 @@
 #include "Servo.h"
 
 // Geschwindigkeit
-AnalogIn poti ( A0 );
+AnalogIn poti ( MBED_CONF_IOTKIT_HALL_SENSOR );
 
 // Motor an M01
-Motor m1(D3, D2, D4); // PWM, Vorwaerts, Rueckwarts
+Motor m1( MBED_CONF_IOTKIT_MOTOR1_PWM, MBED_CONF_IOTKIT_MOTOR1_FWD, MBED_CONF_IOTKIT_MOTOR1_REV ); // PWM, Vorwaerts, Rueckwarts
 
 // Servos
-Servo foot( D6 );
-Servo base( D7 );
-Servo arm( D9 );
-Servo pincer( D10 );
+Servo foot( MBED_CONF_IOTKIT_SERVO1 );
+Servo base( MBED_CONF_IOTKIT_SERVO2 );
+Servo arm( MBED_CONF_IOTKIT_SERVO3 );
+Servo pincer( MBED_CONF_IOTKIT_SERVO4 );
 
 // Move Positionen
 float footLeft = 0.2f;

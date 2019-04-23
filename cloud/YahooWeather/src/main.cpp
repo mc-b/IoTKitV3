@@ -7,7 +7,7 @@
 #include "spxmlnode.hpp"
 #include "spxmlhandle.hpp"
 
-DigitalOut myled( D10 );
+DigitalOut myled( MBED_CONF_IOTKIT_LED1 );
 
 int main()
 {

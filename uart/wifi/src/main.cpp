@@ -16,6 +16,10 @@
 
 #include "mbed.h"
 #include "TCPSocket.h"
+#include "OLEDDisplay.h"
+
+// UI
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
 #define WIFI_ESP8266    1
 #define WIFI_IDW0XX1    2
@@ -143,8 +147,10 @@ void http_demo(NetworkInterface *net)
     response = socket.recv(rbuffer, sizeof rbuffer);
     if (response < 0) {
         printf("Error receiving data: %d\n", response);
+        oled.printf( "Error receiving data: %d\n", response );
     } else {
         printf("recv %d [%.*s]\n", response, strstr(rbuffer, "\r\n")-rbuffer, rbuffer);
+        oled.printf( "recv %d [%.*s]\n", response, strstr(rbuffer, "\r\n")-rbuffer, rbuffer );         
     }
 
     // Close the socket to return its memory and bring down the network interface
@@ -154,7 +160,9 @@ void http_demo(NetworkInterface *net)
 int main()
 {
     int count = 0;
-
+    
+    oled.clear();
+    oled.printf( "WiFi\r\n" );
     printf("WiFi example\n");
 
 #ifdef MBED_MAJOR_VERSION
@@ -168,6 +176,7 @@ int main()
     }
 
     printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
+    oled.printf( "SSID: %s\r\n", MBED_CONF_APP_WIFI_SSID );    
     int ret = wifi.connect(MBED_CONF_APP_WIFI_SSID, MBED_CONF_APP_WIFI_PASSWORD, NSAPI_SECURITY_WPA_WPA2);
     if (ret != 0) {
         printf("\nConnection error: %d\n", ret);
@@ -180,6 +189,7 @@ int main()
     printf("Netmask: %s\n", wifi.get_netmask());
     printf("Gateway: %s\n", wifi.get_gateway());
     printf("RSSI: %d\n\n", wifi.get_rssi());
+    oled.printf( "IP: %s\r\n", wifi.get_ip_address() );    
 
     http_demo(&wifi);
 

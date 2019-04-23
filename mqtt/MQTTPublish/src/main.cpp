@@ -8,20 +8,20 @@
 #include "Motor.h"
 #include "QEI.h"
 #include "MFRC522.h"
-
+ 
 // NFC/RFID Reader (SPI)
-MFRC522    rfidReader( PTA16, PTC7, PTC5, D10, D8 ); // PTD2 statt PTA16
+MFRC522    rfidReader( MBED_CONF_IOTKIT_RFID_MOSI, MBED_CONF_IOTKIT_RFID_MISO, MBED_CONF_IOTKIT_RFID_SCLK, MBED_CONF_IOTKIT_RFID_SS, MBED_CONF_IOTKIT_RFID_RST ); 
 
 #include "ESP8266Interface.h"
 ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
 
 // Sensoren wo Daten fuer Topics produzieren
-static DevI2C devI2c(PTE0,PTE1);
+static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
 static HTS221Sensor hum_temp(&devI2c);
-AnalogIn hallSensor( PTC0 );
-DigitalIn button( PTC13 );
+AnalogIn hallSensor( MBED_CONF_IOTKIT_HALL_SENSOR );
+DigitalIn button( MBED_CONF_IOTKIT_BUTTON1 );
 //Use X2 encoding by default.
-QEI wheel (PTC6, PTA4, NC, 624);
+QEI wheel (MBED_CONF_IOTKIT_BUTTON2, MBED_CONF_IOTKIT_BUTTON3, NC, 624);
 
 // Topic's
 char* topicTEMP =  "iotkit/sensor";
@@ -42,13 +42,13 @@ char cls[3][10] = { "low", "middle", "high" };
 int type = 0;
 
 // UI
-OLEDDisplay oled( PTE26, PTE0, PTE1);
-DigitalOut led1( D10 );
-DigitalOut alert( D13 );
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
+DigitalOut led1( MBED_CONF_IOTKIT_LED1 );
+DigitalOut alert( MBED_CONF_IOTKIT_LED3 );
 
 // Aktore(n)
-Motor m1(D3, D2, D4); // PWM, Vorwaerts, Rueckwarts
-PwmOut speaker( D12 );
+Motor m1( MBED_CONF_IOTKIT_MOTOR1_PWM, MBED_CONF_IOTKIT_MOTOR1_FWD, MBED_CONF_IOTKIT_MOTOR1_REV ); // PWM, Vorwaerts, Rueckwarts
+PwmOut speaker( MBED_CONF_IOTKIT_BUZZER );
 
 /** Hilfsfunktion zum Publizieren auf MQTT Broker */
 void publish( MQTTNetwork &mqttNetwork, MQTT::Client<MQTTNetwork, Countdown> &client, char* topic )
@@ -115,10 +115,10 @@ int main()
     
     /* Init all sensors with default params */
     hum_temp.init(NULL);
-    hum_temp.enable();
-
+    hum_temp.enable();  
+    
     // RFID Reader initialisieren
-    rfidReader.PCD_Init();
+    rfidReader.PCD_Init();  
 
     while   ( 1 ) 
     {
@@ -182,25 +182,25 @@ int main()
         encoder = wheel.getPulses();
         sprintf( buf, "%d", encoder );
         publish( mqttNetwork, client, topicENCODER );
-
+        
         // RFID Reader
         if ( rfidReader.PICC_IsNewCardPresent())
-            if ( rfidReader.PICC_ReadCardSerial())
+            if ( rfidReader.PICC_ReadCardSerial()) 
             {
                 // Print Card UID (2-stellig mit Vornullen, Hexadecimal)
                 printf("Card UID: ");
                 for ( int i = 0; i < rfidReader.uid.size; i++ )
                     printf("%02X:", rfidReader.uid.uidByte[i]);
                 printf("\n");
-
+                
                 // Print Card type
                 int piccType = rfidReader.PICC_GetType(rfidReader.uid.sak);
                 printf("PICC Type: %s \n", rfidReader.PICC_GetTypeName(piccType) );
-
+                
                 sprintf( buf, "%02X:%02X:%02X:%02X:", rfidReader.uid.uidByte[0], rfidReader.uid.uidByte[1], rfidReader.uid.uidByte[2], rfidReader.uid.uidByte[3] );
-                publish( mqttNetwork, client, topicRFID );
-
-            }
+                publish( mqttNetwork, client, topicRFID );                
+                
+            }        
 
         wait    ( 2.0f );
     }

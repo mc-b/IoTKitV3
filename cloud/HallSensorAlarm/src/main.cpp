@@ -5,12 +5,13 @@
 #include "network-helper.h"
 #include "OLEDDisplay.h"
 
-OLEDDisplay oled( PTE26, PTE0, PTE1 );
+// UI
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
-AnalogIn hallSensor( PTC0 );
-DigitalOut led1( D10 );
-DigitalOut led2( D11 );
-DigitalIn reset( PTC13 );
+AnalogIn hallSensor( MBED_CONF_IOTKIT_HALL_SENSOR );
+DigitalOut led1( MBED_CONF_IOTKIT_LED1 );
+DigitalOut led2( MBED_CONF_IOTKIT_LED2 );
+DigitalIn reset( MBED_CONF_IOTKIT_BUTTON1 );
 
 // HTTP Hilfsklassen
 char *finishMsg = "http://maker.ifttt.com/trigger/hallsensoralarm/with/key/ge6H2PIYtdpW0D6SY3w9xu38_1SkvKWIP6C9if4WyRb";
@@ -20,7 +21,8 @@ char message[256];
 int main()
 {
     oled.clear();
-    oled.printf( "Hall Sensor Alarm\n" );
+    oled.printf( "H-Sensor Alarm\n" );
+    
     // Connect to the network with the default networking interface
     // if you use WiFi: see mbed_app.json for the credentials
     NetworkInterface* network = connect_to_default_network_interface();
@@ -32,8 +34,6 @@ int main()
 
     led1 = 0;
     led2 = 1;
-    oled.clear();
-    oled.printf( "Hall Sensor Alarm" );
         
     while(1) 
     {

@@ -3,7 +3,7 @@
 #include "mbed.h"
 
 DigitalIn pirSensor( A5 );
-DigitalOut licht( D10 );
+DigitalOut licht( MBED_CONF_IOTKIT_LED1 );
 
 int main()
 {

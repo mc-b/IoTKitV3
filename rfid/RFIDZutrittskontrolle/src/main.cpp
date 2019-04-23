@@ -5,10 +5,11 @@
 #include "MFRC522.h"
 
 // NFC/RFID Reader (SPI)
-MFRC522    rfidReader( PTA16, PTC7, PTC5, D10, D8 );
+// NFC/RFID Reader (SPI)
+MFRC522    rfidReader( MBED_CONF_IOTKIT_RFID_MOSI, MBED_CONF_IOTKIT_RFID_MISO, MBED_CONF_IOTKIT_RFID_SCLK, MBED_CONF_IOTKIT_RFID_SS, MBED_CONF_IOTKIT_RFID_RST );
 
-DigitalOut led1( D13 );
-DigitalOut mosfet( D5 );
+DigitalOut led1( MBED_CONF_IOTKIT_LED4 );
+DigitalOut mosfet( MBED_CONF_IOTKIT_MOSFET1 );
 
 // erlaubte RFID Tag's
 char ids[3] [4] = {

@@ -2,8 +2,8 @@
 */
 #include "mbed.h"
 
-SPI spi( D11, D12, D13 );
-DigitalOut ss( D9 );   // Steuerpin!!!
+SPI spi( MBED_CONF_IOTKIT_DOTLED_MOSI, MBED_CONF_IOTKIT_DOTLED_MISO, MBED_CONF_IOTKIT_DOTLED_SCLK );
+DigitalOut ss( MBED_CONF_IOTKIT_DOTLED_SS );   // Steuerpin!!!
 char cmd[2];
 
 // Systemregister Dot LED Matrix

@@ -2,7 +2,8 @@
 */
 #include "mbed.h"
 
-SPI spi( PTD6, NC, PTD5 ); // mosi, miso, sclk
+// SPI 1 oder 2, da kein SS
+SPI spi( MBED_CONF_IOTKIT_LED_SPI_MOSI, NC, MBED_CONF_IOTKIT_LED_SPI_SCLK ); // mosi, miso, sclk
 
 /** 3 x 3 Werte */
 unsigned int strip[9];

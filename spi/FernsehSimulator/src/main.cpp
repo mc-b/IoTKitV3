@@ -3,7 +3,7 @@
 #include "mbed.h"
 #include <time.h>
 
-SPI spi( PTD6, NC, PTD5 ); // mosi, miso, sclk
+SPI spi( MBED_CONF_IOTKIT_LED_SPI_MOSI, NC, MBED_CONF_IOTKIT_LED_SPI_SCLK ); // mosi, miso, sclk
 
 /** 3 x 3 Werte */
 unsigned int strip[9];

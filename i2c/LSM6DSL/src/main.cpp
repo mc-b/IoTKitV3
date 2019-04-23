@@ -3,9 +3,9 @@
 #include "LSM6DSLSensor.h"
 
 // UI
-OLEDDisplay oled( PTE26, PTE0, PTE1);
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
-static DevI2C devI2c(PTE0,PTE1);
+static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
 static LSM6DSLSensor acc(&devI2c,LSM6DSL_ACC_GYRO_I2C_ADDRESS_LOW); // low address
 
 int main()
@@ -52,20 +52,20 @@ int main()
         }
 
         else if ( xl )
-		{
-		  sprintf( report, " _____________\n" \
-						   "|_____________| *\n" );
-		}
+        {
+          sprintf( report, " _____________\n" \
+                           "|_____________| *\n" );
+        }
         else if ( yh)
-		{
-		  sprintf( report, " _____________\n" \
-						   "|______v______|\n" );
-		}
+        {
+          sprintf( report, " _____________\n" \
+                           "|______v______|\n" );
+        }
         else if ( yl )
-		{
-		  sprintf( report, " _____________\n" \
-						   "|______^______|\n" );
-		}
+        {
+          sprintf( report, " _____________\n" \
+                           "|______^______|\n" );
+        }
         else if ( zh )
         {
           sprintf( report, " ______*______ \n" \

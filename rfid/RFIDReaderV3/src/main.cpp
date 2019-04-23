@@ -4,19 +4,19 @@
 #include "MFRC522.h"
 #include "OLEDDisplay.h"
 
-// OLED Display
-OLEDDisplay oled( PTE26, PTE0, PTE1 );
+// UI
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
 // NFC/RFID Reader (SPI)
-MFRC522    rfidReader( PTA16, PTC7, PTC5, D10, D8 );
+MFRC522    rfidReader( MBED_CONF_IOTKIT_RFID_MOSI, MBED_CONF_IOTKIT_RFID_MISO, MBED_CONF_IOTKIT_RFID_SCLK, MBED_CONF_IOTKIT_RFID_SS, MBED_CONF_IOTKIT_RFID_RST ); 
 
 int main()
 {
     // OLED Display
     oled.clear();
-    oled.printf( "RFID Demo\r\n" );
+    oled.printf( "RFID Demo\n" );
         
-    printf("RFID Reader MFRC522 Test\n");
+    printf("RFID Reader MFRC522 Test V3\n");
     rfidReader.PCD_Init();
 
     while   ( 1 ) 

@@ -7,9 +7,9 @@
 #include "OLEDDisplay.h"
 
 // UI
-OLEDDisplay oled( PTE26, PTE0, PTE1 );
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
-static DevI2C devI2c(PTE0,PTE1);
+static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
 static HTS221Sensor hum_temp(&devI2c);
 
 /** ThingSpeak URL und API Key ggf. anpassen */

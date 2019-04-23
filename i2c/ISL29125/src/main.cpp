@@ -41,7 +41,7 @@ Serial pc(USBTX, USBRX);
 int main()
 {
     myled = 1;
-
+    
     // Read ID register
     printf("Read ID register\r\nWhoAmI : %02X\r\n", RGBsensor.WhoAmI());
 
@@ -92,7 +92,7 @@ int main()
     printf("192 %d %d\r\n", RGBsensor.IRcomp(192), RGBsensor.IRcomp());                   //try invalid value
 
     RGBsensor.IRQonColor(ISL29125_G); // Enable Green threshold mode
-    als.attach(&ALSread, 0.2);  // Use this when IRQ on threshold is enabled
+    als.attach(&ALSread, 0.2);  // Use this when IRQ on threshold is enabled 
     flipper.attach(&flip, 5.0); // Only used with Sync mode test - Start conversion after 5 seconds.
     while(1)
     {
