@@ -4,8 +4,17 @@ Software
 
 > [⇧ **Home**](../README.md)
 
+### Inhaltsverzeichnis
+
+* [Betriebssystem](#betriebssystem)
+* [Entwicklungsumgebungen](#entwicklungsumgebungen)
+* [mbed-cli](#mbed-cli)
+* [Serielle Kommunikation](#serielle-kommunikation)
+
 ## Betriebssystem
-**
+***
+
+> [⇧ **Nach oben**](#inhaltsverzeichnis)
 
 ![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed_OS_diagram_for_intro.png)
 
@@ -18,8 +27,10 @@ ARM mbed OS ist ein Open-Source-Embedded-Betriebssystem, das speziell für die "
 
 Es enthält alle Funktionen, die benötigt werden, um ein angeschlossenes Produkt auf Basis eines ARM Cortex-M Mikrocontrollers zu entwickeln, einschliesslich Sicherheit, Konnektivität, RTOS und Treiber für Sensoren und E / A-Geräte.
 
-## Entwicklungsumgebung
-**
+## Entwicklungsumgebungen
+***
+
+> [⇧ **Nach oben**](#inhaltsverzeichnis)
 
 Als Entwicklungsumgebung können folgende Produkte verwendet werden:
 * der [Arm Mbed Online Compiler (empfohlen)](https://os.mbed.com/compiler/)
@@ -48,7 +59,12 @@ Ist kein Link **Online Compiler** vorhanden, kann das [IoTKit V3 Template](https
 
 **ACHTUNG**: kann der IoTKit V3 K64F nicht mehr Programmiert werden, Upload endet sofort und es erscheint eine Datei `FAIL.TXT`, ist leicht am Encoder zu drehen und das Board ein- und auszustecken.
 
-### Installation und Quick Start mbed-cli 
+### mbed-cli 
+***
+
+> [⇧ **Nach oben**](#inhaltsverzeichnis)
+
+Für die Offline-Entwicklung bietet Arm Mbed CLI, ein Befehlszeilentool. Mbed CLI ist kompatibel mit Windows, Linux und Mac OS. Mbed CLI bietet mehr Optionen, erfordert jedoch etwas mehr Setup.
 
 [mbed cli](https://github.com/ARMmbed/mbed-cli) mit allen Abhängigkeiten (Python, GCC_ARM) wie unter [Installation](https://github.com/ARMmbed/mbed-cli#installation) beschrieben, installieren.
 
@@ -96,18 +112,44 @@ Und dann wie, oben beschrieben, auf das Board zu kopieren und dieses zu Reseten.
 
 	mbed export -i eclipse_gcc_arm
 	
-Anschliessend mittels File -> Import -> Existing Projects `template` Projekt in Workspace importieren.	
+Anschliessend mittels File -> Import -> Existing Projects `template` und `IoTKitV3` als Projekte in Workspace importieren.	
 
 **Hinweise**:
 * Ab mbed OS V5.10 ist die ESP8266 Driver Library Bestandteil von mbed OS.
 * Als Nachteil für das schnellere Compilieren, ist zu Erwähnen, dass die Programme grösser sind als normal, weil alle Libraries mit verlinkt werden.
 
-#### Serielle Console
+## Serielle Kommunikation
+***
 
-Die mbed CLI beinhaltet ein Terminalprogramm um die Ausgabe via Serieller Schnittstelle des mbed Boards auszugeben.
+> [⇧ **Nach oben**](#inhaltsverzeichnis)
+
+Die Kommunikation mit Ihrem Entwicklungsboard ist ein wesentlicher Bestandteil der Programmierung und des Debugging. Terminalanwendungen erleichtern diese Kommunikation. Die Verwendung von Terminalanwendungen ist häufig der zweite Schritt des Debugging nach blinkenden Lichtern und kann Ihnen mehr Informationen geben als blinkende Lichter.
+
+**Windows serial driver**
+
+Sie können Ihr Board über USB an Ihren Computer anschließen. Dies sollte unter Linux und macOS sofort funktionieren, aber für Windows vor Windows 10 müssen Sie wahrscheinlich einen Treiber für die serielle Schnittstelle installieren:
+
+* Laden Sie den seriellen [Port-Treiber](http://os.mbed.com/media/downloads/drivers/mbedWinSerial_16466.exe) von Arm Mbed herunter .
+* Schließen Sie Ihr Arm Mbed-Gerät über USB an. Es wird als Laufwerk angezeigt.
+* Schließen Sie alle Explorer-Fenster mit dem mbed Laufwerk.
+* Führen Sie das Installationsprogramm aus. Dies kann einige Zeit dauern, oder es werden einige Warnungen "nicht signierter Treiber" angezeigt.
+
+**Terminalanwendungen verwenden**
+
+Terminalanwendungen laufen auf Ihrem Host-PC. Sie bieten ein Fenster, in dem Ihr Board Informationen ausgeben kann und in das Sie Zeichen eingeben können.
+
+*Serielle Konfiguration: Die Standardeinstellung für die serielle USB-Schnittstelle ist 9600 Baud, 8 Bit, 1 Stoppbit, keine Parität (9600-8-N-1).*
+
+Terminalemulations Programme: 
+* [Windows](http://sourceforge.jp/projects/ttssh2/releases/)
+* [Mac](http://freeware.the-meiers.org/)
+* [Linux](http://manpages.ubuntu.com/manpages/vivid/man8/picocom.8.html)
+
+Alternativ kann das Terminalprogramm vom mbed CLI verwendet werden. Dies wird wie folgt gestartet:
 
 	mbed sterm
 
-Damit es Funktioniert muss, auf Windows, zuerst der [Windows Serial Driver](https://os.mbed.com/handbook/Windows-serial-configuration) installiert werden.
+**Links**
 
-Siehe auch [UART (Universal Asynchronous Receiver Transmitter)](../uart/) 
+* [mbed Tutorial](https://os.mbed.com/docs/mbed-os/latest/tutorials/serial-communication.html)
+* [UART (Universal Asynchronous Receiver Transmitter)](../uart/) 
