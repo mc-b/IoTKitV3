@@ -1,4 +1,7 @@
 ## CoAP (Constrained Application Protocol)
+***
+
+> [⇧ **Home**](../README.md)
 
 ![](../images/COAPRD.png) 
 
@@ -32,6 +35,20 @@ Standardmässig sind folgende **Standard Device Management Objects** vorhanden
 
 Komplettes Verzeichnis: [OMNA Lightweight M2M (LWM2M) Object & Resource Registry](http://technical.openmobilealliance.org/Technical/technical-information/omna/lightweight-m2m-lwm2m-object-registry)
 
+### Beispiel(e)
+
+Das Beispiel [coap-example](coap-example/src/main.cpp) schickt eine CoAP Meldung an coap.me.
+
+Eine aktuelles Beispiel inkl. Anleitung findet man auf [ARM Pelion](https://www.pelion.com/iot-device-management/).
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [coap-example](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/coap-example/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/coap-example; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/coap-example` |
+
 ### Links 
 
 *   [Office Hours - Pelion Device Management - Connect Service](https://www.youtube.com/watch?v=HUJcAscT5-s)
@@ -45,11 +62,5 @@ Komplettes Verzeichnis: [OMNA Lightweight M2M (LWM2M) Object & Resource Registry
 *   [RFC 5988 - Web Linking](https://tools.ietf.org/html/rfc5988)
 * 	[NodeJS Coap Server](https://github.com/mcollina/node-coap)
 * 	[NodeJS Coap CLI](https://www.npmjs.com/package/coap-cli)
-
-### Beispiele (ab mbed OS V5.x)
-
-* [CoAP Example on os.mbed.com](https://os.mbed.com/teams/sandbox/code/coap-example/), [Lokale Version](coap-example/)
-* [Angepasst an IoTKitV3](https://os.mbed.com/teams/IoTKitV3/code/coap-example/)
-* [Getting started with mbed Client on mbed OS](https://github.com/ARMmbed/mbed-os-example-client)
-* [Building an internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
+*   [Building an internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
 

@@ -1,4 +1,7 @@
 ## Einleitung HTTP (Hypertext Transfer Protocol)
+***
+
+> [⇧ **Home**](../README.md)
 
 **Anfrage:**
 
@@ -49,8 +52,17 @@ Die Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache), abgek
 
 HTML-Dokumente sind die Grundlage des World Wide Web und werden von Webbrowsern dargestellt.
 
-### Beispiele (ab mbed OS V5.10)
+### Beispiel(e)
 
-* [HTTP and HTTPS on os.mbed.com](https://os.mbed.com/teams/sandbox/code/http-example/)
-* [Einfaches HTTP Beispiel](http-example/)
+Das Beispiel [http-example](http-example/src/main.cpp) Demonstriert die Verwendung von HTTP GET und HTTP POST.
+
+Weitere Beispiele findet man auf [http://os.mbed.com/teams/sandbox/code/http-example/](http://os.mbed.com/teams/sandbox/code/http-example/) oder im Verzeichnis [Cloud](../cloud).
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/http-example; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/http-example` |
+
 
