@@ -51,7 +51,6 @@ Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je n
 
 ## VL6180X
 ***
-***
 
 > [⇧ **Nach oben**](#beispiele)
 
