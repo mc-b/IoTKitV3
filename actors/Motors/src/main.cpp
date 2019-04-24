@@ -14,20 +14,20 @@ int main()
     {
         // rueckwaerts
         printf( "rueckwaerts\n" );
-        for (float s = 0.7f; s < 1.0f ; s += 0.01f )
+        for (float s = 0.7f; s < 1.0f ; s += 0.01f ) 
         {
            m1.speed(s * -1); 
-           m2.speed(s);
+           m2.speed(s);            
            wait(0.2);
         }
         m1.speed( 0 );
         wait( 1.0 );
         
         printf( "vorwaerts\n" );        
-        for (float s = 0.7f; s < 1.0f ; s += 0.01f )
+        for (float s = 0.7f; s < 1.0f ; s += 0.01f ) 
         {
            m1.speed(s); 
-           m2.speed(s * -1);
+           m2.speed(s * -1); 
            wait(0.2);
         }
         m1.speed( 0 );
