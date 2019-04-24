@@ -3,10 +3,8 @@
  */
 
 #include "mbed.h"
-#include "ESP8266Interface.h"
+#include "network-helper.h"
 #include "http_request.h"
-
-ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
 
 void dump_response(HttpResponse* res) {
     printf("Status: %d - %s\n", res->get_status_code(), res->get_status_message().c_str());
@@ -25,17 +23,20 @@ int main() {
 #endif
 
     printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
-    int ret = wifi.connect(MBED_CONF_APP_WIFI_SSID, MBED_CONF_APP_WIFI_PASSWORD, NSAPI_SECURITY_WPA_WPA2);
-    if (ret != 0) {
-        printf("\nConnection error: %d\n", ret);
-        return -1;
-    }
+    // Connect to the network with the default networking interface
+    // if you use WiFi: see mbed_app.json for the credentials
+    NetworkInterface* wifi = connect_to_default_network_interface();
 
+    if ( ! wifi )
+    {
+        printf("Cannot connect to the network, see serial output\n");
+        return 1;
+    }
     // Do a GET request to httpbin.org
     {
         // By default the body is automatically parsed and stored in a buffer, this is memory heavy.
         // To receive chunked response, pass in a callback as last parameter to the constructor.
-        HttpRequest* get_req = new HttpRequest(&wifi, HTTP_GET, "http://httpbin.org/status/418");
+        HttpRequest* get_req = new HttpRequest( wifi, HTTP_GET, "http://httpbin.org/status/418" );
 
         HttpResponse* get_res = get_req->send();
         if (!get_res) {
@@ -51,7 +52,7 @@ int main() {
 
     // POST request to httpbin.org
     {
-        HttpRequest* post_req = new HttpRequest(&wifi, HTTP_POST, "http://httpbin.org/post");
+        HttpRequest* post_req = new HttpRequest( wifi, HTTP_POST, "http://httpbin.org/post" );
         post_req->set_header("Content-Type", "application/json");
 
         const char body[] = "{\"hello\":\"world\"}";
