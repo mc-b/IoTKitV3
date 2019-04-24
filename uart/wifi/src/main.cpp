@@ -18,38 +18,18 @@
 #include "TCPSocket.h"
 #include "OLEDDisplay.h"
 
-// UI
-OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
-
-#define WIFI_ESP8266    1
-#define WIFI_IDW0XX1    2
-#define WIFI_ISM43362   3
-
-#if TARGET_UBLOX_EVK_ODIN_W2
-#include "OdinWiFiInterface.h"
-OdinWiFiInterface wifi;
-
-#elif TARGET_REALTEK_RTL8195AM
-#include "RTWInterface.h"
-RTWInterface wifi;
-
-#else // External WiFi modules
-
-#if MBED_CONF_APP_WIFI_SHIELD == WIFI_ESP8266
+#ifdef TARGET_K64F
 #include "ESP8266Interface.h"
 ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
-
-#elif MBED_CONF_APP_WIFI_SHIELD == WIFI_ISM43362
-#include "ISM43362Interface.h"
-ISM43362Interface wifi;
-
-#elif MBED_CONF_APP_WIFI_SHIELD == WIFI_IDW0XX1
-#include "SpwfSAInterface.h"
-SpwfSAInterface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
-
-#endif // MBED_CONF_APP_WIFI_SHIELD == WIFI_IDW0XX1
-
 #endif
+
+#ifdef TARGET_DISCO_L475VG_IOT01A
+#include "ISM43362Interface.h"
+ISM43362Interface wifi( false );
+#endif
+
+// UI
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
 const char *sec2str(nsapi_security_t sec)
 {
@@ -169,8 +149,9 @@ int main()
     printf("Mbed OS version %d.%d.%d\n\n", MBED_MAJOR_VERSION, MBED_MINOR_VERSION, MBED_PATCH_VERSION);
 #endif
 
-    count = scan_demo(&wifi);
-    if (count == 0) {
+    count = scan_demo( &wifi );
+    if (count == 0)
+    {
         printf("No WIFI APNs found - can't continue further.\n");
         return -1;
     }
@@ -178,7 +159,8 @@ int main()
     printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
     oled.printf( "SSID: %s\r\n", MBED_CONF_APP_WIFI_SSID );    
     int ret = wifi.connect(MBED_CONF_APP_WIFI_SSID, MBED_CONF_APP_WIFI_PASSWORD, NSAPI_SECURITY_WPA_WPA2);
-    if (ret != 0) {
+    if (ret != 0)
+    {
         printf("\nConnection error: %d\n", ret);
         return -1;
     }
@@ -191,7 +173,7 @@ int main()
     printf("RSSI: %d\n\n", wifi.get_rssi());
     oled.printf( "IP: %s\r\n", wifi.get_ip_address() );    
 
-    http_demo(&wifi);
+    http_demo( &wifi );
 
     wifi.disconnect();
 
