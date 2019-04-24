@@ -24,15 +24,15 @@ Die gebräuchlichsten Format sind HTML, [XML](http://de.wikipedia.org/wiki/Exten
 
 **Grundlagen**
 
-* [JSON](#JSON-(JavaScript Object Notation))
-* [XML](#XML-(Extensible Markup Language)) 
+* [JSON](#json-javascript-object-notation)
+* [XML](#xml-extensible-markup-language) 
 
 **Cloud Services**
 
-* [Sunrise Sunset](#SunriseSunset)
-* [IFTTT](#IFTTT-("If-This-Then-That"))
-* [ThinkSpeak](#ThinkSpeak)
-* [Yahoo Weather](#Yahoo-Wetter-(XML/RSS-Feed)) 
+* [Sunrise Sunset](#sunset-sunrise-json)
+* [IFTTT](#ifttt-if-this-then-that)
+* [ThinkSpeak](#thingspeak)
+* [Yahoo Weather](#yahoo-wetter-xmlrss-feed) 
 
 ## JSON (JavaScript Object Notation)
 ***
@@ -275,6 +275,7 @@ Das Beispiel [ThingSpeak](ThingSpeak/src/main.cpp) schickt Sensordaten an den Th
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/ThingSpeak; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/ThingSpeak` |
 
+
 ## Yahoo Wetter (XML/RSS-Feed)
 ***
 
@@ -376,7 +377,6 @@ Das Beispiel [YahooWheater](YahooWheater/src/main.cpp) holt die Wetterdaten von 
 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
-| Online Compiler | [YahooWheater](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/YahooWheater/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/YahooWheater; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/YahooWheater` |
 
