@@ -1,4 +1,7 @@
 ## MQTT (Message Queue Telemetry Transport)
+***
+
+> [⇧ **Home**](../README.md)
 
 ![](../images/MQTTPubSub.png)
 
@@ -31,6 +34,47 @@ Oben sind alle möglichen Wildcard-Operatoren aufgelistet. Im ersten Fall bekomm
 
 Ein weiteres wichtiges Konzept sind die drei Servicequalitäten bei der Datenübertragung 0, 1 und 2. Die Zusicherung variiert von keiner Garantie (Level 0) über die, dass die Nachricht mindestens einmal ankommt (Level 1), bis hin zur Garantie, dass die Nachricht genau einmal ankommt (Level 2).
 
+## MQTT Publish Beispiel
+***
+
+Mittels Publish (unten) kann eine Meldung zum MQTT Broker bzw. Topic gesendet werden.
+
+Ein anderes Board oder der Mosquitto Client mosquitto_sub kann dieses Topic Abonnieren (subscribe).
+
+### Client
+
+Mittels der Client Utilities von [Mosquitto](https://projects.eclipse.org/projects/technology.mosquitto) können Werte abgefragt oder gesendet werden.
+
+Beispiel: Abfragen der Werte von Temperatur und Luftfeuchtigkeit (Ausgabe: I2C Id, Temperatur, Luftfeuchtigkeit, Motorlaufgeschwindigkeit)
+
+    mosquitto_sub -h broker.hivemq.com -t iotkit/sensor/#
+    0xBC,22.90,36.9,low
+    0xBC,28.00,36.7,middle
+    0xBC,32.90,36.7,high
+
+Beispiel: Abfragen ob jemand einen Magneten an den Hall Sensor gehalten hat
+    
+    mosquitto_sub -h broker.hivemq.com -t iotkit/alert/#
+
+Sollte der Server nicht Antworten ist der MQTT Broker zu wechseln (Eintrag `hostname` in `MQTTPublish/src/main.cpp`). 
+
+Eine Liste von Öffentlichen MQTT gibt es [hier](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers).
+
+### Beispiel(e)
+
+Das Beispiel [MQTTPublish](MQTTPublish/src/main.cpp) sendet Sensordaten an einen MQTT Broker.
+
+Ein weiteres Beispiel ist [MQTT on os.mbed.org](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [MQTTPublish](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/MQTTPublish/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/mqtt/MQTTPublish; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/mqtt/MQTTPublish` |
+
+
 ### Links 
 
 *   [Ausführlicher Artikel auf heise.de](http://www.heise.de/developer/artikel/MQTT-Protokoll-fuer-das-Internet-der-Dinge-2168152.html)
@@ -40,7 +84,3 @@ Ein weiteres wichtiges Konzept sind die drei Servicequalitäten bei der Datenüb
 *   [Practical MQTT with Paho](http://www.infoq.com/articles/practical-mqtt-with-paho)
 *   [Paho UI Utilities für MQTT](https://wiki.eclipse.org/Paho/GUI_Utility)
 
-### Beispiele (ab mbed OS V5.x)
-
-* [MQTT on os.mbed.org](https://os.mbed.com/teams/mqtt/code/HelloMQTT/)
-* [MQTT Publish](MQTTPublish/)
