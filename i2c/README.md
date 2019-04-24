@@ -1,4 +1,7 @@
 ## I²C/TWI (Inter-Integrated Circuit, bzw. Two-Wire-Interface)
+***
+
+> [⇧ **Home**](../README.md)
 
 ![](../images/I2C.png) 
 
@@ -28,14 +31,231 @@ Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je n
 *   Ansprechen von Analog/Digital and Digital/Analog IC&#039;s, z.B. [PCF8591](http://developer.mbed.org/users/wim/notebook/pcf8591-i2c-4-channel-8-bit-ad-and-1-channel-8-bit/)
 *   Verbinden von Boards, auch über grössere Distanzen. Siehe [www.mikrokontroller.net](http://www.mikrocontroller.net/articles/I%C2%B2C) und [RocNet](http://wiki.rocrail.net/doku.php?id=rocnet:rocnet-prot-de)
 
-### Beispiele
+## Beispiele
 
-* [mbed - Arduino Kommunikation](mbed2Arduino/)
+**IoTKit K64F Board**
 
-* [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](VL6180X/)
-* [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](ISL29125/)
-* [Hall Sensor](../sensors/HallSensor/)
-* [Capacitive digital sensor for relative humidity and temperature (HTS221)](HTS221/)
-* [High-performance 3-axis magnetometer (LIS3MDL)](LIS3MDL/)
-* [3D accelerometer and 3D gyroscope (LSM6DSL)](LSM6DSL/)
+* [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](#vl6180x)
+* [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](#ISL29125)
 
+**DISCO_L475VG_IOT01A Board**
+
+* [Time-of-Flight and gesture-detection sensor (VL53L0X)](#vl53l0x)
+
+**Beide Boards**
+
+* [Capacitive digital sensor for relative humidity and temperature (HTS221)](#HTS221)
+* [High-performance 3-axis magnetometer (LIS3MDL)](#LIS3MDL)
+* [3D accelerometer and 3D gyroscope (LSM6DSL)](#LSM6DSL)
+* [mbed - Arduino Kommunikation](#mbed---Arduino-Kommunikation)
+
+## VL6180X
+***
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Der VL6180X ist das neueste Produkt, das auf der patentierten FlightSense ™ -Technologie von ST basiert . Dies ist eine bahnbrechende Technologie, die es ermöglicht, die absolute Entfernung unabhängig von der Zielreflektion zu messen. Anstatt die Entfernung durch Messung der vom Objekt reflektierten Lichtmenge zu messen (die maßgeblich von Farbe und Oberfläche beeinflusst wird), misst der VL6180X genau die Zeit, die das Licht braucht, um zum nächsten Objekt zu gelangen und zum Sensor zurückzusenden (Zeit Flug).
+
+Der VL6180X kombiniert einen IR-Strahler, einen Bereichssensor und einen Umgebungslichtsensor in einem gebrauchsfertigen 3-in-1-Reflow-Gehäuse. Der VL6180X ist einfach zu integrieren und erspart dem Endprodukthersteller lange und kostspielige optische und mechanische Designoptimierungen.
+
+Das Modul ist für den Betrieb mit geringer Leistung ausgelegt. Entfernungs- und ALS-Messungen können automatisch in benutzerdefinierten Intervallen durchgeführt werden. Mehrere Schwellenwert- und Interrupt-Schemata werden unterstützt, um Host-Operationen zu minimieren.
+
+
+### Beispiel(e)
+
+Das Beispiel [VL6180X](VL6180X/src/main.cpp) zeigt die Lichtstärke in LUX und die Entfernung eines Gegenstandes, z.B. der Hand, zum VL6180X an.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [VL6180X nur IoTKit K64F](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/VL6180X/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/VL6180X; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+
+### Links
+
+* [Produktseite](https://www.st.com/en/imaging-and-photonics-solutions/vl6180x.html)
+
+## VL53L0X
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Das VL53L0X ist ein Time-of-Flight (ToF)  -Laser-Entfernungsmodul der neuen Generation.
+
+Es bietet eine genaue Abstandsmessung unabhängig von den Zielreflexionen im Gegensatz zu herkömmlichen Technologien. 
+
+Es misst absolute Distanzen bis zu 2 m und setzt damit neue Maßstäbe in Bezug auf das Leistungsspektrum und öffnet die Tür für verschiedene neue Anwendungen.
+
+### Beispiel(e)
+
+Das Beispiel [VL53L0X](VL53L0X/src/main.cpp) zeigt die Entfernung eines Gegenstandes, z.B. der Hand, zum VL53L0X an.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [VL53L0X](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/VL53L0X/) |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/VL53L0X` |
+
+### Links
+
+* [Produktseite](https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html)
+
+## ISL29125
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Der ISL29125 ist eine niedrige Leistung, hohe Empfindlichkeit, ROT, GRÜN und BLAUER Farblichtsensor (RGB) mit einem I2C (SMBus-kompatibel)
+Schnittstelle. 
+
+Das hochmoderne Photodioden-Array bietet eine genaue RGB-Spektralantwort und hervorragende Lichtquelle zu Lichtquellenvariation (LS2LS). 
+
+Der ISL29125 wurde entwickelt um IR in Lichtquellen zu melden und das im Sonnenlicht bis zu dunklen Räumen. 
+
+Das integrierte ADC meldet 50 Hz und 60 Hz Flimmern durch künstliches Licht zurück. 
+
+Ein wählbarer Bereich ermöglicht dem Benutzer die Optimierung Empfindlichkeit für die spezifische Anwendung.
+
+### Beispiel(e)
+
+Das Beispiel [ISL29125](ISL29125/src/main.cpp) gibt die Lichtwerte aus.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [ISL29125](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/ISL29125/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/ISL29125; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+
+### Links
+
+* [Produktseite](https://www.intersil.com/content/dam/Intersil/documents/isl2/isl29125.pdf)
+
+## HTS221
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Der HTS221 ist ein ultrakompakter Sensor für relative Feuchte und Temperatur. Es enthält ein Sensorelement und einen Mischsignal-ASIC, um die Messinformationen über digitale serielle Schnittstellen bereitzustellen.
+
+Das Sensorelement besteht aus einer Polymer-Dielektrikum-Planar-Kondensatorstruktur, die in der Lage ist, Schwankungen der relativen Feuchtigkeit zu detektieren, und wird unter Verwendung eines speziellen ST-Prozesses hergestellt.
+
+### Beispiel(e)
+
+Das Beispiel [HTS221](HTS221/src/main.cpp) gibt Temperatur und Luftfeuchtigkeit aus.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [HTS221](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HTS221/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/HTS221; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/HTS221` |
+
+### Links
+
+* [Produktseite](https://www.st.com/en/mems-and-sensors/hts221.html)
+
+## LIS3MDL
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Der LIS3MDL ist ein ultra-low-power Hochleistungs-Drei-Achsen-Magnetsensor.
+
+Der LIS3MDL hat vom Benutzer wählbare Vollskalen von ± 4 / ± 8 / ± 12 / ± 16 Gauss.
+
+Die Selbsttestfunktion ermöglicht dem Benutzer, die Funktion des Sensors in der endgültigen Anwendung zu überprüfen.
+
+Die Vorrichtung kann konfiguriert sein, um Unterbrechungssignale für die Magnetfelderfassung zu erzeugen.
+
+Der LIS3MDL enthält eine serielle I 2 C-Busschnittstelle, die Standard und Fast Mode (100 kHz und 400 kHz) und SPI serielle Standardschnittstelle unterstützt.
+
+### Beispiel(e)
+
+Das Beispiel [LIS3MDL](LIS3MDL/src/main.cpp) erkennt den Nord- oder Südpool eines Magneten und fungiert als einfacher eCompass wo die Himmelsrichtungen anzeigt. 
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [LIS3MDL](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LIS3MDL/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LIS3MDL; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LIS3MDL` |
+
+### Links
+
+* [Produktseite](https://www.st.com/en/mems-and-sensors/lis3mdl.html)
+
+## LSM6DSL
+ ***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Das LSM6DSL ist ein System-in-Package mit einem digitalen 3D-Beschleunigungssensor und einem digitalen 3D-Gyroskop mit einer Leistung von 0,65 mA im Hochleistungsmode und ermöglicht durchgehend Low-Power-Funktionen für ein optimales Bewegungserlebnis für den Verbraucher.
+
+Das LSM6DSL unterstützt die wichtigsten Betriebssystemanforderungen und bietet reale, virtuelle und Batch-Sensoren mit 4 kByte für die dynamische Datenaufzeichnung.
+
+Die ST-Familie von MEMS-Sensormodulen nutzt die robusten und ausgereiften Fertigungsprozesse, die bereits für die Herstellung von mikrobearbeiteten Beschleunigungssensoren und Gyroskopen verwendet werden.
+
+Das LSM6DSL verfügt über einen vollständigen Beschleunigungsbereich von ± 2 / ± 4 / ± 8 / ± 16 g und einen Winkelgeschwindigkeitsbereich von ± 125 / ± 245 / ± 500 / ± 1000 / ± 2000 dps.
+
+Hohe Robustheit gegenüber mechanischen Schocks macht den LSM6DSL zur bevorzugten Wahl von Systementwicklern für die Herstellung und Herstellung von zuverlässigen Produkten.
+
+### Beispiel(e)
+
+* Das Beispiel [LSM6DSL](LSM6DSL/src/main.cpp) erkennt den jeweiligen Neigungswinkel und zeigt diesen auf dem Display an.
+* Das Beispiel [LSM6DSL_Pedometer](LSM6DSL_Pedometer/src/main.cpp) zählt die Schritte und zeigt diese auf dem Display an.
+* Das Beispiel [LSM6DSL_Tilt](LSM6DSL_Tilt/src/main.cpp) erkennt wenn das Board schief gehalten wird.
+* Das Beispiel [LSM6DSL_SingleTap](LSM6DSL_SingleTap/src/main.cpp) erkennt wenn jemand auf das Board tippt.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [LSM6DSL](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL` |
+| Online Compiler | [LSM6DSL_Pedometer](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL_Pedometer/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL_Pedometer; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL_Pedometer` |
+| Online Compiler | [LSM6DSL_Tilt](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL_Tilt/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL_Tilt; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL_Tilt` |
+| Online Compiler | [LSM6DSL_SingleTap](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL_Tilt/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL_SingleTap; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL_SingleTap` |
+
+### Links
+
+* [Produktseite](https://www.st.com/en/mems-and-sensors/hts221.html)
+* [Weitere Beispiele](https://github.com/stm32duino/LSM6DSL/tree/master/examples)
+
+##  mbed - Arduino Kommunikation
+ ***
+
+> [⇧ **Nach oben**](#beispiele)
+
+Arduino sind weit verbreitet und Verfügen, in der Regel, über keinen direkten Ethernet Anschluss. Mittels dem I2C Bus können bestehende Arduino in das Internet der Dinge eingebunden werden.
+
+Das mbed Board übernimmt dabei die Verbindung zum Internet und die Feinverteilung der Aufgaben auf die Arduinos mittels dem I2C Bus.
+
+### Anwendungen 
+
+*   Verbinden von Boards, über kleinere (1 Meter) oder grössere Distanzen. Siehe [www.mikrokontroller.net](http://www.mikrocontroller.net/articles/I%C2%B2C) und [RocNet](http://wiki.rocrail.net/doku.php?id=rocnet:rocnet-prot-de)
+*   Verbindung mbed mit [Arduino](http://www.bot-thoughts.com/2011/09/i2c-mbed-reading-from-arduino.html)
+
+### Beispiel(e)
+
+* Das Beispiel [mbed2Arduino](mbed2Arduino/src/main.cpp) stellt eine Verbindung, über den Standard I2C Bus, zu einem Arduino Board her. Dazu der Sketch (auskommentierter Code am Ende des Programmes) auf den Arduino geladen werden.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [mbed2Arduino](https://developer.mbed.org/compiler/#import:/teams/smdiotkit1ch/code/mbed2Arduino/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/mbed2Arduino; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/mbed2Arduino` |
