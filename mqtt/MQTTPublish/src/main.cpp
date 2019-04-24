@@ -1,6 +1,7 @@
 /** MQTT Publish von Sensordaten */
 #include "mbed.h"
 #include "HTS221Sensor.h"
+#include "network-helper.h"
 #include "MQTTNetwork.h"
 #include "MQTTmbed.h"
 #include "MQTTClient.h"
@@ -12,16 +13,15 @@
 // NFC/RFID Reader (SPI)
 MFRC522    rfidReader( MBED_CONF_IOTKIT_RFID_MOSI, MBED_CONF_IOTKIT_RFID_MISO, MBED_CONF_IOTKIT_RFID_SCLK, MBED_CONF_IOTKIT_RFID_SS, MBED_CONF_IOTKIT_RFID_RST ); 
 
-#include "ESP8266Interface.h"
-ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
-
 // Sensoren wo Daten fuer Topics produzieren
 static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
 static HTS221Sensor hum_temp(&devI2c);
 AnalogIn hallSensor( MBED_CONF_IOTKIT_HALL_SENSOR );
 DigitalIn button( MBED_CONF_IOTKIT_BUTTON1 );
 //Use X2 encoding by default.
+#ifdef TARGET_K64F
 QEI wheel (MBED_CONF_IOTKIT_BUTTON2, MBED_CONF_IOTKIT_BUTTON3, NC, 624);
+#endif
 
 // Topic's
 char* topicTEMP =  "iotkit/sensor";
@@ -103,14 +103,17 @@ int main()
 
     printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
     oled.printf( "SSID: %s\r\n", MBED_CONF_APP_WIFI_SSID );
-    int ret = wifi.connect(MBED_CONF_APP_WIFI_SSID, MBED_CONF_APP_WIFI_PASSWORD, NSAPI_SECURITY_WPA_WPA2);
-    if (ret != 0) {
-        printf("\nConnection error: %d\n", ret);
-        return -1;
+    // Connect to the network with the default networking interface
+    // if you use WiFi: see mbed_app.json for the credentials
+    NetworkInterface* wifi = connect_to_default_network_interface();
+    if ( !wifi )
+    {
+        printf("Cannot connect to the network, see serial output\n");
+        return 1;
     }
 
     // TCP/IP und MQTT initialisieren (muss in main erfolgen)
-    MQTTNetwork mqttNetwork( &wifi );
+    MQTTNetwork mqttNetwork( wifi );
     MQTT::Client<MQTTNetwork, Countdown> client(mqttNetwork);
     
     /* Init all sensors with default params */
@@ -179,9 +182,11 @@ int main()
         }
 
         // Encoder
+#ifdef TARGET_K64F
         encoder = wheel.getPulses();
         sprintf( buf, "%d", encoder );
         publish( mqttNetwork, client, topicENCODER );
+#endif
         
         // RFID Reader
         if ( rfidReader.PICC_IsNewCardPresent())

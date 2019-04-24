@@ -2,15 +2,14 @@
 */
 #include "mbed.h"
 #include "TCPSocket.h"
-
-#include "ESP8266Interface.h"
+#include "network-helper.h"
 #include "NTPClient.h"
 #include "OLEDDisplay.h" 
 
-ESP8266Interface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
-OLEDDisplay oled( PTE26, PTE0, PTE1 );
+// UI
+OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
-DigitalOut led( D10 );
+DigitalOut led( MBED_CONF_IOTKIT_LED1 );
  
 int main() 
 {
@@ -21,21 +20,24 @@ int main()
 #endif
 
     printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
-    int ret = wifi.connect(MBED_CONF_APP_WIFI_SSID, MBED_CONF_APP_WIFI_PASSWORD, NSAPI_SECURITY_WPA_WPA2);
-    if (ret != 0)
+    // Connect to the network with the default networking interface
+    // if you use WiFi: see mbed_app.json for the credentials
+    NetworkInterface* wifi = connect_to_default_network_interface();
+
+    if ( !wifi )
     {
-        printf("\nConnection error: %d\n", ret);
-        return -1;
+        printf("Cannot connect to the network, see serial output\n");
+        return 1;
     }
    
     // hole Zeit vom Internet
-    NTPClient ntp( &wifi) ;
+    NTPClient ntp( wifi) ;
 	time_t timestamp = ntp.get_timestamp();
 	if (timestamp < 0)
 		printf("An error occurred when getting the time. Code: %ld\r\n", timestamp);
 	else
 		printf("Current time is %s\r\n", ctime(&timestamp));
-	wifi.disconnect();
+	wifi->disconnect();
 
 	// set the time
 	set_time( timestamp );
