@@ -35,6 +35,31 @@ Die Konfiguration wird im [JSON-Format](https://de.wikipedia.org/wiki/JavaScript
 
 Das IoTKit Verwendet dieses System um Pinbelegungen für Unterschiedliche Boards anzupassen. Statt den direkten Bezeichner, z.B. **PTC13** zu verwenden, wird der Konfigurationsparameter **MBED_CONF_IOTKIT_BUTTON1** verwendet. Dieser wird je nach Board mit **PTC13** - IoTKit K64F oder **USER_BUTTON** beim Board DISCO_L475VG_IOT01A ersetzt.
 
+Weitere Informationen zu allen oder einem Konfigurationsparameter erhält man mittels:
+
+    mbed compile --config --prefix iotkit -v
+    mbed compile --config --prefix iotkit.stepper1-1 -v
+    
+    Configuration parameters
+    ------------------------
+    Name: iotkit.stepper1-1
+        Description: Schrittmotor 1 an Stepper 1
+        Defined by: library:iotkit
+        Macro name: MBED_CONF_IOTKIT_STEPPER1_1
+        Value: PTB0 (set by library:iotkit)
+    
+Oder für das DISCO_L475VG_IOT01A Board
+
+    mbed compile --config --prefix iotkit.stepper1-1 -v -m DISCO_L475VG_IOT01A
+    
+    Configuration parameters
+    ------------------------
+    Name: iotkit.stepper1-1
+        Description: Schrittmotor 1 an Stepper 1
+        Defined by: library:iotkit
+        Macro name: MBED_CONF_IOTKIT_STEPPER1_1
+        Value: D3 (set by library:iotkit[DISCO_L475VG_IOT01A])
+   
 Die folgende Tabelle gibt eine Übersicht über die Zuordungen. 
 
 | Konfigurationsparameter | IoTKit K64F Pin | DISCO_L475VG_IOT01A Pin |
@@ -95,3 +120,5 @@ Die folgende Tabelle gibt eine Übersicht über die Zuordungen.
 | MBED_CONF_IOTKIT_STEPPER2_2 | PTC8 | D4 |
 | MBED_CONF_IOTKIT_STEPPER2_3 | PTB19 | D7 |
 | MBED_CONF_IOTKIT_STEPPER2_4 | PTB18 | D8 |
+
+
