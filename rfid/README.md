@@ -72,7 +72,7 @@ Der RFID Reader benötigt die [MFRC522 Library](http://developer.mbed.org/users/
 
 * [RFIDReaderV3](RFIDReaderV3/src/main.cpp) liest die RFID ID aus. Funktioniert mit [MIFARE](https://de.wikipedia.org/wiki/Mifare) Tags u.a. auch mit dem SwissPass.
 * [RFIDInventar](RFIDInventar/src/main.cpp) simuliert ein Lagerverwaltung wo z.B. auf der Schachtel ein RFID-Tag aufgebracht ist und bei jeder Entname wird der Tag gescannt. 
-* [RFIDZutrittskontrolle](RFIDZutrittskontrolle/src/main.cpp) einfache Zutrittskontrolle. Die gespeicherten RFID-Tag öffnen z.B. eine Türe, hier simuliert mit dem [Türöffner](actors#türöffner).
+* [RFIDZutrittskontrolle](RFIDZutrittskontrolle/src/main.cpp) einfache Zutrittskontrolle. Die gespeicherten RFID-Tag öffnen z.B. eine Türe, hier simuliert mit dem [Türöffner](../actors#türöffner).
 * [RFIDDump](/src/main.cpp) gibt den Speicher des RFID-Tags aus. Dazu ist der Tag genügend lange an den Reader zu halten.
 
 **Compilieren**
@@ -83,15 +83,21 @@ Der RFID Reader benötigt die [MFRC522 Library](http://developer.mbed.org/users/
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDReaderV3; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDReaderV3` |
 | Umgebung/Board    | Link/Befehl                      |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [RFIDInventar](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RFIDInventar/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDInventar; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDInventar` |
 | Umgebung/Board    | Link/Befehl                      |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [RFIDZutrittskontrolle](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RFIDZutrittskontrolle/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDZutrittskontrolle; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDZutrittskontrolle` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDDump; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDDump` |
