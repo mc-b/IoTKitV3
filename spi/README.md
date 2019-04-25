@@ -1,4 +1,7 @@
 ## SPI (Serial Peripheral Interface)
+***
+
+> [⇧ **Home**](../README.md)
 
 ![](../images/SPI.png)
 
@@ -29,9 +32,102 @@ Je nach Anordnung der Slaves wird eine (bei Kaskadierung) oder mehrere (bei Ster
 ### Anwendungen 
 
 *   Zugriff auf [SD Karten](http://de.wikipedia.org/wiki/SD-Karte), [RFID Reader](http://de.wikipedia.org/wiki/RFID)
-*   Ansteuerung von [LED Strip&#039;s](https://os.mbed.com/components/Pololu-Addressable-RGB-LED-Strip/), [LCD Display&#039;s](http://developer.mbed.org/users/dreschpe/code/SPI_TFT_ILI9341/)
+*   Ansteuerung von [LED Strips](https://os.mbed.com/components/Pololu-Addressable-RGB-LED-Strip/), [LCD Displays](http://developer.mbed.org/users/dreschpe/code/SPI_TFT_ILI9341/)
 
-### Beispiele
+## Beispiele
 
-* [Dot LED Matrix](DotLEDMatrix/), [Low Level Implementierung](DotLEDMatrixLowLevel/)
-* [RGB LED Streifen - SPI Version, 5 Volt](RGBLEDStripSPI/), [Fernseh Simulator](FernsehSimulator/)
+* [Dot LED Matrix](#dot-led-matrix)
+* [RGB LED Streifen - SPI Version](#rgb-led-streifen)
+
+## Dot LED Matrix
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+![](../images/actors/DotLEDMatrix.png) 
+
+Schaltplan Dot LED Matrix
+
+- - -
+
+Ein Punktmatrix-Display (Dot LED Matrix) ist ein Anzeigegerät um z.B. Fahrplaninformationen anzuzeigen.
+
+Die Anzeige besteht aus einer Punktmatrix von LED&#039;s in einer rechteckigen Konfiguration angeordnet , so dass durch Zu- oder Abschalten der ausgewählten LED, Text oder Grafiken angezeigt werden können. Ein Punktmatrix-Controller wandelt Befehle von einem Prozessor in Signale (0, 1), so dass die gewünschte Anzeige erzeugt wird.
+
+### Anwendungen 
+
+*   Abfahrtszeiten von Zügen etc.
+*   Fahrgast Informationen
+
+### Anschlussbelegung (DotLEDMatrix - Shield) 
+
+*   VCC - V (5 Volt)
+*   GND - G (Ground)
+*   DIN - MOSI 
+*   CS - CS
+*   CLK - SCLK 
+
+### Beispiel(e)
+
+* [DotLEDMatrix](DotLEDMatrix/src/main.cpp) gibt eine Laufschrift und nachher  Zahlen und Buchstaben auf dem Gerät aus.
+* [DotLEDMatrixLowLevel](DotLEDMatrixLowLevel/src/main.cpp) bringt die LEDs einzeln zum Leuchten.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [DotLEDMatrix](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DotLEDMatrix/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/DotLEDMatrix; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/DotLEDMatrix` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/DotLEDMatrixLowLevel; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/DotLEDMatrixLowLevel` |
+
+
+## RGB LED Streifen
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+![](../images/actors/LedStrips.png)
+
+[RGB LED Strip, siehe LadyAda Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide) 
+
+- - -
+
+LED Strips (RGB LED Streifen) eröffnen neue Möglichkeiten für die Dekorative Beleuchtungen von Gegenständen und Räumen.
+
+LED Strips werden in den unterschiedlichsten Formen angeboten.
+
+Es gibt unterschiedliche Arten der Ansteuerung, alle LED einer Farbe, jedes RGB LED einzeln.
+
+Im aktuellen Beispiel verwenden wird ein LED Strip mit einen IC pro RGB LED, d.h. jedes RGB LED kann einzeln via SPI Bus angesprochen werden.
+
+Die LED Strip wird an GND, 5V (!) und an die Datenpins CI - D13 (SLK), DI - D11 (MOSI) angeschlossen.
+
+Auf dem Strip kommen [WS2801](http://www.adafruit.com/datasheets/WS2801.pdf) IC&#039;s zum Einsatz. Das Gegenstück zum WS2801 ist der [WS2811](https://www.adafruit.com/datasheets/WS2811.pdf) IC welcher aber nur mit ein paar mbed Boards funktioniert.
+
+### Anwendungen 
+
+*   Raumbeleuchtung
+*   Dekorative Ausleuchtung von Gegenständen
+
+### Beispiel(e)
+
+* [RGBLEDStripSPI](RGBLEDStripSPI/src/main.cpp) bringt die verschiedenen Farben pro RGB LED zum leuchten.
+* [FernsehSimulator](FernsehSimulator/src/main.cpp) simuliert mittels unterschiedlichen Farbvarianten einen Fernseher, z.B. um Einbrecher abzuschrecken.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [RGBLEDStripSPI](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DotLEDMatrix/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/RGBLEDStripSPI; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/RGBLEDStripSPI` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/FernsehSimulator; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/FernsehSimulator` |
