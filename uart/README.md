@@ -1,4 +1,7 @@
 ## UART (Universal Asynchronous Receiver Transmitter)
+***
+
+> [⇧ **Home**](../README.md)
 
 ![](../images/UART.png)
 
@@ -27,11 +30,26 @@ Um Daten auf die Serielle Schnittstelle auszugeben, sind keine zusätzlichen Obj
 * Board - PC Kommunikation
 * Ansprechen von Modems wie [Bluetooth](http://developer.mbed.org/platforms/FRDM-K64F/#features), [WLAN](https://os.mbed.com/questions/4993/How-to-interface-esp8266-wifi-module/), [GPS](http://developer.mbed.org/cookbook/GlobalSat-EM-406-GPS-Module)
 
-### Beispiele
+### Beispiel(e)
 
-* [Serielle Schnittstelle](SerialAll/), [Serial Master](SerialMaster/), [Serial Slave](SerialSlave/)
-* [WLAN Modem ESP8266 lowlevel](ESP8266/)
-* [WLAN Modem ESP8266 ](wifi/)
+* [Serielle Schnittstelle](SerialAll/src/main.cpp) - Ausgabe, mittels `printf` auf allen Seriellen Schnittstelle des Boards. Muss für DISCO_L475VG_IOT01A angepasst werden.
+* [Serial Master](SerialMaster/src/main.cpp), [Serial Slave](SerialSlave/src/main.cpp) - Kommunikation zwischen zwei Boards über die Serielle Schnittelle.
+* [WLAN Modem ESP8266 lowlevel](ESP8266/) - Ansprechen des ESP8266 WLAN Modems via AT-Befehlen (nur IoTKit K64F Board).
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [SerialAll](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/SerialAll/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/uart/SerialAll; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/uart/SerialAll` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [ESP8266](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/ESP8266/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/uart/ESP8266; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/uart/ESP8266` |
+
 
 ### Links
 

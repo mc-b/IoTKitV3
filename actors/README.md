@@ -228,7 +228,7 @@ Die LED Strip wird an den MOSFETs Header (+ ist oben) oder an die Stepper Leistu
 
 ### Beispiel(e)
 
-Das [Beispiel](RGBLEDStrip/src/main.cpp) öffnet den Türschliesser beim Druck auf den Button.
+Das [Beispiel](RGBLEDStrip/src/main.cpp) bringt die 3 Farben (grün, rot, blau) nacheinnander und gemeinsam (= weiss) zum leuchten.
 
 ### Compilieren
 

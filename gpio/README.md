@@ -226,7 +226,7 @@ Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vo
 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
-| Online Compiler | m[template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Übungscode überschreiben |
+| Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Übungscode überschreiben |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/01-Uebung` |
 

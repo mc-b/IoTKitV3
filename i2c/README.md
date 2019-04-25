@@ -206,10 +206,10 @@ Hohe Robustheit gegenüber mechanischen Schocks macht den LSM6DSL zur bevorzugte
 
 ### Beispiel(e)
 
-* Das Beispiel [LSM6DSL](LSM6DSL/src/main.cpp) erkennt den jeweiligen Neigungswinkel und zeigt diesen auf dem Display an.
-* Das Beispiel [LSM6DSL_Pedometer](LSM6DSL_Pedometer/src/main.cpp) zählt die Schritte und zeigt diese auf dem Display an.
-* Das Beispiel [LSM6DSL_Tilt](LSM6DSL_Tilt/src/main.cpp) erkennt wenn das Board schief gehalten wird.
-* Das Beispiel [LSM6DSL_SingleTap](LSM6DSL_SingleTap/src/main.cpp) erkennt wenn jemand auf das Board tippt.
+* [LSM6DSL](LSM6DSL/src/main.cpp) erkennt den jeweiligen Neigungswinkel und zeigt diesen auf dem Display an.
+* [LSM6DSL_Pedometer](LSM6DSL_Pedometer/src/main.cpp) zählt die Schritte und zeigt diese auf dem Display an.
+* [LSM6DSL_Tilt](LSM6DSL_Tilt/src/main.cpp) erkennt wenn das Board schief gehalten wird.
+* [LSM6DSL_SingleTap](LSM6DSL_SingleTap/src/main.cpp) erkennt wenn jemand auf das Board tippt.
 
 **Compilieren**
 
