@@ -39,7 +39,7 @@ Entstanden ist das Board durch die Kombination des [NXP FRDM-K64F Board](https:/
 * [NFC/RFID Reader](../rfid/)
 * [Capacitive digital sensor for relative humidity and temperature (HTS221)](../i2c#hts221)
 * [High-performance 3-axis magnetometer (LIS3MDL)](../i2c#lis3mdl)
-* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c#lsm6dsl)
+* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c#LSM6DSL)
 * [Wi-Fi® module ESP8266](../wlan)
 
 

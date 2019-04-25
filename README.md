@@ -13,6 +13,7 @@ IoTKit V3 Beispiele und Dokumentation
 * [Software und Installation](sw/)
 * [Kleine C/C++ Einführung](ccpp/)
 * [GPIO](gpio/)
+* [Das Konfigurationssystem (GPIO Belegungen)](config/)
 * [Sensoren](sensors/)
 * [Aktoren](actors/)
 
