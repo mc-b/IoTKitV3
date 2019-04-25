@@ -7,21 +7,23 @@
 #include "MQTTClient.h"
 #include "OLEDDisplay.h"
 #include "Motor.h"
+
+#ifdef TARGET_K64F
 #include "QEI.h"
 #include "MFRC522.h"
- 
+
 // NFC/RFID Reader (SPI)
 MFRC522    rfidReader( MBED_CONF_IOTKIT_RFID_MOSI, MBED_CONF_IOTKIT_RFID_MISO, MBED_CONF_IOTKIT_RFID_SCLK, MBED_CONF_IOTKIT_RFID_SS, MBED_CONF_IOTKIT_RFID_RST ); 
+//Use X2 encoding by default.
+QEI wheel (MBED_CONF_IOTKIT_BUTTON2, MBED_CONF_IOTKIT_BUTTON3, NC, 624);
+
+#endif
 
 // Sensoren wo Daten fuer Topics produzieren
 static DevI2C devI2c( MBED_CONF_IOTKIT_I2C_SDA, MBED_CONF_IOTKIT_I2C_SCL );
 static HTS221Sensor hum_temp(&devI2c);
 AnalogIn hallSensor( MBED_CONF_IOTKIT_HALL_SENSOR );
 DigitalIn button( MBED_CONF_IOTKIT_BUTTON1 );
-//Use X2 encoding by default.
-#ifdef TARGET_K64F
-QEI wheel (MBED_CONF_IOTKIT_BUTTON2, MBED_CONF_IOTKIT_BUTTON3, NC, 624);
-#endif
 
 // Topic's
 char* topicTEMP =  "iotkit/sensor";
@@ -120,8 +122,10 @@ int main()
     hum_temp.init(NULL);
     hum_temp.enable();  
     
+#ifdef TARGET_K64F
     // RFID Reader initialisieren
     rfidReader.PCD_Init();  
+#endif
 
     while   ( 1 ) 
     {
@@ -181,12 +185,12 @@ int main()
             publish( mqttNetwork, client, topicBUTTON );
         }
 
-        // Encoder
 #ifdef TARGET_K64F
+
+        // Encoder
         encoder = wheel.getPulses();
         sprintf( buf, "%d", encoder );
         publish( mqttNetwork, client, topicENCODER );
-#endif
         
         // RFID Reader
         if ( rfidReader.PICC_IsNewCardPresent())
@@ -206,6 +210,7 @@ int main()
                 publish( mqttNetwork, client, topicRFID );                
                 
             }        
+#endif
 
         wait    ( 2.0f );
     }
