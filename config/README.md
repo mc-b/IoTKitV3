@@ -20,7 +20,7 @@ wie folgt, für das IoTKit K64F Board, übersetzt:
 
 ```cpp
 
-    DigitalIn button1( PTC14, PullUp );
+    DigitalIn button1( PTC13, PullUp );
     DigitalOut led1( D11 );
     
     int main()

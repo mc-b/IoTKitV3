@@ -13,3 +13,11 @@ Die Beispiel auf mbed.com können mit folgendem Shellscript mit denen auf GitHub
 		[ -f ../mbed.com/IoTKitV3/$f/main.cpp ] && { cp -v ../mbed.com/IoTKitV3/$f/main.cpp $x; }
 	done
 	
+Die Konfigurationsparameter Tabelle kann wie folgt erstellt werden:
+
+    cd template
+    mbed compile --config | grep ^iotkit | cut "-d " -f6 | tr -d \" | tr -d \) >v1
+    mbed compile --config | grep ^iotkit | cut "-d " -f3 >v2
+    mbed compile --config -m DISCO_L475VG_IOT01A| grep ^iotkit | cut "-d " -f3 >v3
+    paste v1 v2 v3 | awk '{ printf( "| %s | %s | %s |\n", $1, $2, $3 ) }' >v4.txt
+    
