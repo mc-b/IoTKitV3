@@ -73,7 +73,7 @@ Der RFID Reader benötigt die [MFRC522 Library](http://developer.mbed.org/users/
 * [RFIDReaderV3](RFIDReaderV3/src/main.cpp) liest die RFID ID aus. Funktioniert mit [MIFARE](https://de.wikipedia.org/wiki/Mifare) Tags u.a. auch mit dem SwissPass.
 * [RFIDInventar](RFIDInventar/src/main.cpp) simuliert ein Lagerverwaltung wo z.B. auf der Schachtel ein RFID-Tag aufgebracht ist und bei jeder Entname wird der Tag gescannt. 
 * [RFIDZutrittskontrolle](RFIDZutrittskontrolle/src/main.cpp) einfache Zutrittskontrolle. Die gespeicherten RFID-Tag öffnen z.B. eine Türe, hier simuliert mit dem [Türöffner](../actors#türöffner).
-* [RFIDDump](/src/main.cpp) gibt den Speicher des RFID-Tags aus. Dazu ist der Tag genügend lange an den Reader zu halten.
+* [RFIDDump](RFIDDump/src/main.cpp) gibt den Speicher des RFID-Tags aus. Dazu ist der Tag genügend lange an den Reader zu halten.
 
 **Compilieren**
 
