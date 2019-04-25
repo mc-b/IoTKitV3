@@ -33,13 +33,13 @@ Entstanden ist das Board durch die Kombination des [NXP FRDM-K64F Board](https:/
 #### Board features
 
 * [Bluetooth® V4.1 module (SPBTLE-RF)](../wearables/)
-* [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](../i2c/)
-* [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](../i2c/)
-* [Hall Sensor](../sensors/HallSensor/)
+* [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](../i2c#vl6180x)
+* [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](../i2c#ISL29125)
+* [Hall Sensor](../sensors#Hall-Sensor)
 * [NFC/RFID Reader](../rfid/)
-* [Capacitive digital sensor for relative humidity and temperature (HTS221)](../i2c/)
-* [High-performance 3-axis magnetometer (LIS3MDL)](../i2c/)
-* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c/)
+* [Capacitive digital sensor for relative humidity and temperature (HTS221)](../i2c#hts221)
+* [High-performance 3-axis magnetometer (LIS3MDL)](../i2c#lis3mdl)
+* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c#lsm6dsl)
 * [Wi-Fi® module ESP8266](../wlan)
 
 
@@ -53,8 +53,8 @@ Entstanden ist das Board durch die Kombination des [NXP FRDM-K64F Board](https:/
 * [SWDAP](https://os.mbed.com/teams/mbed/wiki/SWDAP)
 * [ARM Cortex M4 K64F MCU](https://www.nxp.com/products/processors-and-microcontrollers/arm-based-processors-and-mcus/kinetis-cortex-m-mcus/k-seriesperformancem4/k6x-ethernet/kinetis-k64-120-mhz-256kb-sram-microcontrollers-mcus-based-on-arm-cortex-m4-core:K64_120)
 * [Grove Header](http://wiki.seeedstudio.com/Grove_System/)
-* [OLED Display](../i2c/OLEDDisplayTest/)
-* [4 LED an GPIO D10 - D13](../gpio/DigitalOut/)
+* OLED Display
+* [4 LED an GPIO D10 - D13](../gpio#DigitalOut)
 
 
 * [H-Bridge](../actors/)
@@ -98,11 +98,11 @@ Internet der Dinge Board
 * [Wi-Fi® module Inventek ISM43362-M3G-L44 (802.11 b/g/n compliant)](../wlan)
 * Dynamic NFC tag based on M24SR with its printed NFC antenna
 * 2 digital omnidirectional microphones (MP34DT01)
-* [Capacitive digital sensor for relative humidity and temperature (HTS221)](../i2c/HTS221)
-* [High-performance 3-axis magnetometer (LIS3MDL)](../i2c/LIS3MDL)
-* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c/LSM6DSL)
+* [Capacitive digital sensor for relative humidity and temperature (HTS221)](../i2c#HTS221)
+* [High-performance 3-axis magnetometer (LIS3MDL)](../i2c#LIS3MDL)
+* [3D accelerometer and 3D gyroscope (LSM6DSL)](../i2c#LSM6DSL)
 * 260-1260 hPa absolute digital output barometer (LPS22HB)
-* [Time-of-Flight and gesture-detection sensor (VL53L0X)](../i2c/VL53L0X)
+* [Time-of-Flight and gesture-detection sensor (VL53L0X)](../i2c#VL53L0X)
 * [2 push-buttons (user and reset)](../gpio)
 * USB OTG FS with Micro-AB connector
 * Expansion connectors:

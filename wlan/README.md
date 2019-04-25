@@ -45,6 +45,7 @@ Je nach Board wird dann das entsprechende WLAN Modem initialisert und eine IP-Ad
 
 ### Links
 
+* [Konfiguration ESP8266](../uart#konfiguration-esp8266)
 * [Gegenüberstellung HTTP, MQTT, CoAP](https://os.mbed.com/blog/entry/Using-HTTP-HTTPS-MQTT-and-CoAP-from-mbed/)
 
 ## Network Time Protocol (NTP)
