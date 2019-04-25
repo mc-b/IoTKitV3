@@ -38,6 +38,10 @@ nRF Connect App Printscreen
 * Nach neuen Geräten scannen.
 * `HRM...` Gerät Verbinden und Herzfrequenz auslesen. 
 
+### Beispiel(e)
+
+* [HeartRate](HeartRate/src/main.cpp) simuliert die Herzfequenz und überträgt diese mittels Bluetooth auf das Smartphone.
+
 **Compilieren**
 
 | Umgebung/Board    | Link/Befehl                      |
@@ -92,6 +96,10 @@ Die Nummern bzw. der URL können in den entsprechenden Programmen angepasst werd
     uint16_t majorNumber = 1234;
     uint16_t minorNumber = 3344;
 
+### Beispiel(e)
+
+* [Beacon](Beacon/src/main.cpp) sendet ein Funkfeuer via Bluetooth aus, welches von einem Smartphone empfangen werden kann.
+
 **Compilieren**
 
 | Umgebung/Board    | Link/Befehl                      |
@@ -103,6 +111,5 @@ Die Nummern bzw. der URL können in den entsprechenden Programmen angepasst werd
 ### Links
 
 * Weitere Beispiele (rechts unten) auf [Board Overview Site](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/). Müssen, für das IoTKit K64F Board wie oben Beschrieben, angepasst werden.
-* [Beacon Beispiel](Beacon/)
 
 
