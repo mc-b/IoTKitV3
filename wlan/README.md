@@ -1,5 +1,7 @@
-WLAN (WiFi)
--------------------
+## WLAN (WiFi)
+***
+
+> [⇧ **Home**](../README.md)
 
 ![](../images/ESP8266.png) 
 
@@ -9,96 +11,73 @@ Handelsübliches ESP8266-Modul. Im oberen Bildbereich die gedruckte WLAN-Antenne
 
 [Wireless Local Area Network](https://de.wikipedia.org/wiki/Wireless_Local_Area_Network) (Wireless LAN bzw. W-LAN, meist WLAN; deutsch drahtloses lokales Netzwerk) bezeichnet ein lokales Funknetz, wobei meist ein Standard der IEEE-802.11-Familie gemeint ist. Für diese engere Bedeutung ist in manchen Ländern (z. B. USA, Großbritannien, Kanada, Niederlande, Spanien, Frankreich, Italien) weitläufig beziehungsweise auch synonym der Begriff Wi-Fi gebräuchlich. 
 
-Der IoTKit V3 wird mittels dem [ESP8266 WLAN Modem](https://de.wikipedia.org/wiki/ESP8266) ans Internet angeschlossen.
+Das IoTKit K64F Board wird mittels dem [ESP8266 WLAN Modem](https://de.wikipedia.org/wiki/ESP8266) ans Internet angeschlossen. Die Verbindung erfolgt mittels Serieller Schnittstelle ([UART](../uart/)).
 
-Weitere nützliche Informationen zum ESP8266 sind in diesem [Blog](https://orxor.wordpress.com/2015/01/30/esp8266-intro/) zu finden. Ausserdem existiert eine [ESP8266 Gruppe](https://os.mbed.com/teams/ESP8266/).
+Das DISCO_L475VG_IOT01A Boards wird mittels dem [Wi-Fi® module Inventek ISM43362-M3G-L44](https://www.inventeksys.com/wifi/wifi-modules/ism4336-m3g-l44-e-embedded-serial-to-wifi-module/) ans Internet angeschlossen. Die Verbindung erfolgt mittels [SPI-Bus](../spi/).
 
-Ab mbed OS V5.10 ist der ESP8266 Driver Bestandteil von mbed und keine separate Library mehr. 
+Die benötigten Libraries befinden sich, entweder direkt in der [mbed-os](https://github.com/ARMmbed/mbed-os/) oder der [IoTKit](https://os.mbed.com/teams/IoTKitV3/code/IoTKit/)-Library. Die Konfiguration erfolgen in `mbed_app.conf`.
 
-Um auf die neuste Version von mbed OS zu updaten ist wie folgt Vorzugehen:
-* mbed-os - Library im Projekt löschen
-* Mittels rechter Maustaste `Import Library ...` -> `From URL ...` anwählen
-* Als URL [https://github.com/ARMmbed/mbed-os.git](https://github.com/ARMmbed/mbed-os.git) eintragen und Library importieren.
+Um mit dem Internet zu kommunizieren ist die `"network-helper.h"` Datei aus der [IoTKit](https://os.mbed.com/teams/IoTKitV3/code/IoTKit/)-Library zu inkluden und die Funktion `connect_to_default_network_interface` aufzurufen.
 
-### Beispiele
+**Beispiel:**
 
-* [WiFi](../uart/wifi/)
-* [ESP8266 via AT-Befehlssatz ansprechen](../uart/ESP8266/)
-* [NTP - Zeit setzen via Internet](NTPV2/)
-* [Gegenüberstellung HTTP, MQTT, CoAP](https://os.mbed.com/blog/entry/Using-HTTP-HTTPS-MQTT-and-CoAP-from-mbed/)
+```cpp
 
-### Konfiguration
+    #include "mbed.h"
+    #include "network-helper.h"
+    
+    int main() 
+    {
+        NetworkInterface* wifi = connect_to_default_network_interface();
+        if ( !wifi )
+        {
+            printf("Cannot connect to the network, see serial output\n");
+            return 1;
+        }
+```
 
-Der IoTKit V3 kommuniziert mittels UART mit dem [ESP8266](https://de.wikipedia.org/wiki/ESP8266) dabei werden folgende Pins verwendet:
-* TX - PTC15
-* RX = PTC14
+Je nach Board wird dann das entsprechende WLAN Modem initialisert und eine IP-Adresse gelöst. Ab dort ist die Kommunikation mit dem Internet möglich.
 
-Die eigentliche Konfiguration der Schnittstelle erfolgt in der Datei `mbed_app.json`. Die sehen Einträge wie folgt aus:
+### Beispiel(e)
 
-	{
-	    "config": {
-	        "wifi-shield": {
-	            "help": "Options are internal, WIFI_ESP8266, WIFI_ISM43362, WIFI_IDW0XX1",
-	            "value": "WIFI_ESP8266"
-	        },
-	        "wifi-ssid": {
-	            "help": "WiFi SSID",
-	            "value": "\"LERNKUBE\""
-	        },
-	        "wifi-password": {
-	            "help": "WiFi Password",
-	            "value": "\"l3rnk4b3\""
-	        },
-	        "wifi-tx": {
-	            "help": "TX pin for serial connection to external device",
-	            "value": "PTC15"
-	        },
-	        "wifi-rx": {
-	            "help": "RX pin for serial connection to external device",
-	            "value": "PTC14"
-	        },
-	        "wifi-debug": {
-	            "value": true
-	        }
-	    }
-	}
-          
-
-### WLAN Modem Konfiguration (UART)
-
-Zum Konfigurieren oder Update der Firmware eignet sich am Besten der PL2303HX Converter USB To RS232 TTL der wie folgt mit dem Modem zu verbinden ist:
-
-*   Grünes Kabel - mit TXD0 (Transmit) verbinden
-*   Weisses Kabel - mit RXD0 (Receive) verbinden
-
-Das Rote und Schwarze Kabel wird nicht benötigt. Die Baudrate ist auf 115200 einzustellen.
-
-**SDK Version ab 1.5.4:**
-
-Modem mit Access Point verbinden:
-
-*   **AT+RST** - Reboot Modem
-*   **AT+GMR** - Ausgabe SW Version
-*   **AT+CWMODE=1** - WLAN Modem als Client (Station) konfigurieren
-*   **AT+CWJAP_CUR="mcbmobile_2EX","android%123"** - mit Access Point mcbmobile_2EX verbinden
-*   **AT+CIFSR** - Ausgabe der IP-Adresse
-
-#### Firmware Update
-
-Dazu ist das Modem mit einem USB To RS232 TTL Converter zu Verbinden und eine Drahtbrücke von GND nach GPIO0 zu legen.
-
-Die Software und Firmware wie in [ESP8266 Firmware Update](https://os.mbed.com/teams/ESP8266/wiki/Firmware-Update) beschrieben herunterladen.
-
-Mittels eines Drahtes GND und RESET für eine Sekunde kurzschliessen und mittels des Flash Download Tools die Firmware updaten.
-
-Die beschriebene Schaltung "serial passthrough" hat nicht funktioniert, so dass der Update mittels USB To RS232 TTL Converter erfolgt ist.
-Auf der mbed MCU ist vorher ein einfaches Programm, z.B. DigitalOut zu uploaden, welche das ESP8266 nicht verwendet und auch nicht stört.
+* [Network Time Protocol (NTP)](#network-time-protokoll-ntp) - holt die Zeit vom Internet und setzt die interne Uhr des Boards.
+* [LowLevel Wifi Zugriff](wifi/src/main.cpp) - WLAN Zugriff, ohne `"network-helper.h"` Datei.
 
 ### Links
 
-* [Mikrocontroller.net](https://www.mikrocontroller.net/articles/ESP8266)
-* [espressif Firmware](https://github.com/espressif/ESP8266_NONOS_SDK/tree/master/bin/at)
-* [Verzeichnis AT Commandos.](https://room-15.github.io/blog/2015/03/26/esp8266-at-command-reference/)
-* [Chip Hersteller](https://espressif.com/en)
-* [Auführliche Beschreibung](https://playground.boxtec.ch/doku.php/wireless/esp8266)
-*  [Arm Mbed Online Compiler](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/ESP8266/)
+* [Gegenüberstellung HTTP, MQTT, CoAP](https://os.mbed.com/blog/entry/Using-HTTP-HTTPS-MQTT-and-CoAP-from-mbed/)
+
+## Network Time Protocol (NTP)
+***
+
+> [⇧ **Nach oben**](#)
+
+![](../images/NTPArchitecture.png) 
+
+NTP Hierarchie, Quelle: [Wikipedia](http://de.wikipedia.org/wiki/Network_Time_Protocol)
+
+- - -
+
+Das Network Time Protocol (NTP) ist ein Standard zur Synchronisierung von Uhren in Computersystemen über paketbasierte Kommunikationsnetze. NTP verwendet das verbindungslose Transportprotokoll UDP. NTP wurde speziell entwickelt, um eine zuverlässige Zeitangabe über Netzwerke mit variabler Paketlaufzeit zu ermöglichen.
+
+Im allgemeinen Sprachgebrauch bezeichnet NTP sowohl das Protokoll als auch die Software-Referenzimplementierung.
+
+NTP nutzt ein hierarchisches System verschiedener Strata (Plural von Stratum). Als Stratum 0 bezeichnet man das Zeitnormal, beispielsweise eine Atomuhr oder eine Funkuhr (genauer: Zeitzeichenempfänger) (GNSS, DCF77). Die unmittelbar mit ihm gekoppelten NTP-Server heißen Stratum 1. Jede weitere abhängige Einheit erhält bei der Bezeichnung eine höhere Nummer (Stratum 2, Stratum 3 …).
+
+Das Network Time Protocol ist in der [NTP Library](https://os.mbed.com/users/donatien/code/NTPClient/) abgebildet.
+
+### Anwendungen 
+
+*   Alle Arten von Zeit basierenden Anwendungen, wie Zeitschaltuhren etc.
+
+### Beispiel(e)
+
+Das Beispiel [NTPV2](NTPV2/src/main.cpp) holt die Zeit vom Internet und setzt die interne Uhr des Boards.
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/wlan/NTPV2; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/wlan/NTPV2` |
+
