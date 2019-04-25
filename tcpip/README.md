@@ -1,5 +1,7 @@
-Netzwerke und Ports
--------------------
+## Sockets (TCP/UDP)
+***
+
+> [⇧ **Home**](../README.md)
 
 ### TCP/IP (Internetprotokollfamilie)
 
@@ -131,10 +133,9 @@ Generell kann man unterscheiden zwischen [TCP](http://de.wikipedia.org/wiki/Tran
 *   Öffnen eines weiteren Ports, z.B. von einem Browser, um eine Datei downzuladen.
 *   Bidirektionale Kommunikation mit dem anderen Geräten, Anwendern, Servern etc., via TCP/IP
 
-### Beispiele (ab mbed OS V5.x)
+### Beispiel(e)
 
-* [Network Sockets on developer.mbed.org](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/communication/network_sockets/)
-* [Websockets on developer.mbed.org](https://os.mbed.com/cookbook/Websockets-Server)
+* [Network Sockets on os.mbed.org](https://os.mbed.com/docs/mbed-os/latest/apis/network-socket.html)
 
 
 

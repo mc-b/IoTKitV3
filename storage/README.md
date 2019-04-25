@@ -1,5 +1,7 @@
-Speicher APIs (Storage)
-=======================
+## Speicher APIs (Storage)
+***
+
+> [⇧ **Home**](../README.md)
 
 Die im Arm Mbed-Betriebssystem vorhandenen Speicher-APIs sind:
 
@@ -34,6 +36,8 @@ Danmit die Speicher-APIs auf die Pins zusteuern ist die `mbed_app.json` wie folg
 	    }
 	} 
 	
+Für das DISCO_L475VG_IOT01A Board ist **K64F** durch **DISCO_L475VG_IOT01A** zu ersetzen.
+	
 Damit werden die `STORAGE` und `SD` Features/Komponenten enabled und die Pins zugewiesen.
 
 An den eigentlichen Programmen ist dann nicht mehr zu ändern.
@@ -44,5 +48,5 @@ An den eigentlichen Programmen ist dann nicht mehr zu ändern.
 
 ### Links
 
-* [API Beispiele](https://os.mbed.com/docs/mbed-os/v5.11/apis/storage.html)
-* [Storage Konfiguration](https://os.mbed.com/docs/mbed-os/v5.11/reference/storage.html)
+* [API Beispiele](https://os.mbed.com/docs/mbed-os/latest/apis/storage.html)
+* [Storage Konfiguration](https://os.mbed.com/docs/mbed-os/latest/reference/storage.html)
