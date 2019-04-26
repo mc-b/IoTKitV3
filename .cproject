@@ -721,6 +721,62 @@
 									<listOptionValue builtIn="false" value="DEVICE_PORTIN=1"/>
 									<listOptionValue builtIn="false" value="TARGET_MCU_K64F"/>
 									<listOptionValue builtIn="false" value="TARGET_CORTEX_M"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUTTON1=PTC13"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUTTON2=PTC6"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUTTON3=PTA4"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUZZER=D12"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_MISO=PTD7"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_MOSI=PTD6"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_SCLK=PTD5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_SS=PTE6"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_I2C_SCL=PTE24"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_I2C_SDA=PTE25"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_UART_RX=PTE5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_UART_TX=PTE4"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE1_1=A4"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE1_2=A5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE2_1=D2"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE2_2=D3"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE3_1=D5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE3_2=D6"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_HALL_SENSOR=PTC0"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_I2C_SCL=PTE1"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_I2C_SDA=PTE0"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED_SPI_MOSI=PTD6"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED_SPI_SCLK=PTD5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED1=D10"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED2=D11"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED3=D12"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED4=D13"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOSFET1=D5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOSFET2=D6"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOSFET3=D7"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR1_FWD=D2"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR1_PWM=D3"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR1_REV=D4"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR2_FWD=D6"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR2_PWM=D5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR2_REV=D7"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_OLED_RST=PTE26"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_OLED_SCL=PTE1"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_OLED_SDA=PTE0"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_MISO=PTC7"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_MOSI=PTA16"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_RST=D8"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_SCLK=PTC5"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_SS=D10"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO1=D9"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO2=D10"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO3=D11"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO4=D12"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_1=PTB0"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_2=PTB1"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_3=PTB21"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_4=PTB20"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_1=PTC9"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_2=PTC8"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_3=PTB19"/>
+			                        <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_4=PTB18"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.869095164" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -1099,6 +1155,62 @@
 									<listOptionValue builtIn="false" value="DEVICE_PORTIN=1"/>
 									<listOptionValue builtIn="false" value="TARGET_MCU_K64F"/>
 									<listOptionValue builtIn="false" value="TARGET_CORTEX_M"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUTTON1=PTC13"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUTTON2=PTC6"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUTTON3=PTA4"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_BUZZER=D12"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_MISO=PTD7"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_MOSI=PTD6"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_SCLK=PTD5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_DOTLED_SS=PTE6"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_I2C_SCL=PTE24"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_I2C_SDA=PTE25"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_UART_RX=PTE5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE_UART_TX=PTE4"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE1_1=A4"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE1_2=A5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE2_1=D2"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE2_2=D3"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE3_1=D5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_GROVE3_2=D6"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_HALL_SENSOR=PTC0"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_I2C_SCL=PTE1"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_I2C_SDA=PTE0"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED_SPI_MOSI=PTD6"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED_SPI_SCLK=PTD5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED1=D10"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED2=D11"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED3=D12"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_LED4=D13"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOSFET1=D5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOSFET2=D6"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOSFET3=D7"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR1_FWD=D2"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR1_PWM=D3"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR1_REV=D4"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR2_FWD=D6"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR2_PWM=D5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_MOTOR2_REV=D7"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_OLED_RST=PTE26"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_OLED_SCL=PTE1"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_OLED_SDA=PTE0"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_MISO=PTC7"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_MOSI=PTA16"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_RST=D8"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_SCLK=PTC5"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_RFID_SS=D10"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO1=D9"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO2=D10"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO3=D11"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_SERVO4=D12"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_1=PTB0"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_2=PTB1"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_3=PTB21"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER1_4=PTB20"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_1=PTC9"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_2=PTC8"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_3=PTB19"/>
+                                    <listOptionValue builtIn="false" value="MBED_CONF_IOTKIT_STEPPER2_4=PTB18"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1704200665" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>

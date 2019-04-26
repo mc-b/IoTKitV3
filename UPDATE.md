@@ -21,4 +21,7 @@ Die Konfigurationsparameter Tabelle kann wie folgt erstellt werden:
     mbed compile --config -m DISCO_L475VG_IOT01A --prefix iotkit | cut "-d " -f3 >v3
     paste v1 v2 v3 | awk '{ printf( "| %s | %s | %s |\n", $1, $2, $3 ) }' >v4.txt
 
+Die Build-in Variables in `.cproject` können wie folgt erstellt werden:
+
+    paste v1 v2 | awk '{ printf( "\t\t\t<listOptionValue builtIn=\"false\" value=\"%s=%s\"/>\n", $1, $2 ) }' | tr -d '\r' >v5.txt
     
