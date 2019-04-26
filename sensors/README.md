@@ -8,9 +8,10 @@ Sensoren sind technische Bauteile, die Eigenschaften der Umgebung (z. B.: Wärme
 
 ### Beispiele
 
-* [Hall Sensor](#Hall-Sensor)
-* [PIR Sensor](#PIR-Sensor)
-* [Ultraschall Abstandsmesser](#Ultraschall-Abstandsmesser)
+* [Hall Sensor](#hall-sensor)
+* [PIR Sensor](#pir-sensor)
+* [Ultraschall Abstandsmesser](#ultraschall-abstandsmesser)
+* [Temperatur Sensor](#temperatur-sensor) externe Variante
 * [Übungen](#Übungen)
 
 ## Hall Sensor 
@@ -173,13 +174,13 @@ Das Beispiel [UltraschallSensor_LowLevelV2](UltraschallSensor_LowLevelV2/src/mai
 
 > [⇧ **Nach oben**](#beispiele)
 
-![](../../images/sensors/TemperatureSensorUse.png)
+![](../images/sensors/TemperatureSensorUse.png)
 
 Beispiel Anwendung
 
 - - -
 
-![](../../images/sensors/TemperatureSensor.png)
+![](../images/sensors/TemperatureSensor.png)
 
 DHT11
 
