@@ -168,6 +168,56 @@ Das Beispiel [UltraschallSensor_LowLevelV2](UltraschallSensor_LowLevelV2/src/mai
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/UltraschallSensor_LowLevelV2;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/UltraschallSensor_LowLevelV2` |
 
+## Temperatur Sensor 
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+![](../../images/sensors/TemperatureSensorUse.png)
+
+Beispiel Anwendung
+
+- - -
+
+![](../../images/sensors/TemperatureSensor.png)
+
+DHT11
+
+- - -
+
+Der DHT11 ist ein multifunktionaler Sensor, der [Temperatur](http://de.wikipedia.org/wiki/Temperatursensor) und relative Luftfeuchte gleichzeitig misst. Er liefert zuverlässige Messwerte bei einer Luftfeuchtigkeit zwischen 20 % und 90 % und einer Temperatur zwischen 0 ° bis 50 ° Celsius.
+
+Der Sensor benötigt die [DHT Library](http://developer.mbed.org/teams/components/code/DHT/)
+
+**Tip:** zum Testen der Temperatur den Sensor zwischen die Hände halten. Zum Testen der Luftfeuchtigkeit, Sensor anhauchen.
+
+### Anwendungen 
+
+*   Überwachen Temperatur und Luftfeuchtigkeit
+*   Ein- / Ausschalten der Heizung, Klimaanlage etc.
+
+### Anschlussbelegung 
+
+*   "+" - +5V (5 Volt)
+*   OUT - A5
+*   "-" - GND (Ground)
+
+### Beispiel(e)
+
+Das [Beispiel](TemperaturSensorExtern/src/main.cpp) gibt Temperatur und Luftfeuchtigkeit auf der Console aus.
+
+### Compilieren
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler           | [TemperaturSensorExtern](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/TemperaturSensorExtern/) |
+| CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/TemperaturSensorExtern;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/TemperaturSensorExtern` |
+| Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Beispielcode überschreiben |
+| CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/TemperaturSensorExtern_LowLevelV2;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/TemperaturSensorExtern_LowLevelV2` |
+
+
 ## Übungen
 ***
 
