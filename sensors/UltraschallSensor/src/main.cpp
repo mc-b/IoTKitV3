@@ -9,7 +9,7 @@
     printf("Entfernung %dmm\n", distance);
 }
  
-ultrasonic mu(D5, D6, .1, 1, &dist);    // setzt den Trigger Pin auf D5, den Echo Pin auf D6
+ultrasonic mu(A4, A5, .1, 1, &dist);    // setzt den Trigger Pin auf A4, den Echo Pin auf A5
                                         // liefert all 0.1 Sekunten einen neuen Wert mit einem
                                         // Timeout von 1 Sekunden. Fuer die Ausgabe des Wertes
                                         // wird die Funktion dist aufgerufen.

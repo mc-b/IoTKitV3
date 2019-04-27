@@ -4,6 +4,13 @@ Sensoren
 
 > [⇧ **Home**](../README.md)
 
+![](../images/Messysteme.png)
+
+Source: Prof. Dr.-Ing. Michael Weyrich, http://wiki.zimt.uni-siegen.de/fertigungsautomatisierung
+
+- - -
+
+
 Sensoren sind technische Bauteile, die Eigenschaften der Umgebung (z. B.: Wärmestrahlung, Temperatur, Feuchtigkeit, Druck, Schall, Helligkeit oder Beschleunigung) erfassen und in ein weiter verarbeitbares elektrisches Signal umformen.
 
 ### Beispiele
@@ -96,9 +103,9 @@ Der [PIR Sensor (Bewegungsmelder)](http://de.wikipedia.org/wiki/Bewegungsmelder)
 
 ### Anschlussbelegung (Sensor - Shield) 
 
-*   VCC - V (5 Volt)
+*   VCC - +5V (5 Volt)
 *   OUT - A5
-*   GND - G (Ground)
+*   GND - GND (Ground)
 
 ### Beispiel(e)
 
@@ -148,8 +155,8 @@ Die Ganze Arbeit nimmt uns die [SR04](http://developer.mbed.org/users/ejteb/code
 ### Anschlussbelegung (Sensor - Shield)
 
 *   VCC - V (5 Volt)
-*   Trig - (siehe main.cpp)
-*   Echo - (siehe main.cpp)
+*   Trig - A4
+*   Echo - A5
 *   GND - G (Ground)
 
 ### Beispiel(e)
@@ -165,6 +172,9 @@ Das Beispiel [UltraschallSensor_LowLevelV2](UltraschallSensor_LowLevelV2/src/mai
 | Online Compiler           | [UltraschallSensor](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/UltraschallSensor/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/UltraschallSensor;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/UltraschallSensor` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
 | Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Beispielcode überschreiben |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/UltraschallSensor_LowLevelV2;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/UltraschallSensor_LowLevelV2` |
@@ -211,9 +221,6 @@ Das [Beispiel](TemperaturSensorExtern/src/main.cpp) gibt Temperatur und Luftfeuc
 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
-| Online Compiler           | [TemperaturSensorExtern](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/TemperaturSensorExtern/) |
-| CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/TemperaturSensorExtern;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
-| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/TemperaturSensorExtern` |
 | Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Beispielcode überschreiben |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/TemperaturSensorExtern;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/TemperaturSensorExtern` |
@@ -224,7 +231,7 @@ Das [Beispiel](TemperaturSensorExtern/src/main.cpp) gibt Temperatur und Luftfeuc
 
 > [⇧ **Nach oben**](#beispiele)
 
-Ein paar der Übungen funktionieren nur mit dem IoTKitV3 K64F, weil der Encoder benötigt wird.
+**Hinweis**: Ein paar der Übungen funktionieren nur mit dem IoTKitV3 K64F, weil der Encoder benötigt wird.
 
 | Übung                     | Lösung       |
 | ------------------------- | ------------ |
