@@ -3,9 +3,7 @@
 
 > [⇧ **Home**](../README.md)
 
-![](../images/sensors/RFIDTag.png)
-
-[RFID Tags](http://de.wikipedia.org/wiki/Near_Field_Communication)
+[![](https://www.st.com/content/ccc/fragment/multimedia/video/product_video_thumbnail/group0/e1/e2/a9/18/f0/44/46/f1/What%20is%20NFC%20-%20Thumbnail/files/What%20is%20NFC%20Thumbnail.jpg/_jcr_content/translations/en.What%20is%20NFC%20Thumbnail.jpg)](https://st-videos.s3.amazonaws.com/2017-NFC-forum-what-is-nfc.mp4)
 
 - - -
 
@@ -23,7 +21,12 @@ Die Technik hinter NFC basiert auf der englisch [radio-frequency identification 
 *   Zugangskontrolle
 *   Wächterkontrollsysteme zum Nachweis der Anwesenheit eines NFC-Lesegerätes an einem bestimmten Kontrollpunkt mit montierten oder geklebtes NFC-Tag. Steuerung des Smartphones durch im Handel verfügbare NFC-Tags (z. B. SmartTags von Sony, TecTiles von Samsung, oder universell einsetzbare BluewaveTags)
 
-## RFID (Sensor, SPI)
+### Beispiele
+
+* [RFID Reader](#rfid-reader)
+* [Dynamic NFC Tag (nur DISCO_L475VG_IOT01A Board)](#nfc-tag)
+
+## RFID Reader
 ***
 
 > [⇧ **Nach oben**](#beispiele)
@@ -99,4 +102,35 @@ Der RFID Reader benötigt die [MFRC522 Library](http://developer.mbed.org/users/
 | ----------------- | -------------------------------- |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDDump; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDDump` |
+
+## NFC Tag
+
+Das DISCO_L475VG_IOT01A Board beinhaltet ein dynamisches NFC-Tag basierend auf dem [M24SR](https://www.st.com/en/nfc/m24sr-series-dynamic-nfc-tags.html) mit einer gedruckten NFC-Antenne.
+
+Die M24SR-Serie bietet eine NFC-Forum-Tag-Typ-4-HF-Schnittstelle und unterstützt das NFC-Datenaustauschformat (NDEF). 
+
+Dies ermöglicht NFC-Anwendungsfälle wie einfaches Bluetooth-Pairing und andere Verbindungen, automatische Links zu URLs, Speichern von Vcard und andere Arten von Informationen. 
+
+### Anwendungen
+
+* Unterhaltungselektronik,
+* Computerperipheriegerät
+* Haushaltsgeräte
+* Industrieautomatisierung 
+* Gesundheitsprodukte
+
+### Beispiel(e)
+
+
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [RFIDReaderV3](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RFIDReaderV3/) |
+
+### Links
+
+* [Produktseite](https://www.st.com/en/nfc/m24sr-series-dynamic-nfc-tags.html)
+
 
