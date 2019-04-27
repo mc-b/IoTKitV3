@@ -73,7 +73,7 @@ int main()
     send( "AT+CIPMUX=1" );  // Mehrere Verbindungen aktivieren
     wait( 1.0f );    
     
-    send( "AT+CIPSTART=4,\"TCP\",\"www.sunrise.ch\",80" );  // Socket zu google.com oeffnen
+    send( "AT+CIPSTART=4,\"TCP\",\"httpbin.org\",80" );  // Socket zu google.com oeffnen
     wait( 1.0f ); 
     
     send( "AT+CIPSEND=4,18" );  // 18 Zeichen senden
