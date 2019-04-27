@@ -33,8 +33,8 @@ Es enthält alle Funktionen, die benötigt werden, um ein angeschlossenes Produk
 > [⇧ **Nach oben**](#inhaltsverzeichnis)
 
 Als Entwicklungsumgebung können folgende Produkte verwendet werden:
-* der [Arm Mbed Online Compiler (empfohlen)](https://os.mbed.com/compiler/)
-* das [mbed CLI](https://github.com/ARMmbed/mbed-cli)
+* der [Arm Mbed Online Compiler (empfohlen)](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html)
+* das [mbed CLI](https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html)
 
 Eine Tabelle unterhalb jedes Beispiels enthält einen Link auf die Online Version oder zeigt an, wie das Programm für das jeweilige Board zu compilieren ist.
 
