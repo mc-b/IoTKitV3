@@ -94,7 +94,7 @@ Weitere Beispiele siehe [mbed Komponenten Verzeichnis](http://developer.mbed.org
     int feld[10];                                       // Anlegen ohne Initialisierung
     int feld[]   = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };   // Mit Initialisierung (automatisch 10 Elemente)
     int feld[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };   // Fehleranfällig, weil der Compiler ein 11tes Element nicht als Fehler erkennt                    
-    char host[]  = "mbed-myboard";                      // Zeichenkette es wird automatisch ein &#039;\0&#039; als Abschluss angefügt
+    char host[]  = "mbed-myboard";                      // Zeichenkette es wird automatisch ein Hex 0 als Abschluss angefügt
 
 ### Beispiel struct 
 

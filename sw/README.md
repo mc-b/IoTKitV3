@@ -51,24 +51,24 @@ Die Tabelle ist wie folgt zu lesen:
 * **CLI (IoTKit K64F)** zeigt die Befehle in der Spalte *Link/Befehl*, welche benötigt werden um das Beispiel, mittels [mbed CLI](https://github.com/ARMmbed/mbed-cli), zu Compilieren und das fertige Programm auf das IoTKit K64F Board zu kopieren. 
 * **CLI (DISCO_L475VG_IOT01A)** zeigt den Befehl in der Spalte *Link/Befehle*, welcher benötigt wird um das Beispiel, mittels [mbed CLI](https://github.com/ARMmbed/mbed-cli), zu Compilieren und das fertige Programm auf das DISCO_L475VG_IOT01A Board zu kopieren.
 
-Bei beiden **CLI** Varianten wird vorausgesetzt das, dass [mbed CLI](https://github.com/ARMmbed/mbed-cli) wie unten Installiert wurde wir uns in der *Bash* Shell im Verzeichnis `template` befinden. 
+Bei beiden **CLI** Varianten wird vorausgesetzt, dass das [mbed CLI](https://github.com/ARMmbed/mbed-cli) Installiert wurde und wir uns in der *Bash* Shell im Verzeichnis `template` befinden. 
 
 Bei der **CLI (IoTKit K64F)** Variante muss zusätzlich das Laufwerk mittels der Umgebungsvariable `DAPLINK` gesetzt sein, z.B. `EXPORT DAPLINK=/d` für das Laufwerk D:.
 
 Ist kein Link **Online Compiler** vorhanden, kann das [IoTKit V3 Template](https://os.mbed.com/teams/IoTKitV3/code/template/) verwendet werden. Dabei ist der Inhalt von `main.cpp` mit dem Inhalt des Beispiels zu ersetzen.
 
-**ACHTUNG**: kann der IoTKit V3 K64F nicht mehr Programmiert werden, Upload endet sofort und es erscheint eine Datei `FAIL.TXT`, ist leicht am Encoder zu drehen und das Board ein- und auszustecken.
+**ACHTUNG**: kann der IoTKit K64F nicht mehr Programmiert werden, Upload endet sofort und es erscheint eine Datei `FAIL.TXT`, ist leicht am Encoder zu drehen und das Board ein- und auszustecken.
 
 ### mbed-cli 
 ***
 
 > [⇧ **Nach oben**](#inhaltsverzeichnis)
 
-Für die Offline-Entwicklung bietet Arm Mbed CLI, ein Befehlszeilentool. Mbed CLI ist kompatibel mit Windows, Linux und Mac OS. Mbed CLI bietet mehr Optionen, erfordert jedoch etwas mehr Setup.
+Für die Offline-Entwicklung bietet Arm Mbed CLI, ein Befehlszeilentool an. Mbed CLI ist kompatibel mit Windows, Linux und Mac OS. Mbed CLI bietet mehr Optionen, erfordert jedoch etwas mehr Installation.
 
 [mbed cli](https://github.com/ARMmbed/mbed-cli) mit allen Abhängigkeiten (Python, GCC_ARM) wie unter [Installation](https://github.com/ARMmbed/mbed-cli#installation) beschrieben, installieren.
 
-*Bash* Shell starten und in ein Verzeichnis, wo die Beispiele abgelegt werden sollen wechseln, z.B.
+*Bash* Shell starten und in ein Verzeichnis, wo die Beispiele abgelegt werden sollen, wechseln, z.B.
 
     cd /c/
     
@@ -83,11 +83,11 @@ Globale Konfigurationen für Board und Compiler setzen.
 	cd template
 	mbed compile
 	
-Für das DISCO_L475VG_IOT01A ist der letzte Befehl durch `mbed compile -m DISCO_L475VG_IOT01A -f` zu ersetzen.	Das Kopieren des Programm und der Reset des Boards erfolgt automatisch.
+Für das DISCO_L475VG_IOT01A ist der letzte Befehl durch `mbed compile -m DISCO_L475VG_IOT01A -f` zu ersetzen.	Das Kopieren des Programm und der Reset des Boards erfolgt bei diesem Board automatisch.
 
-Nur **IoTKitV3 K64F**: 
+Nur **IoTKitV3 K64F**:
 * Das compiliertes Beispiel Programm befindet sich im Verzeichnis `BUILD/K64F/GCC_ARM` mit Namen `template.bin`. 
-* Dieses ist auf das Laufwerk mit Namen `DAPLINK` zu kopieren und der `Reset`-Button zu drücken, z.B. `cp BUILD/K64F/GCC_ARM/template.bin /d/`
+* Dieses ist auf das Laufwerk mit Namen `DAPLINK` zu kopieren und der `Reset`-Button zu drücken, z.B. `cp BUILD/K64F/GCC_ARM/template.bin /d/` bzw. `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK`
 
 Das Compilierte Programm baut eine Verbindung mit dem Internet auf (WLAN Einstellungen siehe `mbed_app.json`) und zeigt die aktuelle Zeit auf dem OLED Display an.
 	
@@ -106,7 +106,7 @@ oder
 	
 	mbed compile --source . --source ../IoTKitV3/cloud/HallSensorAlarm/
 	
-Und dann wie, oben beschrieben, auf das Board zu kopieren und dieses zu Reseten.
+Um es dann wie, oben beschrieben, auf das Board zu kopieren und dieses zu Reseten. Die jeweiligen Befehle stehen nochmals unterhalb jedes Beispiels unter **Compilieren**.
 
 **Optional** Beispiele für Eclipse aufbereiten
 
@@ -123,11 +123,11 @@ Anschliessend mittels File -> Import -> Existing Projects `template` und `IoTKit
 
 > [⇧ **Nach oben**](#inhaltsverzeichnis)
 
-Die Kommunikation mit Ihrem Entwicklungsboard ist ein wesentlicher Bestandteil der Programmierung und des Debugging. Terminalanwendungen erleichtern diese Kommunikation. Die Verwendung von Terminalanwendungen ist häufig der zweite Schritt des Debugging nach blinkenden Lichtern und kann Ihnen mehr Informationen geben als blinkende Lichter.
+Die Kommunikation mit Ihrem Entwicklungsboard ist ein wesentlicher Bestandteil der Programmierung und des Debugging. Terminalanwendungen erleichtern diese Kommunikation. Die Verwendung von Terminalanwendungen ist häufig der zweite Schritt des Debuggings und kann Ihnen mehr Informationen geben als blinkende Lichter.
 
 **Windows serial driver**
 
-Sie können Ihr Board über USB an Ihren Computer anschließen. Dies sollte unter Linux und macOS sofort funktionieren, aber für Windows vor Windows 10 müssen Sie wahrscheinlich einen Treiber für die serielle Schnittstelle installieren:
+Sie können Ihr Board über USB an Ihren Computer anschließen. Dies sollte unter Linux und macOS sofort funktionieren. Für Windows 10 müssen Sie einen Treiber für die serielle Schnittstelle installieren:
 
 * Laden Sie den seriellen [Port-Treiber](http://os.mbed.com/media/downloads/drivers/mbedWinSerial_16466.exe) von Arm Mbed herunter .
 * Schließen Sie Ihr Arm Mbed-Gerät über USB an. Es wird als Laufwerk angezeigt.
