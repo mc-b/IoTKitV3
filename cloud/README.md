@@ -265,7 +265,7 @@ Programm compilieren und auf das Board downloaden. Unter **Private View** sollte
 
 ### Beispiel(e)
 
-Das Beispiel [ThingSpeak](ThingSpeak/src/main.cpp) schickt Sensordaten an den ThingSpeak Cloud Dienst.
+Das Beispiel [ThingSpeak](ThinkSpeak/src/main.cpp) schickt Sensordaten an den ThingSpeak Cloud Dienst.
 
 **Compilieren**
 
@@ -371,7 +371,7 @@ Aufruf mittels curl
 
 ### Beispiel(e)
 
-Das Beispiel [YahooWheater](YahooWheater/src/main.cpp) holt die Wetterdaten von Yahoo.
+Das Beispiel [YahooWheater](YahooWeather/src/main.cpp) holt die Wetterdaten von Yahoo.
 
 **Compilieren**
 

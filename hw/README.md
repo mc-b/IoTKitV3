@@ -86,7 +86,6 @@ Internet der Dinge Board
 
 * [mbed Page](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/)
 * [Product Page](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html?icmp=tt5071_gl_bn_apr2017)
-* [Code](https://os.mbed.com/teams/Disco-L475VG-IOT/)
 * [User Manual](https://www.st.com/content/ccc/resource/technical/document/user_manual/group0/b1/b8/7a/f2/f7/8d/4b/6b/DM00347848/files/DM00347848.pdf/jcr:content/translations/en.DM00347848.pdf)
 * [Schematics](https://www.st.com/resource/en/schematic_pack/b-l475e-iot01ax_sch.zip)
 

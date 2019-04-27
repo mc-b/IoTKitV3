@@ -5,66 +5,9 @@
 
 ### TCP/IP (Internetprotokollfamilie)
 
-<table width="100%" style="margin: auto; text-align: center;" border="1">
-    <tr>
-        <th class="hintergrundfarbe6">OSI-Schicht</th>
-        <th class="hintergrundfarbe6">TCP/IP-Schicht</th>
-        <th class="hintergrundfarbe6">Beispiel</th>
-    </tr>
-    <tr>
-        <th class="hintergrundfarbe7">Anwendungen&#160;(7)</th>
-        <td class="hintergrundfarbe7" rowspan="4">Anwendungen</td>
-        <td class="hintergrundfarbe7" rowspan="3"><a
-            href="http://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
-            title="Hypertext Transfer Protocol">HTTP</a>, <a
-            href="http://de.wikipedia.org/wiki/File_Transfer_Protocol" title="File Transfer Protocol">FTP</a>,
-            <a href="http://de.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol"
-            title="Simple Mail Transfer Protocol">SMTP</a>, <a
-            href="http://de.wikipedia.org/wiki/Post_Office_Protocol" title="Post Office Protocol">POP</a>,
-            <a href="http://de.wikipedia.org/wiki/Telnet" title="Telnet">Telnet</a></td>
-    </tr>
-    <tr>
-        <th class="hintergrundfarbe7">Darstellung&#160;(6)</th>
-    </tr>
-    <tr>
-        <th class="hintergrundfarbe7">Sitzung&#160;(5)</th>
-    </tr>
-    <tr>
-        <td></td>
-        <td class="hintergrundfarbe7"><a href="http://de.wikipedia.org/wiki/SOCKS" title="SOCKS">SOCKS</a></td>
-    </tr>
-    <tr>
-        <th class="hintergrundfarbe9">Transport&#160;(4)</th>
-        <td class="hintergrundfarbe9">Transport</td>
-        <td class="hintergrundfarbe9"><a
-            href="http://de.wikipedia.org/wiki/Transmission_Control_Protocol"
-            title="Transmission Control Protocol"><b>TCP</b></a>, <a
-            href="http://de.wikipedia.org/wiki/User_Datagram_Protocol" title="User Datagram Protocol"><b>UDP</b></td>
-    </tr>
-    <tr>
-        <th class="hintergrundfarbe3">Vermittlung&#160;(3)</th>
-        <td class="hintergrundfarbe3">Internet</td>
-        <td class="hintergrundfarbe3"><a href="http://de.wikipedia.org/wiki/Internet_Protocol"
-            title="Internet Protocol">IP</a> (<a href="http://de.wikipedia.org/wiki/IPv4" title="IPv4">IPv4</a>,
-            <a href="http://de.wikipedia.org/wiki/IPv6" title="IPv6">IPv6</a>)</td>
-    </tr>
-    <tr>
-        <th class="hintergrundfarbe4">Sicherung&#160;(2)</th>
-        <td class="hintergrundfarbe4" rowspan="2">Netzzugang</td>
-        <td class="hintergrundfarbe4" rowspan="2"><a href="http://de.wikipedia.org/wiki/Ethernet"
-            title="Ethernet"><b>Ethernet</b></a>, <a
-            href="http://de.wikipedia.org/wiki/Fiber_Distributed_Data_Interface"
-            title="Fiber Distributed Data Interface">FDDI</a>, <a
-            href="http://de.wikipedia.org/wiki/Wireless_Local_Area_Network"
-            title="Wireless Local Area Network">Wifi/WLAN</a></td>
-    </tr>
-    <tr>
-        <th class="hintergrundfarbe4">Bitübertragung&#160;(1)</th>
-    </tr>
-</table>
+![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)
 
-<p style="font-size: 0.5em">Quelle: [Wikipedia](http://de.wikipedia.org/wiki/Internetprotokollfamilie)</p>
-
+Quelle: [mbed.com](https://os.mbed.com/docs/mbed-os/latest/apis/network-socket.html)
 - - -
 
 Transmission Control Protocol / Internet Protocol (TCP/IP) ist eine Familie von Netzwerkprotokollen und wird wegen ihrer großen Bedeutung für das Internet auch als Internetprotokollfamilie bezeichnet.

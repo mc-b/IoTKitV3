@@ -39,7 +39,7 @@ Komplettes Verzeichnis: [OMNA Lightweight M2M (LWM2M) Object & Resource Registry
 
 Das Beispiel [coap-example](coap-example/src/main.cpp) schickt eine CoAP Meldung an coap.me.
 
-Eine umfangreicheres und aktuelles Beispiel inkl. Anleitung findet man auf [ARM Pelion](https://www.pelion.com/iot-device-management/).
+Eine umfangreicheres Beispiel inkl. Anleitung findet man auf [ARM Pelion](https://www.pelion.com/iot-device-management/), der Cloud Plattform von mbed.
 
 **Compilieren**
 

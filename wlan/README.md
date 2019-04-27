@@ -38,6 +38,23 @@ Um mit dem Internet zu kommunizieren ist die `"network-helper.h"` Datei aus der 
 
 Je nach Board wird dann das entsprechende WLAN Modem initialisert und eine IP-Adresse gelöst. Ab dort ist die Kommunikation mit dem Internet möglich.
 
+Die WLAN SSID und Password steht in der Datei `mbed_app.json`.
+
+**Beispiel**:
+
+```js
+
+    "config": {
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"LERNKUBE\""
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"l3rnk4b3\""
+        },
+```        
+
 ### Beispiel(e)
 
 * [Network Time Protocol (NTP)](#network-time-protokoll-ntp) - holt die Zeit vom Internet und setzt die interne Uhr des Boards.

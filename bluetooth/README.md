@@ -12,6 +12,9 @@ Diese Wearables verwenden sehr oft das Bluetooth Protokoll. Auf dem IoTKit K64F 
 * [Herzfrequenzmesser](#herzfrequenzmesser)
 * [Beacon](#beacons)
 
+* Weitere Beispiele (rechts unten) auf [Board Overview Site](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/). Diese müssen, wie unten beschrieben, für das IoTKit K64F Board angepasst werden.
+
+
 ## Herzfrequenzmesser
 ***
 
@@ -108,8 +111,5 @@ Die Nummern bzw. der URL können in den entsprechenden Programmen angepasst werd
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/bluetooth/Beacon; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/bluetooth/Beacon` |
 
-### Links
-
-* Weitere Beispiele (rechts unten) auf [Board Overview Site](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/). Müssen, für das IoTKit K64F Board wie oben Beschrieben, angepasst werden.
 
 
