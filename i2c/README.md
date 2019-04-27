@@ -48,6 +48,7 @@ Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je n
 * [High-performance 3-axis magnetometer (LIS3MDL)](#LIS3MDL)
 * [3D accelerometer and 3D gyroscope (LSM6DSL)](#LSM6DSL)
 * [mbed - Arduino Kommunikation](#mbed---Arduino-Kommunikation)
+* [Übungen](#Übungen)
 
 ## VL6180X
 ***
@@ -264,3 +265,24 @@ Das mbed Board übernimmt dabei die Verbindung zum Internet und die Feinverteilu
 | Online Compiler | [mbed2Arduino](https://developer.mbed.org/compiler/#import:/teams/smdiotkit1ch/code/mbed2Arduino/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/mbed2Arduino; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/mbed2Arduino` |
+
+## Übungen
+***
+
+> [⇧ **Nach oben**](#beispiele)
+
+| Übung                     | Lösung       |
+| ------------------------- | ------------ |
+| **6D Lagesensor und Servo** steuert mit dem 6 Lagensensor die Position des Servos<br>**Anwendungen**: Ausgleich der Lage z.B. bei einem Zug. | [Lösung](01-Uebung/src/main.cpp) |
+| **6D Lagsensor und Schrittmotor** bringt mit dem 6 Lagesensor den ersten oder zweiten Schrittmotor vor- oder rückwärts zum laufen. | [Lösung](02-Uebung/src/main.cpp) |
+| **Abstandssensor und Motor** Motor Geschwindigkeit anhand des Abstandes zum Abstandssensor setzen. Wie näher desto schneller. | [Lösung](03-Uebung/src/main.cpp) | 
+
+### Compilieren
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Übungscode überschreiben |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/01-Uebung` |
+
+* *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.

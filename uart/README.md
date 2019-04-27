@@ -171,7 +171,7 @@ Auf der mbed MCU ist vorher ein einfaches Programm, z.B. DigitalOut zu uploaden,
 | Übung                     | Lösung       |
 | ------------------------- | ------------ |
 | **AT Commands**, ändern Sie das [ESP8266](#beispiele) Beispiel so, dass Ihre Webseite geholt wird. |  |
-| **ATCmdParser**, verwenden Sie den [ATCmdParser](https://os.mbed.com/docs/mbed-os/latest/apis/atcmdparser.html) von mbed um eine Webseite zu holen. | [Lösung](02-Uebung/src/main.cpp) |
+| **ATCmdParser**, verwenden Sie den [ATCmdParser](https://os.mbed.com/docs/mbed-os/latest/apis/atcmdparser.html) von mbed um eine Webseite zu holen.<br>**Anwendungen**: Kommunikation mit AT Befehlsatz kompatiblen Modems. | [Lösung](02-Uebung/src/main.cpp) |
 
 ### Compilieren
 
