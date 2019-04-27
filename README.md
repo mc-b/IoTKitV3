@@ -3,9 +3,11 @@ IoTKitV3
 
 ![](images/IoTKit.png)
 
+IoTKit V3 Board
+
 - - -
 
-IoTKit V3 Beispiele und Dokumentation
+Beispiele und Dokumentation zum IoTKit V3 Board. Für eine Einführung und Vertiefung in das Internet der Dinge siehe [Kurse und Weiterbildung auf Zertifikatsstufe CAS](#kurse-und-weiterbildung-auf-zertifikatsstufe-cas)
 
 ## Grundlagen
 
