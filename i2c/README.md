@@ -13,7 +13,7 @@ I²C, für englisch Inter-Integrated Circuit, im Deutschen gesprochen als I-Quad
 
 Der Bus wurde 1982 von Philips eingeführt zur Geräte internen Kommunikation zwischen ICs in z.B. CD-Spielern und Fernsehgeräten.
 
-I²C ist als **Master-Slave-Bus** konzipiert. Ein Datentransfer wird immer durch einen Master initiiert; der über eine Adresse angesprochene Slave reagiert darauf. Mehrere Master sind möglich (Multimaster-Mode). Im Multimaster-Mode können zwei Master-Geräte direkt miteinander kommunizieren, dabei arbeitet ein Gerät als Slave.
+I²C ist als **Master-Slave-Bus** konzipiert. Ein Datentransfer wird immer durch einen Master (die MCU auf dem Board) initiiert; der über eine Adresse angesprochene Slave (die Sensoren auf dem Board) reagiert darauf. Mehrere Master sind möglich (Multimaster-Mode). Im Multimaster-Mode können zwei Master-Geräte direkt miteinander kommunizieren, dabei arbeitet ein Gerät als Slave.
 
 Der **Bustakt** wird immer vom Master ausgegeben. Für die verschiedenen Modi ist jeweils ein maximal erlaubter Bustakt vorgegeben. In der Regel können aber auch beliebig langsamere Taktraten verwendet werden, falls diese vom Master-Interface unterstützt werden. Bestimmte ICs (z.B. Analog-Digital-Umsetzer) benötigen jedoch eine bestimmte, minimale Taktfrequenz, um ordnungsgemäss zu funktionieren.
 
@@ -38,7 +38,7 @@ Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je n
 * [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](#vl6180x)
 * [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](#ISL29125)
 
-**DISCO_L475VG_IOT01A Board**
+**DISCO_L475VG_IOT01A Board** - Anordnung der Sensoren siehe [Hardware](../hw#disco-l475vg-iot01a)
 
 * [Time-of-Flight and gesture-detection sensor (VL53L0X)](#vl53l0x)
 
@@ -107,16 +107,15 @@ Das Beispiel [VL53L0X](VL53L0X/src/main.cpp) zeigt die Entfernung eines Gegensta
 
 > [⇧ **Nach oben**](#beispiele)
 
-Der ISL29125 ist eine niedrige Leistung, hohe Empfindlichkeit, ROT, GRÜN und BLAUER Farblichtsensor (RGB) mit einem I2C (SMBus-kompatibel)
-Schnittstelle. 
+Der ISL29125 ist ein ROT, GRÜN und BLAUER Farblichtsensor (RGB) mit einer I2C Schnittstelle. 
 
 Das hochmoderne Photodioden-Array bietet eine genaue RGB-Spektralantwort und hervorragende Lichtquelle zu Lichtquellenvariation (LS2LS). 
 
-Der ISL29125 wurde entwickelt um IR in Lichtquellen zu melden und das im Sonnenlicht bis zu dunklen Räumen. 
+Der ISL29125 wurde entwickelt um IR in Lichtquellen zu melden und das vom Sonnenlicht bis zu dunklen Räumen. 
 
 Das integrierte ADC meldet 50 Hz und 60 Hz Flimmern durch künstliches Licht zurück. 
 
-Ein wählbarer Bereich ermöglicht dem Benutzer die Optimierung Empfindlichkeit für die spezifische Anwendung.
+Ein wählbarer Bereich ermöglicht dem Benutzer die Optimierung der Empfindlichkeit für spezifische Anwendungen.
 
 ### Beispiel(e)
 
@@ -167,15 +166,13 @@ Der LIS3MDL ist ein ultra-low-power Hochleistungs-Drei-Achsen-Magnetsensor.
 
 Der LIS3MDL hat vom Benutzer wählbare Vollskalen von ± 4 / ± 8 / ± 12 / ± 16 Gauss.
 
-Die Selbsttestfunktion ermöglicht dem Benutzer, die Funktion des Sensors in der endgültigen Anwendung zu überprüfen.
+Die Vorrichtung kann konfiguriert werden, um Unterbrechungssignale für die Magnetfelderfassung zu erzeugen.
 
-Die Vorrichtung kann konfiguriert sein, um Unterbrechungssignale für die Magnetfelderfassung zu erzeugen.
-
-Der LIS3MDL enthält eine serielle I 2 C-Busschnittstelle, die Standard und Fast Mode (100 kHz und 400 kHz) und SPI serielle Standardschnittstelle unterstützt.
+Der LIS3MDL enthält eine serielle I2C-Busschnittstelle, die Standard und Fast Mode (100 kHz und 400 kHz) und SPI serielle Standardschnittstelle unterstützt.
 
 ### Beispiel(e)
 
-Das Beispiel [LIS3MDL](LIS3MDL/src/main.cpp) erkennt den Nord- oder Südpool eines Magneten und fungiert als einfacher eCompass wo die Himmelsrichtungen anzeigt. 
+Das Beispiel [LIS3MDL](LIS3MDL/src/main.cpp) erkennt den Nord- oder Südpool eines Magneten und fungiert als einfacher eCompass welcher die Himmelsrichtungen anzeigt. 
 
 **Compilieren**
 
@@ -218,12 +215,21 @@ Hohe Robustheit gegenüber mechanischen Schocks macht den LSM6DSL zur bevorzugte
 | Online Compiler | [LSM6DSL](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
 | Online Compiler | [LSM6DSL_Pedometer](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL_Pedometer/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL_Pedometer; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL_Pedometer` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
 | Online Compiler | [LSM6DSL_Tilt](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL_Tilt/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL_Tilt; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL_Tilt` |
+- - -
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
 | Online Compiler | [LSM6DSL_SingleTap](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/LSM6DSL_Tilt/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/i2c/LSM6DSL_SingleTap; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/LSM6DSL_SingleTap` |
