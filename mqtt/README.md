@@ -78,6 +78,7 @@ Ein weiteres Beispiel ist [MQTT on os.mbed.org](https://os.mbed.com/teams/mqtt/c
 ### Links 
 
 *   [Ausführlicher Artikel auf heise.de](http://www.heise.de/developer/artikel/MQTT-Protokoll-fuer-das-Internet-der-Dinge-2168152.html)
+*   [MQTT Client Library Encyclopedia - Paho Embedded](https://www.hivemq.com/blog/mqtt-client-library-encyclopedia-paho-embedded/)
 *   [MQTT Team auf mbed.org](https://os.mbed.com/teams/mqtt/)
 *   [MQTT JavaScript Client Library für node.js und Browser](https://github.com/mqttjs/MQTT.js)
 *   [Eclipse Paho, Client Libraries für Verschiedene Sprachen](http://www.eclipse.org/paho/)
