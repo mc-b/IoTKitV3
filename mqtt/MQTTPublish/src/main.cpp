@@ -49,7 +49,7 @@ DigitalOut led1( MBED_CONF_IOTKIT_LED1 );
 DigitalOut alert( MBED_CONF_IOTKIT_LED3 );
 
 // Aktore(n)
-Motor m1( MBED_CONF_IOTKIT_MOTOR1_PWM, MBED_CONF_IOTKIT_MOTOR1_FWD, MBED_CONF_IOTKIT_MOTOR1_REV ); // PWM, Vorwaerts, Rueckwarts
+Motor m1( MBED_CONF_IOTKIT_MOTOR2_PWM, MBED_CONF_IOTKIT_MOTOR2_FWD, MBED_CONF_IOTKIT_MOTOR2_REV ); // PWM, Vorwaerts, Rueckwarts
 PwmOut speaker( MBED_CONF_IOTKIT_BUZZER );
 
 /** Hilfsfunktion zum Publizieren auf MQTT Broker */
