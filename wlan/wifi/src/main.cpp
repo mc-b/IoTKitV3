@@ -33,6 +33,10 @@ ISM43362Interface wifi( false );
 ESP8266Interface wifi( D10, D2);
 #endif
 
+#ifdef TARGET_NUCLEO_F746ZG
+#include "ESP8266Interface.h"
+ESP8266Interface wifi( D1, D0 );
+#endif
 // UI
 OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );
 
