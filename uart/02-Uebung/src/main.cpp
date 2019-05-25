@@ -27,7 +27,7 @@ int main()
 {
     printf( "\nATCmdParser with ESP8266 example" );
 
-    serial = new UARTSerial( PTC15, PTC14, ESP8266_DEFAULT_BAUD_RATE );
+    serial = new UARTSerial( MBED_CONF_IOTKIT_ESP8266_TX, MBED_CONF_IOTKIT_ESP8266_RX, ESP8266_DEFAULT_BAUD_RATE );
     parser = new ATCmdParser( serial );
     parser->debug_on( 1 );
     parser->set_delimiter( "\r\n" );

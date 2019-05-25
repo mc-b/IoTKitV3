@@ -30,12 +30,12 @@ ISM43362Interface wifi( false );
 
 #if defined( TARGET_NUCLEO_F303RE  ) || defined( TARGET_NUCLEO_F411RE ) || defined( TARGET_NUCLEO_F103RB )
 #include "ESP8266Interface.h"
-ESP8266Interface wifi( D10, D2);
+ESP8266Interface wifi( MBED_CONF_IOTKIT_ESP8266_TX, MBED_CONF_IOTKIT_ESP8266_RX );
 #endif
 
 #ifdef TARGET_NUCLEO_F746ZG
 #include "ESP8266Interface.h"
-ESP8266Interface wifi( D1, D0 );
+ESP8266Interface wifi( MBED_CONF_IOTKIT_ESP8266_TX, MBED_CONF_IOTKIT_ESP8266_RX );
 #endif
 // UI
 OLEDDisplay oled( MBED_CONF_IOTKIT_OLED_RST, MBED_CONF_IOTKIT_OLED_SDA, MBED_CONF_IOTKIT_OLED_SCL );

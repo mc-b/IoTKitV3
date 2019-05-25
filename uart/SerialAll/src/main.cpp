@@ -3,7 +3,7 @@
 #include "mbed.h"
 
 // 4 x UART: USB, A2+A3, I2C Bus (Doppelbelegung), Serial auf IoTKit V3, PTC14+PTC15 an ESP8266, Bluetooth Header: PTD6+PTD7 nicht ansprechbar
-Serial serial[] = { Serial( USBTX, USBRX ), Serial( A3, A2 ), Serial( D15, D14 ), Serial( PTE4, PTE5 ) };
+Serial serial[] = { Serial( USBTX, USBRX ), Serial( A3, A2 ), Serial( D15, D14 ), Serial( MBED_CONF_IOTKIT_ESP8266_TX, MBED_CONF_IOTKIT_ESP8266_RX ) };
 
 int main()
 {
