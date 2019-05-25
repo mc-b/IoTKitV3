@@ -51,12 +51,7 @@ void servoMove( Servo &servo, float start, float end )
 /** Hauptprogramm */
 int main()
 {
-    // Servo kalibrieren, damit er die vollen 180° verwendet.
-    foot.calibrate ( 0.0009, 180.0);
-    base.calibrate ( 0.0009, 180.0);
-    arm.calibrate ( 0.0009, 180.0);
-    pincer.calibrate ( 0.0009, 180.0);
-    
+
     while   ( 1 )
     {
         m1.speed( poti );

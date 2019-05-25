@@ -34,7 +34,6 @@ public:
     ServoRobot( PinName pin, float min = 0.25f, float max = 0.75f, float step = 0.000025f, float range = 0.0009, float degrees = 90.0 ) : Servo( pin ), 
                 min(min), max(max), step(step)
     {
-        calibrate( range, degrees );
     }
     
     /** Roboterarm von aktueller Position nach end bewegen */
