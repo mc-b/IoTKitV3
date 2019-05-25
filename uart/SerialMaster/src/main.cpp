@@ -4,7 +4,7 @@
 #include "mbed.h"
 
 Serial serial( USBTX, USBRX );
-char *cmd[] = { "red", "green", "blue" };
+char *command[] = { "red", "green", "blue" };
 char buf[128];
 
 /** eine Zeile vom UART lesen */
@@ -35,7 +35,7 @@ int main()
     {
         for ( int i = 0; i < 3; i++ )
         {
-            serial.printf( "%s\n", cmd[i] );
+            serial.printf( "%s\n", command[i] );
             readline();
             wait( 0.1f );
         }
