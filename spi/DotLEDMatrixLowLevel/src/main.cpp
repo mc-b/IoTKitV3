@@ -4,7 +4,6 @@
 
 SPI spi( MBED_CONF_IOTKIT_DOTLED_MOSI, MBED_CONF_IOTKIT_DOTLED_MISO, MBED_CONF_IOTKIT_DOTLED_SCLK );
 DigitalOut ss( MBED_CONF_IOTKIT_DOTLED_SS );   // Steuerpin!!!
-char cmd[2];
 
 // Systemregister Dot LED Matrix
 #define reg_decodeMode   0x09
