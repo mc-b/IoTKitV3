@@ -6,8 +6,8 @@
 // I2C Master
 I2C i2c( D14, D15 );
 
-// CMD Buffer (cmd, addr, arg) 
-char cmd[4] = { 0x00, 0x00, 0x00, 0x00 };
+// CMD Buffer (buf, addr, arg)
+char buf[4] = { 0x00, 0x00, 0x00, 0x00 };
 int slave = 0x10 << 1;
 
 int main()
@@ -20,19 +20,19 @@ int main()
         // write I2C
         for ( int i = 4; i <= 7; i++ ) 
         {
-            cmd[0] = 'w';
-            cmd[1] = i;
-            cmd[2] = 1;
-            printf( "write to %d, %d - ", slave, (int) cmd[2] );
-            status = i2c.write( slave, cmd, 3 );
+            buf[0] = 'w';
+            buf[1] = i;
+            buf[2] = 1;
+            printf( "write to %d, %d - ", slave, (int) buf[2] );
+            status = i2c.write( slave, buf, 3 );
             printf("Status %d\n", status );
             wait( 1.0 );
 
-            cmd[0] = 'w';
-            cmd[1] = i;
-            cmd[2] = 0;
-            printf( "write to %d, %d - ", slave, (int) cmd[2] );
-            status = i2c.write( slave, cmd, 3 );
+            buf[0] = 'w';
+            buf[1] = i;
+            buf[2] = 0;
+            printf( "write to %d, %d - ", slave, (int) buf[2] );
+            status = i2c.write( slave, buf, 3 );
             printf("Status %d\n", status );
             wait( 1.0 );
         }
@@ -49,7 +49,7 @@ int a3;                              // Poti
 // I2C Empfangerfunktion 
 void receiveEvent(int howMany)
 {
-  int cmd = Wire.read();            // Command (ignored)
+  int buf = Wire.read();            // Command (ignored)
   int addr = Wire.read();           // Adresse
   int value = Wire.read();          // Wert
   
