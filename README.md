@@ -44,6 +44,7 @@ Beispiele und Dokumentation zum IoTKit V3 Board. Für eine Einführung und Verti
 * [Roboter](roboter/)
 * [NFC / RFID](rfid/)
 * [Workflow](workflow/)
+* [Edge Computing](edge/)
 * [Built with Mbed](https://www.mbed.com/built-with-mbed/)
 
 ## Erweiterungen
