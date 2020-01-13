@@ -44,6 +44,7 @@ Beispiele und Dokumentation zum IoTKit V3 Board. Für eine Einführung und Verti
 * [Roboter](roboter/)
 * [NFC / RFID](rfid/)
 * [Workflow](workflow/)
+* [Edge Computing](edge/)
 * [Built with Mbed](https://www.mbed.com/built-with-mbed/)
 
 ## Erweiterungen
@@ -54,10 +55,9 @@ Für die nachfolgenden Erweiterten Beispiele wird evtl. zusätzliche HW, wie z.B
 
 ## Kurse und Weiterbildung auf Zertifikatsstufe CAS
 
-* [CAS IoT Manager Smarte Lösungen mit Internet of Things (IoT)](https://www.hslu.ch/de-ch/informatik/weiterbildung/networking-and-innovative-technologies/cas-iot/) 
-* [Internet of Things (IoT) im Einsatz](https://www.digicomp.ch/weiterbildung/trainings-fuer-it-professionals/blockchain-iot-ai/internet-of-things-iot/kurs-internet-of-things-iot-im-einsatz)
-* [IoT Grundlagen](https://www.eb-zuerich.ch/angebot/internet-der-dinge-grundlagen.html)
-* [IoT Aufbau – Komplexe Anwendungen](https://www.eb-zuerich.ch/angebot/internet-der-dinge-aufbau.html)
+* [CAS Internet of Things (IoT) and Digital Ecosystem Technologien verstehen, Lösungen entwickeln](http://hslu.ch/casiot)
+* [CAS Cloud and Platform Manager Mit Cloud-Expertise die Digitalisierung mitgestalten](http://hslu.ch/cascpm) 
+* [Internet of Things (IoT) im Einsatz](https://www.digicomp.ch/d/IOTEIN)
 
 ## Links
 
