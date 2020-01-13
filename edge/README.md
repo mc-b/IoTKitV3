@@ -44,22 +44,7 @@ Wir verwenden wie im [Workflow Beispiel](../workflow) [Node-RED](https://nodered
     
 Die eigentliche Applikation Node-RED ist via Browser <IP-Raspberry Pi:1880> zugreifbar.
 
-## Cloud Umgebung
-
-In der [MODTEC](https://github.com/mc-b/modtec) Umgebung starten wie die benötigten Services:
-
-    # IoT Umgebung 
-    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/mosquitto.yaml
-    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/nodered.yaml
-
-    # Messaging Umgebung 
-    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/kafka/zookeeper.yaml
-    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/kafka/kafka.yaml
-
-    # Kafka Streams 
-    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-alert.yaml
-    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-consumer.yaml
-    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-pipe.yaml
+## Cloud Umgebung (Edge - REST)
 
 Für das *Internet of Everything* brauchen wir noch eine Geschäftsprozess (BPMN) Workflow Umgebung und ein entsprechender Prozess:
 
@@ -78,7 +63,31 @@ warten bis die Workflow Umgebung gestartet ist und veröffentlichen des Rechnung
         
 Details zu BPMN und des Prozesses [siehe](https://github.com/mc-b/misegr/tree/master/bpmn).
 
-### Feintuning Node-RED
+### Node-RED (Edge - REST)
+
+Raspberry Pi mit Node-RED Oberfläche verbinden.
+
+
+
+## Cloud Umgebung (Edge, MQTT - Cloud - Messaging) 
+
+In der [MODTEC](https://github.com/mc-b/modtec) Umgebung starten wie die benötigten Services:
+
+    # IoT Umgebung 
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/mosquitto.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/nodered.yaml
+
+    # Messaging Umgebung 
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/kafka/zookeeper.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/kafka/kafka.yaml
+
+    # Kafka Streams 
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-alert.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-consumer.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-pipe.yaml
+
+
+### Node-RED (Edge, MQTT - Cloud, Messaging)
 
 Um die Beispiele z.B. vom Kurs [MODTEC](https://github.com/mc-b/modtec) auszuführen brauchen wir noch ein paar zusätzliche Plugins.
 
