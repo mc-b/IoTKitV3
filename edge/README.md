@@ -37,13 +37,48 @@ Testen der Docker Umgebung:
     
 Nach der Installation der benötigten Grundinfrastruktur können wir loslegen und die eigentlich benötigte Software als Container starten.
 
-Wir verwenden wie im [Workflow Beispiel](../workflow) [Node-RED](https://nodered.org/) und bauen das Beispiel dann Stück für Stück aus.
+Wir verwenden wie im [Workflow Beispiel](../workflow) [Node-RED](https://nodered.org/), Mosquitto und bauen das Beispiel dann Stück für Stück aus.
 
     docker run -d -p 1880:1880 nodered/node-red
+    docker run -d -p 1883:1883 eclipse-mosquitto
     
 Die eigentliche Applikation Node-RED ist via Browser <IP-Raspberry Pi:1880> zugreifbar.
 
-### Node-RED
+## Cloud Umgebung
+
+In der [MODTEC](https://github.com/mc-b/modtec) Umgebung starten wie die benötigten Services:
+
+    # IoT Umgebung 
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/mosquitto.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/nodered.yaml
+
+    # Messaging Umgebung 
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/kafka/zookeeper.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/kafka/kafka.yaml
+
+    # Kafka Streams 
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-alert.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-consumer.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-pipe.yaml
+
+Für das *Internet of Everything* brauchen wir noch eine Geschäftsprozess (BPMN) Workflow Umgebung und ein entsprechender Prozess:
+
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/camunda.yaml
+    wget https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/RechnungStep3.bpmn -O RechnungStep3.bpmn
+    
+warten bis die Workflow Umgebung gestartet ist und veröffentlichen des Rechnungsprozesses:
+
+    curl -k -w "\n" \
+    -H "Accept: application/json" \
+    -F "deployment-name=rechnung" \
+    -F "enable-duplicate-filtering=true" \
+    -F "deploy-changed-only=true" \
+    -F "Rechnung.bpmn=@RechnungStep3.bpmn" \
+    https://localhost:30443/engine-rest/deployment/create    
+        
+Details zu BPMN und des Prozesses [siehe](https://github.com/mc-b/misegr/tree/master/bpmn).
+
+### Feintuning Node-RED
 
 Um die Beispiele z.B. vom Kurs [MODTEC](https://github.com/mc-b/modtec) auszuführen brauchen wir noch ein paar zusätzliche Plugins.
 
@@ -54,6 +89,4 @@ Diese können in Node-RED mittels Pulldownmenu rechts -> `Palette verwalten`, Ta
 Dadurch erhalten wird neu `Nodes` für die Integration mit [Apache Kafka](https://kafka.apache.org/).    
 
 Topics auslesen, lesen und schreiben auf Topics in Kafka Container, siehe [Projekt duk](https://github.com/mc-b/duk/tree/master/kafka)
-
-
 
