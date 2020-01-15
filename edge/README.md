@@ -65,9 +65,23 @@ Details zu BPMN und des Prozesses [siehe](https://github.com/mc-b/misegr/tree/ma
 
 ### Node-RED (Edge - REST)
 
-Raspberry Pi mit Node-RED Oberfläche verbinden.
+![](../images/NodeREDMQTT.png)
 
+- - -
 
+* [Mosquitto](https://mosquitto.org/) installieren.
+* [Node-RED](https://nodered.org/) installieren.
+* In Node-RED
+    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit` eintragen.
+    * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
+    * Programm mittels `Deploy` veröffentlichen.
+* mbed Teil
+    * [MQTTPublish](../mqtt#mqtt-publish-beispiel) Beispiel in mbed Compiler importieren und ca. auf Zeile 21 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
+    * Programm Compilieren und auf Board laden.
+    
+Ändert den Workflow so, dass statt der Ausgabe in Node-RED jetzt ein Prozess in der Camunda BPM Workflow Engine gestartet wird.
+
+Der URL wie ein Prozess gestartet werden kann steht im [Frontend](https://github.com/mc-b/misegr/tree/master/bpmn) Beispiel bei `$.post`.
 
 ## Cloud Umgebung (Edge, MQTT - Cloud - Messaging) 
 
@@ -97,5 +111,20 @@ Diese können in Node-RED mittels Pulldownmenu rechts -> `Palette verwalten`, Ta
 
 Dadurch erhalten wird neu `Nodes` für die Integration mit [Apache Kafka](https://kafka.apache.org/).    
 
-Topics auslesen, lesen und schreiben auf Topics in Kafka Container, siehe [Projekt duk](https://github.com/mc-b/duk/tree/master/kafka)
+Topics auslesen, lesen und schreiben auf Topics in Kafka Container, siehe [Projekt duk](https://github.com/mc-b/duk/tree/master/kafka).
+
+* mbed Teil
+    * [MQTTPublish](../mqtt#mqtt-publish-beispiel) Beispiel in mbed Compiler importieren und ca. auf Zeile 21 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
+    * Programm Compilieren und auf Board laden.
+
+* In Node-RED (1. Teil - MQTT)
+    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit` eintragen.
+    * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
+    * Programm mittels `Deploy` veröffentlichen.
+    
+* In Node-RED (2. Teil - MQTT -> Kafka)
+    * Kafka Producer auf Flow 1 platzieren mit Kafka Server (kafka:9092) verbinden
+    * `mqtt` Input Node mit Kafka Producer verbinden, evtl. braucht es zusätzliche Plugins um die MQTT Topics `iotkit/#` nach `broker_message` für Kafka zu wandeln.
+    * Das Ergebnis kann mittels `logs iot-kafka-consumer` angeschaut werden. Dort sollten die MQTT Messages umgewandelt als Kafka Messages erscheinen.
+    
 
