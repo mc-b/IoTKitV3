@@ -1,0 +1,140 @@
+[
+    {
+        "id": "a7bafb4a.e54ea8",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "215a6e42.08ec62",
+        "type": "mqtt in",
+        "z": "a7bafb4a.e54ea8",
+        "name": "",
+        "topic": "iotkit/#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "96d6ec93.a4905",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "8c24f923.b57978"
+            ]
+        ]
+    },
+    {
+        "id": "8c24f923.b57978",
+        "type": "change",
+        "z": "a7bafb4a.e54ea8",
+        "name": "topic",
+        "rules": [
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "iotkit/alert",
+                "fromt": "str",
+                "to": "broker_message",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "iotkit/sensor",
+                "fromt": "str",
+                "to": "broker_message",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "5919ea7e.a68334",
+                "273904a2.6888bc"
+            ]
+        ]
+    },
+    {
+        "id": "5919ea7e.a68334",
+        "type": "Kafka Producer",
+        "z": "a7bafb4a.e54ea8",
+        "name": "",
+        "broker": "78d21a7.9aa02e4",
+        "topic": "broker_message",
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "",
+        "partition": 0,
+        "attributes": 0,
+        "connectionType": "Producer",
+        "x": 720,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "273904a2.6888bc",
+        "type": "debug",
+        "z": "a7bafb4a.e54ea8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 710,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "96d6ec93.a4905",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "mosquitto",
+        "broker": "192.168.2.170",
+        "port": "1818",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "78d21a7.9aa02e4",
+        "type": "Kafka Broker",
+        "z": "",
+        "name": "kafka",
+        "hosts": [
+            {
+                "host": "kafka",
+                "port": 9092
+            }
+        ],
+        "connectTimeout": "10000",
+        "requestTimeout": "30000",
+        "autoConnect": "true",
+        "idleConnection": "5",
+        "reconnectOnIdle": "true",
+        "maxAsyncRequests": "10",
+        "checkInterval": "10",
+        "usetls": false
+    }
+]

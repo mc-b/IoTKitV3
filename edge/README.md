@@ -46,7 +46,7 @@ Die eigentliche Applikation Node-RED ist via Browser <IP-Raspberry Pi:1880> zugr
 
 ## Cloud Umgebung (Edge - REST)
 
-Für das *Internet of Everything* brauchen wir noch eine Geschäftsprozess (BPMN) Workflow Umgebung und ein entsprechender Prozess:
+Für das *Internet of Everything* brauchen wir noch eine Geschäftsprozess (BPMN) Workflow Umgebung und einen entsprechenden Prozess:
 
     kubectl apply -f https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/camunda.yaml
     wget https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/RechnungStep3.bpmn -O RechnungStep3.bpmn
@@ -65,27 +65,36 @@ Details zu BPMN und des Prozesses [siehe](https://github.com/mc-b/misegr/tree/ma
 
 ### Node-RED (Edge - REST)
 
-![](../images/NodeREDMQTT.png)
+![](../images/NodeREDREST.png)
 
 - - -
+
+Die MQTT Messages vom IoTKit Board sollen vom MQTT Protokoll in das HTTP/REST Protokoll umgewandelt werden.
+
+Um dies zu Demonstrieren erstellen wir eine Input MQTT Node welche das Topic `iotkit/alert` empfängt, eine Node welche eine JSON Struktur erzeugt und eine Node welche die JSON Daten via HTTP/REST an die BPMN Workflow Umgebung weiterleitet.
 
 * [Mosquitto](https://mosquitto.org/) installieren.
 * [Node-RED](https://nodered.org/) installieren.
 * In Node-RED
-    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit` eintragen.
-    * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
-    * Programm mittels `Deploy` veröffentlichen.
+    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit/alert` eintragen.
+    * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden - damit können wir die MQTT Messages kontrollieren
+    * `change` Node auf Flow 1 platzieren und als `msg.payload` folgenden JSON String `{"variables":{"rnr":{"value":"123","type":"long"},"rbetrag":{"value":"200.00","type":"String"}}}` eintragen.
+    * `http request` Node auf Flow 1 platzieren, als Methode `POST` und als URL `http://camunda:8080/engine-rest/process-definition/key/RechnungStep3/start` eintragen
+    * Zur Kontrolle ebenfalls eine `debug` noch hinten platzieren.
+    * Alle Nodes wie oben in der Grafik verbinden und veröffentlichen (deploy).
 * mbed Teil
     * [MQTTPublish](../mqtt#mqtt-publish-beispiel) Beispiel in mbed Compiler importieren und ca. auf Zeile 21 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
     * Programm Compilieren und auf Board laden.
+    * Magnet an Hall Sensor halten.
+* In Camunda BPMN Workflow Engine [https://localhost:30443/camunda](https://localhost:30443/camunda) (URL kann abweichen, je nach Umgebung) einloggen mittels User/Password `demo/demo`. Bei jedem Alarm welcher vom Board (Hall Sensor) mittels Magneten ausgelöst wird, sollte ein neuer Rechnungsprozess gestartet werden.
     
-Ändert den Workflow so, dass statt der Ausgabe in Node-RED jetzt ein Prozess in der Camunda BPM Workflow Engine gestartet wird.
+Details zum BPMN Prozess und der URL wie ein Prozess gestartet werden kann steht im [Frontend](https://github.com/mc-b/misegr/tree/master/bpmn) Beispiel bei `$.post`.
 
-Der URL wie ein Prozess gestartet werden kann steht im [Frontend](https://github.com/mc-b/misegr/tree/master/bpmn) Beispiel bei `$.post`.
+Der Flow zum importieren und anpassen, siehe [Node-RED-REST.json](Node-RED-REST.json).
 
 ## Cloud Umgebung (Edge, MQTT - Cloud - Messaging) 
 
-In der [MODTEC](https://github.com/mc-b/modtec) Umgebung starten wie die benötigten Services:
+In Kubernetes starten wie die benötigten Services:
 
     # IoT Umgebung 
     kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/mosquitto.yaml
@@ -103,7 +112,18 @@ In der [MODTEC](https://github.com/mc-b/modtec) Umgebung starten wie die benöti
 
 ### Node-RED (Edge, MQTT - Cloud, Messaging)
 
-Um die Beispiele z.B. vom Kurs [MODTEC](https://github.com/mc-b/modtec) auszuführen brauchen wir noch ein paar zusätzliche Plugins.
+
+![](../images/NodeREDKafka.png)
+
+- - -
+
+Die MQTT Message sollen nun an [Apache Kafka](https://kafka.apache.org/) weitergeleitet werden. Das hat den Vorteil, dass wir diese
+* in andere Formate, z.B. von Binär nach JSON, umwandeln können
+* sie Persistieren können
+* ein Eventlog erhalten
+* etc.
+
+Um [Apache Kafka](https://kafka.apache.org/) anzusprechen brauchen wir ein paar zusätzliche Plugins.
 
 Diese können in Node-RED mittels Pulldownmenu rechts -> `Palette verwalten`, Tab `Installieren` hinzugefügt werden. Es handelt es sich um die Plugins:
 * node-red-contrib-kafka-node-latest - mindestens Version 0.2
@@ -111,20 +131,22 @@ Diese können in Node-RED mittels Pulldownmenu rechts -> `Palette verwalten`, Ta
 
 Dadurch erhalten wird neu `Nodes` für die Integration mit [Apache Kafka](https://kafka.apache.org/).    
 
-Topics auslesen, lesen und schreiben auf Topics in Kafka Container, siehe [Projekt duk](https://github.com/mc-b/duk/tree/master/kafka).
+* In Node-RED
+    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit/#` eintragen.
+    * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden - damit können wir die MQTT Messages kontrollieren
+    * `change` Node auf Flow 1 platzieren und als Regel `Ändern` Wert `msg.topic` von `iotkit/alert` in `broker_message`, weitere Regel hinzufügen und gleich verfahren für `iotkit/sensor` nach `broker_message`.
+    * Kafka Producer auf Flow 1 platzieren und mit Kafka Server (kafka:9092) verbinden
+    * Alle Nodes wie oben in der Grafik verbinden und veröffentlichen (deploy).
 
 * mbed Teil
     * [MQTTPublish](../mqtt#mqtt-publish-beispiel) Beispiel in mbed Compiler importieren und ca. auf Zeile 21 den `hostname` mit der IP-Adresse auswechseln wo der Mosquitto Server läuft. 
     * Programm Compilieren und auf Board laden.
+* Kubernetes    
+    * Das Ergebnis kann mittels `logs iot-kafka-consumer`, logs iot-kafka-pipe` angeschaut werden. Dort sollten die MQTT Messages umgewandelt als Kafka Messages erscheinen.
+* In Camunda BPMN Workflow Engine [https://localhost:30443/camunda](https://localhost:30443/camunda) (URL kann abweichen, je nach Umgebung) einloggen mittels User/Password `demo/demo`. Bei jedem Alarm welcher vom Board (Hall Sensor) mittels Magneten ausgelöst wird, sollte ein neuer Rechnungsprozess gestartet werden.
+    
 
-* In Node-RED (1. Teil - MQTT)
-    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit` eintragen.
-    * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
-    * Programm mittels `Deploy` veröffentlichen.
-    
-* In Node-RED (2. Teil - MQTT -> Kafka)
-    * Kafka Producer auf Flow 1 platzieren mit Kafka Server (kafka:9092) verbinden
-    * `mqtt` Input Node mit Kafka Producer verbinden, evtl. braucht es zusätzliche Plugins um die MQTT Topics `iotkit/#` nach `broker_message` für Kafka zu wandeln.
-    * Das Ergebnis kann mittels `logs iot-kafka-consumer` angeschaut werden. Dort sollten die MQTT Messages umgewandelt als Kafka Messages erscheinen.
-    
+Topics auslesen, lesen und schreiben auf Topics in Kafka Container, siehe [Projekt duk](https://github.com/mc-b/duk/tree/master/kafka).
+
+Der Flow zum importieren und anpassen, siehe [Node-RED-Kafka.json](Node-RED-Kafka.json).
 

@@ -1,0 +1,126 @@
+[
+    {
+        "id": "ca7318d1.488d38",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fe672d9d.bb075",
+        "type": "mqtt in",
+        "z": "ca7318d1.488d38",
+        "name": "",
+        "topic": "iotkit/alert",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "96d6ec93.a4905",
+        "x": 180,
+        "y": 120,
+        "wires": [
+            [
+                "9bae7f12.360bd",
+                "e01ab6a9.c577b8"
+            ]
+        ]
+    },
+    {
+        "id": "9bae7f12.360bd",
+        "type": "debug",
+        "z": "ca7318d1.488d38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 430,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f28b4058.38f9d",
+        "type": "http request",
+        "z": "ca7318d1.488d38",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "http://camunda:8080/engine-rest/process-definition/key/RechnungStep3/start",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "a82e0ce6.e906e"
+            ]
+        ]
+    },
+    {
+        "id": "a82e0ce6.e906e",
+        "type": "debug",
+        "z": "ca7318d1.488d38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 910,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e01ab6a9.c577b8",
+        "type": "change",
+        "z": "ca7318d1.488d38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"variables\":{\"rnr\":{\"value\":\"123\",\"type\":\"long\"},\"rbetrag\":{\"value\":\"200.00\",\"type\":\"String\"}}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "f28b4058.38f9d"
+            ]
+        ]
+    },
+    {
+        "id": "96d6ec93.a4905",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "mosquitto",
+        "broker": "192.168.2.170",
+        "port": "1818",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
