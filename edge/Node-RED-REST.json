@@ -1,33 +1,33 @@
 [
     {
-        "id": "ca7318d1.488d38",
+        "id": "f1dd9383.9968b",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "MQTT to REST",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "fe672d9d.bb075",
+        "id": "df92ef0.9ff3e1",
         "type": "mqtt in",
-        "z": "ca7318d1.488d38",
+        "z": "f1dd9383.9968b",
         "name": "",
         "topic": "iotkit/alert",
         "qos": "2",
         "datatype": "auto",
-        "broker": "96d6ec93.a4905",
+        "broker": "8bf276d0.ab9338",
         "x": 180,
         "y": 120,
         "wires": [
             [
-                "9bae7f12.360bd",
-                "e01ab6a9.c577b8"
+                "f27144e9.024e58",
+                "2cdcb57c.95fcda"
             ]
         ]
     },
     {
-        "id": "9bae7f12.360bd",
+        "id": "f27144e9.024e58",
         "type": "debug",
-        "z": "ca7318d1.488d38",
+        "z": "f1dd9383.9968b",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -39,9 +39,9 @@
         "wires": []
     },
     {
-        "id": "f28b4058.38f9d",
+        "id": "1b516bca.97aaf4",
         "type": "http request",
-        "z": "ca7318d1.488d38",
+        "z": "f1dd9383.9968b",
         "name": "",
         "method": "POST",
         "ret": "obj",
@@ -55,14 +55,14 @@
         "y": 180,
         "wires": [
             [
-                "a82e0ce6.e906e"
+                "8a6cfac7.0ed5e8"
             ]
         ]
     },
     {
-        "id": "a82e0ce6.e906e",
+        "id": "8a6cfac7.0ed5e8",
         "type": "debug",
-        "z": "ca7318d1.488d38",
+        "z": "f1dd9383.9968b",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -75,9 +75,9 @@
         "wires": []
     },
     {
-        "id": "e01ab6a9.c577b8",
+        "id": "2cdcb57c.95fcda",
         "type": "change",
-        "z": "ca7318d1.488d38",
+        "z": "f1dd9383.9968b",
         "name": "",
         "rules": [
             {
@@ -97,17 +97,17 @@
         "y": 180,
         "wires": [
             [
-                "f28b4058.38f9d"
+                "1b516bca.97aaf4"
             ]
         ]
     },
     {
-        "id": "96d6ec93.a4905",
+        "id": "8bf276d0.ab9338",
         "type": "mqtt-broker",
         "z": "",
         "name": "mosquitto",
-        "broker": "192.168.2.170",
-        "port": "1818",
+        "broker": "iotkit.mc-b.ch",
+        "port": "1883",
         "clientid": "",
         "usetls": false,
         "compatmode": false,

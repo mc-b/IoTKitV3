@@ -1,32 +1,33 @@
 [
     {
-        "id": "a7bafb4a.e54ea8",
+        "id": "f6371c6a.06fcc",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "MQTT to Kafka",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "215a6e42.08ec62",
+        "id": "c7e8bd77.5df84",
         "type": "mqtt in",
-        "z": "a7bafb4a.e54ea8",
+        "z": "f6371c6a.06fcc",
         "name": "",
         "topic": "iotkit/#",
         "qos": "2",
         "datatype": "auto",
-        "broker": "96d6ec93.a4905",
+        "broker": "8a4d6f84.20268",
         "x": 290,
         "y": 120,
         "wires": [
             [
-                "8c24f923.b57978"
+                "dd3f2f21.58773",
+                "82463576.0e6568"
             ]
         ]
     },
     {
-        "id": "8c24f923.b57978",
+        "id": "dd3f2f21.58773",
         "type": "change",
-        "z": "a7bafb4a.e54ea8",
+        "z": "f6371c6a.06fcc",
         "name": "topic",
         "rules": [
             {
@@ -46,6 +47,33 @@
                 "fromt": "str",
                 "to": "broker_message",
                 "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "iotkit/rfid",
+                "fromt": "str",
+                "to": "broker_message",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "iotkit/encoder",
+                "fromt": "str",
+                "to": "broker_message",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "iotkit/button",
+                "fromt": "str",
+                "to": "broker_message",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -57,17 +85,16 @@
         "y": 120,
         "wires": [
             [
-                "5919ea7e.a68334",
-                "273904a2.6888bc"
+                "e5b153fe.e7e89"
             ]
         ]
     },
     {
-        "id": "5919ea7e.a68334",
+        "id": "e5b153fe.e7e89",
         "type": "Kafka Producer",
-        "z": "a7bafb4a.e54ea8",
+        "z": "f6371c6a.06fcc",
         "name": "",
-        "broker": "78d21a7.9aa02e4",
+        "broker": "33fcb129.b6642e",
         "topic": "broker_message",
         "requireAcks": 1,
         "ackTimeoutMs": 100,
@@ -77,31 +104,31 @@
         "attributes": 0,
         "connectionType": "Producer",
         "x": 720,
-        "y": 180,
+        "y": 120,
         "wires": []
     },
     {
-        "id": "273904a2.6888bc",
+        "id": "82463576.0e6568",
         "type": "debug",
-        "z": "a7bafb4a.e54ea8",
+        "z": "f6371c6a.06fcc",
         "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 710,
-        "y": 120,
+        "complete": "true",
+        "targetType": "full",
+        "x": 470,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "96d6ec93.a4905",
+        "id": "8a4d6f84.20268",
         "type": "mqtt-broker",
         "z": "",
         "name": "mosquitto",
-        "broker": "192.168.2.170",
-        "port": "1818",
+        "broker": "iotkit.mc-b.ch",
+        "port": "1883",
         "clientid": "",
         "usetls": false,
         "compatmode": false,
@@ -118,7 +145,7 @@
         "willPayload": ""
     },
     {
-        "id": "78d21a7.9aa02e4",
+        "id": "33fcb129.b6642e",
         "type": "Kafka Broker",
         "z": "",
         "name": "kafka",
