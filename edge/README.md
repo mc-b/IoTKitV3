@@ -46,12 +46,25 @@ Die eigentliche Applikation Node-RED ist via Browser <IP-Raspberry Pi:1880> zugr
 
 ## Cloud Umgebung (Edge - REST)
 
-Für das *Internet of Everything* brauchen wir noch eine Geschäftsprozess (BPMN) Workflow Umgebung und einen entsprechenden Prozess:
+Für das *Internet of Everything* brauchen wir noch eine Geschäftsprozess (BPMN) Workflow Umgebung und einen entsprechenden Prozess.
+
+**Variante a) Manuelle Installation**
+
+Installieren von 
+* [Camunda BPMN Workflow Engine](https://camunda.com/)
+* [Camunda Modeler](https://camunda.com/)
+* Download des Rechnungsprozesses vom Projekt [misegr](https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/RechnungStep3.bpmn)
+* Import des Rechnungsprozesses [RechnungStep3.bpmn](https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/RechnungStep3.bpmn) in den Modeler
+* Export des Rechnungsprozesse vom Modeler in die BPMN Workflow Engine.
+
+**Variante b) in einer Kubernetes Umgebung**
+
+Starten der [Camunda BPMN Workflow Engine](https://camunda.com/). Download Rechnungsprozesses [RechnungStep3.bpmn](https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/RechnungStep3.bpmn). 
 
     kubectl apply -f https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/camunda.yaml
     wget https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/RechnungStep3.bpmn -O RechnungStep3.bpmn
     
-warten bis die Workflow Umgebung gestartet ist und veröffentlichen des Rechnungsprozesses:
+warten bis die Workflow Umgebung gestartet ist und veröffentlichen des Rechnungsprozesses, mittels REST Schnittstelle:
 
     curl -k -w "\n" \
     -H "Accept: application/json" \
