@@ -32,6 +32,8 @@ int main()
 {
     oled.clear();
     oled.printf( "H-Sensor BPMN\n" );
+    printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
+    oled.printf( "SSID: %s\r\n", MBED_CONF_APP_WIFI_SSID );
     
     // Connect to the network with the default networking interface
     // if you use WiFi: see mbed_app.json for the credentials
@@ -51,12 +53,12 @@ int main()
         // Alarm scharf
         if  ( led1 == 0 )
         {
-            oled.cursor( 1, 0 );
+            oled.cursor( 3, 0 );
             oled.printf( "scharf      " );
             float value = hallSensor.read();
             if  ( value > 0.6f )
             {
-                oled.cursor( 1, 0 );
+                oled.cursor( 3, 0 );
                 oled.printf( "ALARM !!!" );
                 HttpRequest* post_req = new HttpRequest( network, HTTP_POST, "http://192.168.178.12:30880/engine-rest/process-definition/key/RechnungStep3/start" );
                 post_req->set_header("Content-Type", "application/json");
@@ -82,7 +84,7 @@ int main()
         {
             if  ( reset == 0 )
             {
-                oled.cursor( 1, 0 );
+                oled.cursor( 3, 0 );
                 oled.printf( "reset       " );                
                 led1 = 0;
                 led2 = 1;

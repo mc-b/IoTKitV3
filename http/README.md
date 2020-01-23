@@ -75,6 +75,11 @@ Zuerst installieren wir die [Camunda BPMN Workflow Engine](https://camunda.com/)
 
 Beim Programm handelt es sich um eine Variante des Cloud Beispiels [HallSensorAlarm](../cloud/HallSensorAlarm/src/main.cpp). Welches beim feststellen eines Magneten über dem Hall-Sensor eine HTTP-POST sendet. Dieser erstellt einen neuen Prozess in der [Camunda BPMN Workflow Engine](https://camunda.com/).
 
+Dieses ist in den Online Compiler zu importieren und auf ca. Zeile 63 der URL zur [Camunda BPMN Workflow Engine](https://camunda.com/) entsprechend anzupassen:
+
+    HttpRequest* post_req = new HttpRequest( network, HTTP_POST, "http://<IP-Adresse>:30880/engine-rest/process-definition/key/RechnungStep3/start" );
+
+
 **Compilieren**
 
 | Umgebung/Board    | Link/Befehl                      |
