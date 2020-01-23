@@ -65,4 +65,20 @@ Weitere Beispiele findet man auf [http://os.mbed.com/teams/sandbox/code/http-exa
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/http-example; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/http-example` |
 
+## REST Beispiel
 
+Für ein komplexeres Beispiel wollen wir via IoTKit eine [BPMN Prozess](https://de.wikipedia.org/wiki/Business_Process_Model_and_Notation) starten. 
+
+Dazu verwenden wir die [Camunda BPMN Workflow Engine](https://camunda.com/) aus dem [Edge Beispiel](../edge#cloud-umgebung-edge---rest).
+
+Zuerst installieren wir die [Camunda BPMN Workflow Engine](https://camunda.com/) wie im [Edge Beispiel](../edge#cloud-umgebung-edge---rest) beschrieben, veröffentlichen den Rechnungsprozess und laden das entsprechende Programm, zum auslösen des Prozesses, auf das Board.
+
+Beim Programm handelt es sich um eine Variante des Cloud Beispiels [HallSensorAlarm](../cloud/HallSensorAlarm/src/main.cpp). Welches beim feststellen eines Magneten über dem Hall-Sensor eine HTTP-POST sendet. Dieser erstellt einen neuen Prozess in der [Camunda BPMN Workflow Engine](https://camunda.com/).
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [HallSensorBPMN](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensorBPMN/) |
+| CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/http/HallSensorBPMN; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
+| CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/http/HallSensorBPMN` |
