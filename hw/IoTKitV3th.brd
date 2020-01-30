@@ -18,8 +18,8 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -273,9 +273,9 @@ GND</text>
 <wire x1="73.66" y1="15.24" x2="74.93" y2="16.51" width="0.1524" layer="25"/>
 <wire x1="74.93" y1="16.51" x2="80.01" y2="16.51" width="0.1524" layer="25"/>
 <text x="47.625" y="11.43" size="1.778" layer="25" rot="SR180">A3</text>
-<text x="73.66" y="47.625" size="1.778" layer="26" rot="MR0">IoTKit V3, Rev. 1.1, 2019
-Designed to work with mbed
+<text x="73.66" y="47.625" size="1.778" layer="26" rot="MR0">IoTKit V3, Rev. 1.1, 2020
 
+Designed to work with mbed
 https://github.com/mc-b/iotkitv3</text>
 <text x="62.23" y="3.81" size="1.778" layer="25" rot="SR180">IoTKit V3 Shield</text>
 <text x="6.35" y="40.64" size="1.778" layer="26" rot="MR0" align="bottom-right">SCLK (D13)
