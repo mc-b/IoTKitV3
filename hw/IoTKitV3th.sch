@@ -6414,9 +6414,9 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <label x="88.9" y="81.28" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<pinref part="SD-CARD" gate="A" pin="3"/>
-<wire x1="-21.59" y1="129.54" x2="-21.59" y2="121.92" width="0.1524" layer="91"/>
-<label x="-20.32" y="119.38" size="1.778" layer="95" rot="R90"/>
+<pinref part="SD-CARD" gate="A" pin="4"/>
+<wire x1="-19.05" y1="129.54" x2="-19.05" y2="121.92" width="0.1524" layer="91"/>
+<label x="-17.78" y="119.38" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="D12" class="0">
@@ -6436,9 +6436,9 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <label x="48.26" y="111.76" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<pinref part="SD-CARD" gate="A" pin="4"/>
-<wire x1="-19.05" y1="129.54" x2="-19.05" y2="121.92" width="0.1524" layer="91"/>
-<label x="-17.78" y="119.38" size="1.778" layer="95" rot="R90"/>
+<pinref part="SD-CARD" gate="A" pin="3"/>
+<wire x1="-21.59" y1="129.54" x2="-21.59" y2="121.92" width="0.1524" layer="91"/>
+<label x="-20.32" y="119.38" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="D13" class="0">
@@ -6855,23 +6855,23 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <approved hash="104,1,127,55.88,H-BRIDGE,VCC1,+5V,,,"/>
 <approved hash="104,1,142.24,55.88,H-BRIDGE,GND3,GND,,,"/>
 <approved hash="104,1,147.32,55.88,H-BRIDGE,GND4,GND,,,"/>
-<approved hash="113,1,72.1639,70.8862,STEPPER1+,,,,,"/>
-<approved hash="113,1,95.0239,70.8862,STEPPER2+,,,,,"/>
-<approved hash="113,1,144.554,68.8171,M02,,,,,"/>
-<approved hash="113,1,147.546,12.4629,M01,,,,,"/>
-<approved hash="113,1,87.3023,39.37,STEPPER,,,,,"/>
+<approved hash="113,1,72.1944,70.8862,STEPPER1+,,,,,"/>
+<approved hash="113,1,95.0544,70.8862,STEPPER2+,,,,,"/>
+<approved hash="113,1,144.584,68.8171,M02,,,,,"/>
+<approved hash="113,1,147.516,12.4629,M01,,,,,"/>
+<approved hash="113,1,87.3214,39.37,STEPPER,,,,,"/>
 <approved hash="113,1,71.12,92.71,D3,,,,,"/>
 <approved hash="113,1,93.98,92.71,D6,,,,,"/>
-<approved hash="113,1,120.608,94.2061,A4,,,,,"/>
-<approved hash="113,1,137.118,94.2061,A2,,,,,"/>
-<approved hash="113,1,153.628,94.2061,A0,,,,,"/>
-<approved hash="113,1,8.66394,124.697,SPI,,,,,"/>
-<approved hash="113,1,48.0339,126.586,NFC/RFID,,,,,"/>
-<approved hash="113,1,107.724,129.625,HALL-SENSOR,,,,,"/>
-<approved hash="113,1,144.554,127.929,OLED(0X78),,,,,"/>
-<approved hash="113,1,81.5061,111.523,D3~,,,,,"/>
-<approved hash="113,1,-19.0923,104.366,ESP8266,,,,,"/>
-<approved hash="113,1,-19.0923,85.3161,JP1,,,,,"/>
+<approved hash="113,1,120.608,94.1756,A4,,,,,"/>
+<approved hash="113,1,137.118,94.1756,A2,,,,,"/>
+<approved hash="113,1,153.628,94.1756,A0,,,,,"/>
+<approved hash="113,1,8.69442,124.697,SPI,,,,,"/>
+<approved hash="113,1,48.0644,126.586,NFC/RFID,,,,,"/>
+<approved hash="113,1,107.754,129.625,HALL-SENSOR,,,,,"/>
+<approved hash="113,1,144.584,127.929,OLED(0X78),,,,,"/>
+<approved hash="113,1,81.4756,111.523,D3~,,,,,"/>
+<approved hash="113,1,-19.0923,104.336,ESP8266,,,,,"/>
+<approved hash="113,1,-19.0923,85.2856,JP1,,,,,"/>
 <approved hash="113,1,-20.32,130.535,SD-CARD,,,,,"/>
 <approved hash="113,1,-19.8857,53.34,POTI(A2),,,,,"/>
 </errors>
