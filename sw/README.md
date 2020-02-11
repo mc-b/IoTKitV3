@@ -8,8 +8,10 @@ Software
 
 * [Betriebssystem](#betriebssystem)
 * [Entwicklungsumgebungen](#entwicklungsumgebungen)
-* [mbed-cli](#mbed-cli)
-* [Serielle Kommunikation](#serielle-kommunikation)
+    * [Arm Mbed Online Compiler (empfohlen)](#arm-mbed-online-compiler)
+    * [mbed-cli](#mbed-cli)
+    * [Arm Mbed Studio (Public Beta)](https://os.mbed.com/docs/mbed-studio/latest/introduction/index.html)
+* [Serielle Kommunikation](#serielle-kommunikation) **wird für Ausgabe von Debug Informationen benötigt!**
 
 ## Betriebssystem
 ***
@@ -58,6 +60,32 @@ Bei der **CLI (IoTKit K64F)** Variante muss zusätzlich das Laufwerk mittels der
 Ist kein Link **Online Compiler** vorhanden, kann das [IoTKit V3 Template](https://os.mbed.com/teams/IoTKitV3/code/template/) verwendet werden. Dabei ist der Inhalt von `main.cpp` mit dem Inhalt des Beispiels zu ersetzen.
 
 **ACHTUNG**: kann der IoTKit K64F nicht mehr Programmiert werden, Upload endet sofort und es erscheint eine Datei `FAIL.TXT`, ist leicht am Encoder zu drehen und das Board ein- und auszustecken.
+
+### Arm Mbed Online Compiler
+***
+
+Für die Online-Entwicklung stellt Arm den [Mbed Online Compiler](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html) zur Verfügung. Dies ist eine gute Wahl, wenn Sie schnell mit Mbed OS arbeiten möchten.
+
+**IoTKit mit dem PC/Notebook verbinden**
+
+* IoTKit via USB Kabel mit dem PC/Notebook verbinden.
+* Account auf [https://os.mbed.com](https://os.mbed.com) anlegen.
+* Für das **IoTKitV3 K64F** auf [https://os.mbed.com/platforms/frdm-k64f/](https://os.mbed.com/platforms/frdm-k64f/), für das **DISCO-L475VG-IOT01A** auf [https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) auf den URL wechseln und `Add to ... Compiler` (rechts unten) anwählen.
+* Das erste Programm mittels URL [https://os.mbed.com/teams/IoTKitV3/code/DigitalOut/](https://os.mbed.com/teams/IoTKitV3/code/DigitalOut/) und «Import Comp…» importieren.
+* Ein Dialog erscheint – Programm mit Standardeinstellungen, ohne Update Libraries, importieren
+
+**Programm compilieren**
+
+* Wählt links main.cpp an, das Hauptprogramm erscheint im Editor.
+* Drückt `Compile` das Programm wird compiliert (übersetzt in Maschinensprache für den ARM Cortex M4 Prozessor).
+* Speichert die *.bin Datei auf dem neu erstellten Laufwerk (Mac/Linux = Verzeichnis) ab (je nach Browser ist die Datei im Verzeichnis `Download` und muss mittels Drag&Drop verschoben werden). 
+* Drückt die `Reset Taste` (neben USB Anschluss) auf dem IoTKit. Das  Programm wird vom Laufwerk in den Flash des ARM Cortex M4 Prozessors geschrieben.
+* Die 4 LEDs auf dem IoTKit sollten jetzt Abwechslungsweise, im Abstand von 0.5 Sekunden, blinken. 
+* Ändert den Wert von `warte = 0.5f` auf `1.0f` in `main.cpp` und wiederholt den Vorgang. Was hat sich verändert 
+
+Zusätzlich zum Laufwerk (Mac/Linux = Verzeichnis), wird auch eine Serielle Verbindung zum IoTKit erstellt (siehe Gerätemanager). Aus dieser Seriellen Verbindung können z.B. Debugging Meldungen ausgegeben werden.
+
+Für den richtigen Treiber und die zusätzlich benötigte Software siehe [Serielle Kommunikation](#serielle-kommunikation).
 
 ### mbed-cli 
 ***

@@ -32,7 +32,7 @@ Entstanden ist das Board durch die Kombination des [NXP FRDM-K64F Board](https:/
 
 #### Board features
 
-* [Bluetooth® V4.1 module (SPBTLE-RF)](../wearables/)
+* [Bluetooth® V4.1 module (SPBTLE-RF)](../bluetooth/)
 * [Proximity sensor, gesture and ambient light sensing (ALS) module (VL6180X)](../i2c#vl6180x)
 * [low power, high sensitivity, RED, GREEN and BLUE color light sensor (RGB)](../i2c#ISL29125)
 * [Hall Sensor](../sensors#Hall-Sensor)
