@@ -10,7 +10,6 @@ Software
 * [Entwicklungsumgebungen](#entwicklungsumgebungen)
     * [Arm Mbed Online Compiler (empfohlen)](#arm-mbed-online-compiler)
     * [mbed-cli](#mbed-cli)
-    * [Arm Mbed Studio (Public Beta)](https://os.mbed.com/docs/mbed-studio/latest/introduction/index.html)
 * [Serielle Kommunikation](#serielle-kommunikation) **wird für Ausgabe von Debug Informationen benötigt!**
 
 ## Betriebssystem
@@ -70,7 +69,7 @@ Für die Online-Entwicklung stellt Arm den [Mbed Online Compiler](https://os.mbe
 
 * IoTKit via USB Kabel mit dem PC/Notebook verbinden.
 * Account auf [https://os.mbed.com](https://os.mbed.com) anlegen.
-* Für das **IoTKitV3 K64F** auf [https://os.mbed.com/platforms/frdm-k64f/](https://os.mbed.com/platforms/frdm-k64f/), für das **DISCO-L475VG-IOT01A** auf [https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) auf den URL wechseln und `Add to ... Compiler` (rechts unten) anwählen.
+* Für das **IoTKitV3 K64F** auf den URL [https://os.mbed.com/platforms/frdm-k64f/](https://os.mbed.com/platforms/frdm-k64f/), für das **DISCO-L475VG-IOT01A** auf [https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) wechseln und `Add to ... Compiler` (rechts unten) anwählen.
 * Das erste Programm mittels URL [https://os.mbed.com/teams/IoTKitV3/code/DigitalOut/](https://os.mbed.com/teams/IoTKitV3/code/DigitalOut/) und «Import Comp…» importieren.
 * Ein Dialog erscheint – Programm mit Standardeinstellungen, ohne Update Libraries, importieren
 
@@ -83,7 +82,7 @@ Für die Online-Entwicklung stellt Arm den [Mbed Online Compiler](https://os.mbe
 * Die 4 LEDs auf dem IoTKit sollten jetzt Abwechslungsweise, im Abstand von 0.5 Sekunden, blinken. 
 * Ändert den Wert von `warte = 0.5f` auf `1.0f` in `main.cpp` und wiederholt den Vorgang. Was hat sich verändert 
 
-Zusätzlich zum Laufwerk (Mac/Linux = Verzeichnis), wird auch eine Serielle Verbindung zum IoTKit erstellt (siehe Gerätemanager). Aus dieser Seriellen Verbindung können z.B. Debugging Meldungen ausgegeben werden.
+Zusätzlich zum Laufwerk (Mac/Linux = Verzeichnis), wird auch eine Serielle Verbindung zum IoTKit erstellt (siehe Gerätemanager). Über die Serielle Verbindung können z.B. Debugging Meldungen ausgegeben werden.
 
 Für den richtigen Treiber und die zusätzlich benötigte Software siehe [Serielle Kommunikation](#serielle-kommunikation).
 
