@@ -93,7 +93,7 @@ Für den richtigen Treiber und die zusätzlich benötigte Software siehe [Seriel
 
 Für die Offline-Entwicklung bietet Arm Mbed CLI, ein Befehlszeilentool an. Mbed CLI ist kompatibel mit Windows, Linux und Mac OS. Mbed CLI bietet mehr Optionen, erfordert jedoch etwas mehr Installation.
 
-[mbed cli](https://github.com/ARMmbed/mbed-cli) mit allen Abhängigkeiten (Python, GCC_ARM) wie unter [Installation](https://github.com/ARMmbed/mbed-cli#installation) beschrieben, installieren.
+[mbed cli](https://github.com/ARMmbed/mbed-cli) mit allen Abhängigkeiten (Python, GCC_ARM) wie unter [Installation](https://os.mbed.com/docs/mbed-os/v5.15/quick-start/offline-with-mbed-cli.html) beschrieben, installieren.
 
 *Bash* Shell starten und in ein Verzeichnis, wo die Beispiele abgelegt werden sollen, wechseln, z.B.
 
