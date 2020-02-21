@@ -57,7 +57,7 @@ Die WLAN SSID und Password steht in der Datei `mbed_app.json`.
 
 ### Beispiel(e)
 
-* [Network Time Protocol (NTP)](#network-time-protokoll-ntp) - holt die Zeit vom Internet und setzt die interne Uhr des Boards.
+* [Network Time Protocol (NTP)](#network-time-protocol-ntp) - holt die Zeit vom Internet und setzt die interne Uhr des Boards.
 * [LowLevel Wifi Zugriff](wifi/src/main.cpp) - WLAN Zugriff, ohne `"network-helper.h"` Datei.
 
 ### Links
@@ -82,7 +82,7 @@ Im allgemeinen Sprachgebrauch bezeichnet NTP sowohl das Protokoll als auch die S
 
 NTP nutzt ein hierarchisches System verschiedener Strata (Plural von Stratum). Als Stratum 0 bezeichnet man das Zeitnormal, beispielsweise eine Atomuhr oder eine Funkuhr (genauer: Zeitzeichenempfänger) (GNSS, DCF77). Die unmittelbar mit ihm gekoppelten NTP-Server heißen Stratum 1. Jede weitere abhängige Einheit erhält bei der Bezeichnung eine höhere Nummer (Stratum 2, Stratum 3 …).
 
-Das Network Time Protocol ist in der [NTP Library](https://os.mbed.com/users/donatien/code/NTPClient/) abgebildet.
+Das Network Time Protocol ist in der [NTP Library](https://github.com/ARMmbed/ntp-client/) abgebildet.
 
 ### Anwendungen 
 
