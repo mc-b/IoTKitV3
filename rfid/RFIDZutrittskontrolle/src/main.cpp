@@ -42,26 +42,29 @@ int main(void)
                 printf("\n");
 
                 // alle ids durchlaufen (r = ids, c = position)
+                int ok = true;
                 for ( int r = 0; r < 3; r++ ) 
                 {
-                    int ok = true;
                     for ( int c = 0; c < 4; c++ ) 
                     {
+                    	ok = true;
                         if  ( rfidReader.uid.uidByte[c] != ids[r] [c] ) 
                         {
                             ok = false;
                             break;
                         }
                     }
-                    // RFID Tag's erkannt?
-                    if  ( ok ) 
-                    {
-                        mosfet = 1;
-                        wait_ms(1000);
-                        mosfet = 0;
-                        break;
-                    }
+                    if	( ok )
+                    	break;
                 }
+				// RFID Tag's erkannt?
+				if  ( ok )
+				{
+					mosfet = 1;
+					wait_ms(1000);
+					mosfet = 0;
+					break;
+				}
             }
         wait ( 0.2f );
     }
