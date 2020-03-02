@@ -196,6 +196,10 @@ IFTTT ermöglicht Benutzern "Applets" nach dem Motto "If this then that" ("Wenn 
 
 Die eigentlichen Geräte / Dienste werden als **Services** bezeichnet.
 
+### Alternative (nicht getestet)
+
+* [Zapier](https://zapier.com/)
+
 ### Webhook Service 
 
 Der [Webhook Service](https://ifttt.com/maker_webhooks) ermöglicht es, IFTTT mit dem IoTKit zu verbinden.
