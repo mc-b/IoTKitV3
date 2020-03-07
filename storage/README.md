@@ -15,33 +15,24 @@ Als Shields oder externe Lösungen kommen in Frage:
 * [Data Logging shield for Arduino](https://www.adafruit.com/product/1141)
 * [Arduino SD Card Module Interface](https://www.youtube.com/watch?v=ZBOlIznlGKY)
 
-Diese werden am SPI Bus angeschlossen und verwenden folgende Pins:
-* SS = D10
-* MOSI = D11
-* MISO = D12
-* SCLK = 13
+Damit die SD Karte verwendet wird, sind Anpassungen im Programm nötig.
 
-Danmit die Speicher-APIs auf die Pins zusteuern ist die `mbed_app.json` wie folgt zu erweitern:
+Zuerst ist `BlockDevice` durch `SDBlockDevice` zu ersetzen
 
-	{
-	    "target_overrides": {
-	        "K64F": {
-	             "target.features_add": ["STORAGE"],
-	             "target.components_add": ["SD"],
-	             "sd.SPI_MOSI": "D11",
-	             "sd.SPI_MISO": "D12",
-	             "sd.SPI_CLK": "D13",
-	             "sd.SPI_CS": "D10"
-	        }        
-	    }
-	} 
+    #include "SDBlockDevice.h"
+    ...
+    // This will take the system's default block device
+    SDBlockDevice *bd = new SDBlockDevice( D11, D12, D13, D9 );
+    
+Und wenn statt `LittleFileSystem` das MS-DOS FAT Filesystem verwendet werden soll, dass erste zu deaktiveren und das zweite zu aktiveren
+
+    //#include "LittleFileSystem.h"
+    //LittleFileSystem fs("fs");
+
+    // Uncomment the following two lines and comment the previous two to use FAT file system.
+    #include "FATFileSystem.h"
+    FATFileSystem fs("fs");    
 	
-Für das DISCO_L475VG_IOT01A Board ist **K64F** durch **DISCO_L475VG_IOT01A** zu ersetzen.
-	
-Damit werden die `STORAGE` und `SD` Features/Komponenten enabled und die Pins zugewiesen.
-
-An den eigentlichen Programmen ist dann nicht mehr zu ändern.
-
 ### Beispiele
 
 * [Filesystem](https://github.com/ARMmbed/mbed-os-example-filesystem/)	
