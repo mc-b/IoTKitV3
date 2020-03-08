@@ -4862,9 +4862,9 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <label x="55.88" y="111.76" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="A" pin="6"/>
-<wire x1="96.52" y1="91.44" x2="96.52" y2="81.28" width="0.1524" layer="91"/>
-<label x="93.98" y="81.28" size="1.778" layer="95"/>
+<pinref part="JP2" gate="A" pin="6"/>
+<wire x1="78.74" y1="91.44" x2="78.74" y2="81.28" width="0.1524" layer="91"/>
+<label x="76.2" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D9" class="0">
@@ -4884,9 +4884,9 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <label x="-12.7" y="119.38" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="A" pin="5"/>
-<wire x1="88.9" y1="91.44" x2="88.9" y2="81.28" width="0.1524" layer="91"/>
-<label x="86.36" y="81.28" size="1.778" layer="95"/>
+<pinref part="JP2" gate="A" pin="5"/>
+<wire x1="71.12" y1="91.44" x2="71.12" y2="81.28" width="0.1524" layer="91"/>
+<label x="68.58" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$38" class="0">
@@ -4957,9 +4957,9 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <label x="10.16" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="A" pin="6"/>
-<wire x1="78.74" y1="91.44" x2="78.74" y2="81.28" width="0.1524" layer="91"/>
-<label x="76.2" y="81.28" size="1.778" layer="95"/>
+<pinref part="JP3" gate="A" pin="5"/>
+<wire x1="88.9" y1="91.44" x2="88.9" y2="81.28" width="0.1524" layer="91"/>
+<label x="86.36" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TX" class="0">
@@ -5330,9 +5330,9 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <label x="15.24" y="17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="A" pin="5"/>
-<wire x1="71.12" y1="91.44" x2="71.12" y2="81.28" width="0.1524" layer="91"/>
-<label x="68.58" y="81.28" size="1.778" layer="95"/>
+<pinref part="JP3" gate="A" pin="6"/>
+<wire x1="96.52" y1="91.44" x2="96.52" y2="81.28" width="0.1524" layer="91"/>
+<label x="93.98" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
