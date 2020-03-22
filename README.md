@@ -40,6 +40,7 @@ Beispiele und Dokumentation zum IoTKit V3 Board. Für eine Einführung und Verti
 ## Anwendungen
 
 * [Cloud Dienste](cloud/) wie IFTTT, Yahoo Weather
+* [LAM (Linux, Apache, MySQL) Server](LAM/)
 * [Industrie V4.0](industrieV4/)
 * [Roboter](roboter/)
 * [NFC / RFID](rfid/)
