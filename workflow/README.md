@@ -36,7 +36,7 @@ Im Node-RED Fenster auf der Node `debug`, sollten jetzt alle 10 Sekunden neue Me
 * [Mosquitto](https://mosquitto.org/) installieren.
 * [Node-RED](https://nodered.org/) installieren.
 * In Node-RED
-    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden und als Topic `iotkit` eintragen.
+    * `mqtt` Input Node auf Flow 1 platzieren, mit Mosquitto Server verbinden, als Topic `iotkit/#` und bei Output `a String` eintragen.
     * `debug` Output Node auf Flow 1 platzieren und mit Input Node verbinden.
     * Programm mittels `Deploy` veröffentlichen.
 * mbed Teil
