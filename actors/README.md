@@ -71,6 +71,7 @@ Das [Beispiel](Servos/src/main.cpp) bewegt 4 Servos.
 | Online Compiler           | [Servos](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/Servos/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/Servos;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/Servos` |
+| CLI (nucleo_f303re)       | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/actors/Servos` |
 
 ## Gleichstrom Motor
 ***
@@ -113,6 +114,7 @@ Das [Beispiel](Motors/src/main.cpp) bewegt 2 DC Motoren vorwärts und rückwärt
 | Online Compiler           | [Motors](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/Motors/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/Motors;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/Motors` |
+| CLI (nucleo_f303re)       | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/actors/Motors` |
 
 ## Schrittmotor
 ***
@@ -156,6 +158,7 @@ Das [Beispiel](Steppers/src/main.cpp) bewegt 2 Schrittmotoren vorwärts und rüc
 | Online Compiler           | [Steppers](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/Steppers/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/Steppers;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/Steppers` |
+| CLI (nucleo_f303re)       | - |
 
 
 ## Türöffner
@@ -197,6 +200,7 @@ Das [Beispiel](DoorOpener/src/main.cpp) öffnet den Türschliesser beim Druck au
 | Online Compiler           | [DoorOpener](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DoorOpener/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/DoorOpener;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/DoorOpener` |
+| CLI (nucleo_f303re)       | - |
 
 
 ## RGB LED Streifen 
@@ -242,6 +246,7 @@ Das [Beispiel](RGBLEDStrip/src/main.cpp) bringt die 3 Farben (grün, rot, blau) 
 | Online Compiler           | [RGBLEDStrip](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RGBLEDStrip/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/RGBLEDStrip;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/RGBLEDStrip` |
+| CLI (nucleo_f303re)       | - |
 
 ### Links
 
@@ -269,6 +274,7 @@ Das [Beispiel](FernsehSimulatorLED/src/main.cpp) verwendet die Verbauten LEDs un
 | Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Beispielcode überschreiben |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/FernsehSimulatorLED;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/FernsehSimulatorLED` |
+| CLI (nucleo_f303re)       | - |
 
 ### Links
 
@@ -298,5 +304,6 @@ Ein paar der Übungen funktionieren nur mit dem IoTKitV3 K64F, weil der Encoder 
 | Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp Übungscode überschreiben |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/actors/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/actors/01-Uebung` |
+| CLI (nucleo_f303re)       | - |
 
 * *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.
