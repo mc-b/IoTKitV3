@@ -79,11 +79,13 @@ Die Anzeige besteht aus einer Punktmatrix von LED&#039;s in einer rechteckigen K
 | Online Compiler | [DotLEDMatrix](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DotLEDMatrix/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/DotLEDMatrix; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/DotLEDMatrix` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/spi/DotLEDMatrix` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/DotLEDMatrixLowLevel; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/DotLEDMatrixLowLevel` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/spi/DotLEDMatrixLowLevel` |
 
 
 ## RGB LED Streifen
@@ -126,8 +128,10 @@ Auf dem Strip kommen [WS2801](http://www.adafruit.com/datasheets/WS2801.pdf) IC&
 | Online Compiler | [RGBLEDStripSPI](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RGBLEDStripSPI/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/RGBLEDStripSPI; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/RGBLEDStripSPI` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/spi/RGBLEDStripSPI` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/spi/FernsehSimulator; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/spi/FernsehSimulator` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/spi/FernsehSimulator` |

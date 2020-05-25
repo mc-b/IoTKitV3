@@ -73,6 +73,7 @@ Das Beispiel [JSONParser](JSONParser/src/main.cpp) erzeugt eine JSON Struktur un
 | Online Compiler | [JSONParser](https://os.mbed.org/compiler/#import:/teams/smdiotkit2ch/code/JSONParser/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/JSONParser; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/JSONParser` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/cloud/JSONParser` |
 
 
 ## XML (Extensible Markup Language)
@@ -127,6 +128,7 @@ Das Beispiel [XMLParser](XMLParser/src/main.cpp) erzeugt eine XML Struktur und p
 | Online Compiler | [XMLParser](https://os.mbed.org/compiler/#import:/teams/smdiotkit2ch/code/XMLParser/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/XMLParser; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/XMLParser` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/cloud/XMLParser` |
 
 ## Sunset Sunrise (JSON)
 ***
@@ -176,6 +178,7 @@ Das Beispiel [SunriseSunset](SunriseSunset/src/main.cpp) holt die Informationen 
 | Online Compiler | [SunriseSunset](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/SunriseSunset/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/SunriseSunset; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/SunriseSunset` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/cloud/SunriseSunset` |
 
 
 ## IFTTT ("If This Then That")
@@ -237,6 +240,7 @@ Das Beispiel [HallSensorAlarm](HallSensorAlarm/src/main.cpp) löst eine Aktion a
 | Online Compiler | [HallSensorAlarm](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensorAlarm/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/HallSensorAlarm; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/HallSensorAlarm` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/cloud/HallSensorAlarm` |
 
 
 ## ThingSpeak
@@ -278,6 +282,7 @@ Das Beispiel [ThingSpeak](ThinkSpeak/src/main.cpp) schickt Sensordaten an den Th
 | Online Compiler | [ThingSpeak](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/ThingSpeak/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/ThingSpeak; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/ThingSpeak` |
+| CLI (nucleo_f303re) | - |
 
 
 ## Yahoo Wetter (XML/RSS-Feed)
@@ -383,6 +388,7 @@ Das Beispiel [YahooWheater](YahooWeather/src/main.cpp) holt die Wetterdaten von 
 | ----------------- | -------------------------------- |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/cloud/YahooWheater; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/cloud/YahooWheater` |
+| CLI (nucleo_f303re) | - |
 
 
 

@@ -99,4 +99,5 @@ Das Beispiel [NTPV2](NTPV2/src/main.cpp) holt die Zeit vom Internet und setzt di
 | Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) enthält das NTP Beispiel |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/wlan/NTPV2; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/wlan/NTPV2` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/wlan/NTPV2` |
 

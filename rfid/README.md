@@ -85,23 +85,27 @@ Der RFID Reader benötigt die [MFRC522 Library](http://developer.mbed.org/users/
 | Online Compiler | [RFIDReaderV3](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RFIDReaderV3/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDReaderV3; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDReaderV3` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/rfid/RFIDReaderV3` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [RFIDInventar](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RFIDInventar/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDInventar; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDInventar` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/rfid/RFIDInventar` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [RFIDZutrittskontrolle](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/RFIDZutrittskontrolle/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDZutrittskontrolle; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDZutrittskontrolle` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/rfid/RFIDZutrittskontrolle` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/rfid/RFIDDump; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/rfid/RFIDDump` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/rfid/RFIDDump` |
 
 ## NFC Tag
 ***

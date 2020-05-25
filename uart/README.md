@@ -51,24 +51,28 @@ Die Konfiguration und der Firmware Update des ESP8266 WLAN Modems ist weiter [un
 | Online Compiler | [Serialprintf](https://developer.mbed.org/teams/smdiotkitch/code/Serialprintf/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/uart/Serialprintf; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/uart/Serialprintf` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/uart/Serialprintf` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [Serialscanf](https://developer.mbed.org/teams/smdiotkitch/code/Serialscanf/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/uart/Serialscanf; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/uart/Serialscanf` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/uart/Serialscanf` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [SerialAll](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/SerialAll/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/uart/SerialAll; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/uart/SerialAll` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/uart/SerialAll` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [ESP8266](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/ESP8266/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/uart/ESP8266; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/uart/ESP8266` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/uart/ESP8266` |
 
 ### Links
 
@@ -180,5 +184,6 @@ Auf der mbed MCU ist vorher ein einfaches Programm, z.B. DigitalOut zu uploaden,
 | Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Übungscode überschreiben |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/uart/02-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/uart/02-Uebung` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/uart/02-Uebung` |
 
 * *02-Uebung* durch entsprechendes Übung Verzeichnis *xx-Uebung* etc. ersetzen.

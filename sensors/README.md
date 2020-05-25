@@ -62,6 +62,7 @@ Das [Beispiel](HallSensor/src/main.cpp) bringt je nach Pool eine LED zu leuchten
 | Online Compiler           | [HallSensor](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensor/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/HallSensor;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/HallSensor` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/sensors/HallSensor` |
 
 ## PIR Sensor 
 ***
@@ -118,6 +119,7 @@ Das [Beispiel](PIRSensor/src/main.cpp) bei Erkennung einer Bewegung wird eine LE
 | Online Compiler           | [PIRSensor](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/PIRSensor/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/PIRSensor;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/PIRSensor` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/sensors/PIRSensor` |
 
 ### Links 
 
@@ -172,12 +174,14 @@ Das Beispiel [UltraschallSensor_LowLevelV2](UltraschallSensor_LowLevelV2/src/mai
 | Online Compiler           | [UltraschallSensor](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/UltraschallSensor/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/UltraschallSensor;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/UltraschallSensor` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/sensors/UltraschallSensor` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Beispielcode überschreiben |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/UltraschallSensor_LowLevelV2;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/UltraschallSensor_LowLevelV2` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/sensors/UltraschallSensor_LowLevelV2` |
 
 ## Temperatur Sensor 
 ***
@@ -224,6 +228,7 @@ Das [Beispiel](TemperaturSensorExtern/src/main.cpp) gibt Temperatur und Luftfeuc
 | Online Compiler           | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Beispielcode überschreiben |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/senors/TemperaturSensorExtern;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/TemperaturSensorExtern` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/sensors/TemperaturSensorExtern` |
 
 
 ## Übungen
@@ -246,5 +251,6 @@ Das [Beispiel](TemperaturSensorExtern/src/main.cpp) gibt Temperatur und Luftfeuc
 | Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp Übungscode überschreiben |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/sensors/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/sensors/01-Uebung` |
+| CLI (nucleo_f303re) | - |
 
 * *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.

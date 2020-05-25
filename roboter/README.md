@@ -23,6 +23,7 @@ Einen kleinen Roboter mit Hilfe eines Mikroprozessors zu steuern ist ganz einfac
 | ----------------- | -------------------------------- |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/roboter/Roboter; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/roboter/Roboter` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/roboter/Roboter` |
 - - -
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |

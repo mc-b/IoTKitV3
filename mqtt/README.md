@@ -74,6 +74,7 @@ Ein weiteres Beispiel ist [MQTT on os.mbed.org](https://os.mbed.com/teams/mqtt/c
 | Online Compiler | [MQTTPublish](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/MQTTPublish/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/mqtt/MQTTPublish; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/mqtt/MQTTPublish` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/mqtt/MQTTPublish` |
 
 
 ### Links 

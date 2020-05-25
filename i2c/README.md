@@ -42,13 +42,18 @@ Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je n
 
 * [Time-of-Flight and gesture-detection sensor (VL53L0X)](#vl53l0x)
 
-**Beide Boards**
+**IoTKit K64F und DISCO_L475VG_IOT01A Board**
 
 * [Capacitive digital sensor for relative humidity and temperature (HTS221)](#HTS221)
 * [High-performance 3-axis magnetometer (LIS3MDL)](#LIS3MDL)
 * [3D accelerometer and 3D gyroscope (LSM6DSL)](#LSM6DSL)
 * [mbed - Arduino Kommunikation](#mbed---Arduino-Kommunikation)
 * [Übungen](#Übungen)
+
+**Nucleo F303RE Board**
+
+* [bmp180]()
+* [APDS-9930]()
 
 ## VL6180X
 ***

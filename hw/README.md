@@ -80,7 +80,7 @@ Der Internet der Dinge Kit V3 Disco besteht aus den nachfolgenden Komponenten.
 
 ![](../images/STM32L4.png)
 
-Internet der Dinge Board
+Internet der Dinge Disco L475VG Board
 
 - - -
 
@@ -108,7 +108,29 @@ Internet der Dinge Board
 * Arduino™ Uno V3
 * PMOD
 
-### Shield
+## NUCLEO-F303RE
+***
+
+![](../images/F303RE.png)
+
+Internet der Dinge Board Nucleo F303 RE
+- - -
+
+Das STM32 Nucleo-Board bietet Anwendern eine erschwingliche und flexible Möglichkeit, neue Ideen auszuprobieren und Prototypen zu bauen.
+
+#### Board features
+
+STM32F303RET6 in LQFP64 package
+ARM®32-bit Cortex®-M4 CPU, 72 MHz max CPU frequency
+512 KB Flash, 80 KB SRAM
+GPIO (51) with external interrupt capability, 12-bit ADC (4), 12-bit DAC (2)
+RTC, Timers (10)
+I2C (3), USART (5), SPI (4), USB 2.0 full-speed, CAN
+
+* [mbed Page](https://os.mbed.com/platforms/ST-Nucleo-F303RE/)
+
+## Shield
+***
 
 ![](../images/Shield.png)
 
@@ -124,12 +146,35 @@ Shield features
 * 2 x UART Header (1x Grove)
 * 4 x Servo 4x3 Header
 * 2 x I2C Header (1x Grove)
-* 1 x Stepper, Door Opener, LED Strip Driver
+* 1 x Leistungsstufe für Schrittmotoren, Türöffner oder für die Ansteuerung von LED Streifen
 * 1 x Hall Sensor
 * 1 x OLED (128x64 Pixel)
-* 1 x H-Bridge
+* 1 x H-Bridge für 2 DC Motoren
 * 8 x Analog/Digital 6x3 Header und 2 x Grove
 * 1 x Buzzer
+
+## Shield (small)
+
+![](../images/ShieldSmall.png)
+
+Internet der Dinge Shield (small)
+
+- - -
+
+Der IoTKit V3 Shield (small) ist die abgespeckte Variante des IoTKit Shields. 
+
+Shield features
+* 1 x SPI Header
+* 1 x NFC/RFID Reader Header
+* 1 x I2C Header (Grove)
+* 1 x SD Card Header
+* 1 x Hall Sensor
+* 1 x OLED (128x64 Pixel)
+* 1 x H-Bridge für 2 DC Motoren
+* 4 x Analog/Digital 6x3 Header z.B. für Sensoren und Servos
+* 1 x Grove
+* 1 x Anschluss für BMP180 Sensor für die Messung von Luftdruck und Temperatur.
+* 1 x Anschluss für APDS-9930 ein Umgebungslicht (ALS) und Näherungssensor
 
 ## Zubehör
 ***

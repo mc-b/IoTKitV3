@@ -52,6 +52,7 @@ nRF Connect App Printscreen
 | Online Compiler           | [HeartRate](https://os.mbed.com/teams/ST/code/mbed-os-example-ble-HeartRate/)  |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/bluetooth/HeartRate; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/bluetooth/HeartRate` |
+| CLI (nucleo_f303re)       | - |
 
 ### Code Anpassungen für IoTKit K64F Board (nur mbed Online Compiler)
 
@@ -110,6 +111,7 @@ Die Nummern bzw. der URL können in den entsprechenden Programmen angepasst werd
 | Online Compiler           | [mbed-os-example-ble-Beacon](https://os.mbed.com/teams/ST/code/mbed-os-example-ble-Beacon/)  |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/bluetooth/Beacon; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/bluetooth/Beacon` |
+| CLI (nucleo_f303re)       | - |
 
 
 

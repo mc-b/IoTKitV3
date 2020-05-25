@@ -71,6 +71,7 @@ Das Beispiel [DigitalOut](DigitalOut/src/main.cpp) steuert die LEDs D10 - D13 na
 | Online Compiler | [DigitalOut](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DigitalOut/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/DigitalOut; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/DigitalOut` |
+| Online Compiler (nucleo_f303re) | [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky/) |
 
 ## DigitalIn
 ***
@@ -106,6 +107,7 @@ Das [Beispiel](DigitalIn/src/main.cpp) frägt den Taster vom Encoder ab.
 | Online Compiler | [DigitalIn](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/DigitalIn/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/DigitalIn; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/DigitalIn` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/gpio/DigitalIn` |
 
 ## AnalogIn
 ***
@@ -142,6 +144,7 @@ Das [Beispiel](AnalogIn/src/main.cpp) frägt den Hallsensor (zur Ermittelung des
 | Online Compiler           | [AnalogIn](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/HallSensor/) |
 | CLI (IoTKit K64F)         | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/AnalogIn;` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/AnalogIn` |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/gpio/AnalogIn` |
 
 
 ## PwmOut - Pulsweitenmodulation
@@ -183,13 +186,14 @@ Siehe auch: [mbed Handbook](https://os.mbed.com/docs/mbed-os/latest/apis/pwmout.
 | Online Compiler | [PwmOut](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/PwmOut/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/PwmOut; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/PwmOut` |
+| CLI (nucleo_f303re) | LED1 (D13) unterstützt kein PWM |
 - - - 
 | Umgebung/Board    | Link/Befehl                      |
 | ----------------- | -------------------------------- |
 | Online Compiler | [PwmOutPeriod](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/PwmOutPeriod/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/PwmOutPeriod; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/PwmOutPeriod` |
-
+| CLI (nucleo_f303re) | - |
 
 ## Encoder Switch
 ***
@@ -213,6 +217,7 @@ Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vo
 | Online Compiler | [EncoderSwitch](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/EncoderSwitch/) |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/EncoderSwitch; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | Das Board/Shield hat kein Encoder Switch verbaut |
+| CLI (nucleo_f303re) | Das Board/Shield hat kein Encoder Switch verbaut |
 
 ## Übungen
 ***
@@ -232,5 +237,6 @@ Ein Encoder Switch - zählt die Impulse am Encoder und schaltet einen Zähler vo
 | Online Compiler | [template](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/template/) Importieren und Inhalt von main.cpp mit Übungscode überschreiben |
 | CLI (IoTKit K64F) | `mbed compile -m K64F --source . --source ../IoTKitV3/gpio/01-Uebung; ` <br> `cp BUILD/K64F/GCC_ARM/template.bin $DAPLINK` |
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/gpio/01-Uebung` |
+| CLI (nucleo_f303re) | - |
 
 * *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.
