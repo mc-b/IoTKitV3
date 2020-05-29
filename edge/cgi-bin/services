@@ -42,7 +42,7 @@ cat <<%EOF%
     <table width="100%" border=1>
     $(kubectl --kubeconfig ${HOME}/.kube/config get services --all-namespaces -o json | \
       jq -r '.items[] | [.metadata.name,([.spec.ports[].nodePort | tostring ] | join("|"))] | @tsv' | \
-      awk -v CLUSTER="${ADDR}" '{ if( substr($2, 1, 4) != "null" ) printf("<tr><td>%s</td><td><a href=%s:%s target=_blank>%s:%s</a></td></tr>\n", $1, CLUSTER, $2, CLUSTER, $2 ) }')
+      awk -v CLUSTER="http://${ADDR}" '{ if( substr($2, 1, 4) != "null" ) printf("<tr><td>%s</td><td><a href=%s:%s target=_blank>%s:%s</a></td></tr>\n", $1, CLUSTER, $2, CLUSTER, $2 ) }')
     </table>
 </body>
 </html>
