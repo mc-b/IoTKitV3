@@ -1,0 +1,61 @@
+#!/bin/bash
+#
+#   Abhandlung der REST Methoden GET, POST, PUT, DELETE
+#
+#   Juni 2015 / Marcel mc-b Bernet
+
+export HOME=/var/www
+
+# HTTP Header fuer Client
+echo "Content-type: text/html"
+echo ""
+
+cat <<%EOF% 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="https://kubernetes.io/images/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these 
+        
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+    .table-borderless tbody tr td, .table-borderless tbody tr th,
+        .table-borderless thead tr th, .table-borderless thead tr td,
+        .table-borderless tfoot tr th, .table-borderless tfoot tr td {
+        border: none;
+    }
+    </style>
+</head>
+<body>
+
+    <h3>Nodes</h3>
+    <table width="100%" border=1>
+$(kubectl --kubeconfig ${HOME}/.kube/config get nodes | \
+awk '{ printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n", $1, $2, $3, $4, $5 ) }')
+    </table>
+    
+    <h3>Konfiguration</h3>
+    <pre>
+$(kubectl --kubeconfig ${HOME}/.kube/config config view)
+    </pre>
+    <h3>IP-Adressen</h3>
+    <pre>
+$(ifconfig eth0)<hr/>$(ifconfig wlan0)<hr/>$(ifconfig wg0)
+    </pre>    
+    <h3>System-Info (Uptime, Disk, Memory)</h3>
+    <pre>$(uptime)</pre>
+    <pre>$(df -h /)</pre>
+    <pre>$(free -m)</pre>    
+    
+</body>
+</html>
+%EOF%

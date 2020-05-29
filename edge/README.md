@@ -2,13 +2,17 @@
 
 Edge Computing bezeichnet im Gegensatz zum Cloud Computing die dezentrale Datenverarbeitung am Rand des Netzwerks, der sogenannten Edge (engl. für Rand oder Kante).
 
-## Raspberry Pi als Edge aufsetzen
+Dazu kommen Cloud Technologien, wie Docker und Kubernetes, zum Einsatz
 
-Der Raspberry Pi eignet sich als Edge. Zuerst muss dieser allerdings wie folgt aufgesetzt werden:
+## Raspberry Pi (2, 3) als Edge aufsetzen
+
+Der Raspberry Pi (2, 3) eignet sich als Edge. 
+
+Dazu ist der Raspbery Pi (2, 3) wie folgt aufzusetzen:
 
 * Raspbian Lite wie auf [raspberrypi.org](https://www.raspberrypi.org/) beschrieben, downloaden und auf SD Karte speichern.
-* Auf dem Neuen Laufwerk eine Datei «ssh» ohne Endung erstellen.
-* Auf Windows Git/Bash oder Putty o.ä. installieren.
+* Auf der SD Karte eine Datei «ssh» ohne Endung erstellen.
+* Auf Windows Git/Bash oder Putty o.ä. installieren. Mac und Linux brauchen nur Git.
 * Raspberry Pi via Kabel mit dem Router LERNKUBE verbinden und via ssh Verbinden
     
 Grundinstallation:
@@ -20,7 +24,7 @@ Grundinstallation:
 
 Quelle: https://howtoraspberrypi.com/how-to-raspberry-pi-headless-setup/ 
 
-Anschliessend bietet sich [Docker](https://docker.com) als Container Umgebung an. Diese kann wie folgt installier werden:
+Anschliessend bietet sich [Docker](https://docker.com) als Container Umgebung an. Docker kann wie folgt installiert werden:
 
     ssh 192.168.2.xx -l pi
     sudo -i
@@ -35,16 +39,69 @@ Testen der Docker Umgebung:
     ssh 192.168.2.xx -l pi
     docker run hello-world
     
-Nach der Installation der benötigten Grundinfrastruktur können wir loslegen und die eigentlich benötigte Software als Container starten.
+Nach der Installation der benötigten Grundinfrastruktur können wir loslegen und die eigentliche Software als Container starten.
 
-Wir verwenden wie im [Workflow Beispiel](../workflow) [Node-RED](https://nodered.org/), Mosquitto und bauen das Beispiel dann Stück für Stück aus.
+Wir verwenden wie im [Workflow Beispiel](../workflow) [Node-RED](https://nodered.org/) und Mosquitto und bauen das Beispiel dann Stück für Stück aus.
 
     docker run -d -p 1880:1880 nodered/node-red
     docker run -d -p 1883:1883 eclipse-mosquitto
     
 Die eigentliche Applikation Node-RED ist via Browser <IP-Raspberry Pi:1880> zugreifbar.
 
-## Cloud Umgebung (Edge - REST)
+
+## Raspberry Pi (4) als Edge aufsetzen
+
+Grundsätzlich kann der Raspberry Pi 4 wie die Version 2, 3 installiert werden. Aber statt Docker installieren wir, die leichtgewichtige Kubernetes Variante [k3s](https://k3s.io/).
+
+Installationsschritte wie oben aber ohne Docker ausführen, stattdessen installieren wir [k3s](https://k3s.io/).
+
+    #   Installiert Rancher k3s ohne Ingress Controller traefik
+    curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--no-deploy=traefik" sh -s -
+
+    # pi User als Admin zulassen
+    sudo mkdir -p /home/pi/.kube
+    sudo cp /etc/rancher/k3s/k3s.yaml /home/pi/.kube/config
+    sudo chown -R pi:pi /home/pi/.kube
+    sudo chmod 700 /home/pi/.kube
+    sudo echo 'export KUBECONFIG=$HOME/.kube/config' >>/home/pi/.bashrc 
+    
+Optional lohnt es sich dem Raspberry Pi ein Web-UI zu spendieren. Das vereinfacht den Zugriff auf die Kubernetes Ressourcen.
+
+    # Apache Server als Web UI installieren
+    sudo apt install -y apache2 jq markdown
+    sudo a2enmod cgi
+    sudo systemctl restart apache2
+
+    # Web-UI einrichten
+    git clone https://github.com/mc-b/IoTKitV3
+    cd IoTKit3/edge
+    sudo cp cgi-bin/* /usr/lib/cgi-bin/
+    sudo cp html/* /var/www/html/
+    
+    # www-data User Zugriff auf Kubernetes erlauben
+    sudo mkdir -p /var/www/.kube
+    sudo cp /etc/rancher/k3s/k3s.yaml /var/www/.kube/config
+    sudo chown -R pi:pi /var/www/.kube
+    sudo chmod 700 /var/www/.kube    
+   
+Nach der Installation der benötigten Grundinfrastruktur können wir loslegen und die eigentliche Software als Container starten.
+
+Wir verwenden wie im [Workflow Beispiel](../workflow) [Node-RED](https://nodered.org/) und Mosquitto und bauen das Beispiel dann Stück für Stück aus.
+    
+    # IoT Umgebung 
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/mosquitto.yaml
+    kubectl apply -f https://raw.githubusercontent.com/mc-b/duk/master/iot/nodered.yaml
+    
+Über welche Ports die Services verfügbar sind kann im Web-UI nachgeschaut oder mittels des nachfolgenden Befehls ermittelt werden:
+
+    kubectl get services
+    
+Werden mehrere Node-RED Umgebungen benötigt, können diese in neuen Kubernetes Namespaces gestartet werden.   
+
+    kubectl create namespace nr1
+    kubectl apply -n nr1 -f https://raw.githubusercontent.com/mc-b/duk/master/iot/nodered.yaml   
+
+## Cloud Umgebung (MQTT - Edge - REST)
 
 Für das *Internet of Everything* brauchen wir noch eine Geschäftsprozess (BPMN) Workflow Umgebung und einen entsprechenden Prozess.
 
@@ -74,9 +131,9 @@ warten bis die Workflow Umgebung gestartet ist und veröffentlichen des Rechnung
     -F "Rechnung.bpmn=@RechnungStep3.bpmn" \
     https://localhost:30443/engine-rest/deployment/create    
         
-Details zu BPMN und des Prozesses [siehe](https://github.com/mc-b/misegr/tree/master/bpmn).
+Details zu BPMN und dem Prozess [siehe](https://github.com/mc-b/misegr/tree/master/bpmn).
 
-### Node-RED (Edge - REST)
+### Node-RED (MQTT - Edge - REST)
 
 ![](../images/NodeREDREST.png)
 
@@ -105,7 +162,7 @@ Details zum BPMN Prozess und der URL wie ein Prozess gestartet werden kann steht
 
 Der Flow zum importieren und anpassen, siehe [Node-RED-REST.json](Node-RED-REST.json).
 
-## Cloud Umgebung (Edge, MQTT - Cloud - Messaging) 
+## Cloud Umgebung (MQTT - Edge - Cloud Messaging) 
 
 In Kubernetes starten wie die benötigten Services:
 
@@ -123,14 +180,14 @@ In Kubernetes starten wie die benötigten Services:
     kubectl apply -f https://raw.githubusercontent.com/mc-b/iot.kafka/master/iot-kafka-pipe.yaml
 
 
-### Node-RED (Edge, MQTT - Cloud, Messaging)
+### Node-RED (MQTT - Edge - Cloud Messaging)
 
 
 ![](../images/NodeREDKafka.png)
 
 - - -
 
-Die MQTT Message sollen nun an [Apache Kafka](https://kafka.apache.org/) weitergeleitet werden. Das hat den Vorteil, dass wir diese
+Die MQTT Messages sollen nun an [Apache Kafka](https://kafka.apache.org/) weitergeleitet werden. Das hat den Vorteil, dass wir diese
 * in andere Formate, z.B. von Binär nach JSON, umwandeln können
 * sie Persistieren können
 * ein Eventlog erhalten
