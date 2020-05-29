@@ -40,8 +40,8 @@ cat <<%EOF%
 </head>
 <body>
     <table width="100%" border=1>
-    $(kubectl --kubeconfig ${HOME)/.kube/config get pods --all-namespaces -o wide | \
-      awk -v CLUSTER="${ADDR}" '{ printf("<tr><td>%s</td><td><a target=logs href=\"%s/cgi-bin/logs\?%s\&%s\">%s</a></td><td>%s</td><td>%s</td><td>%s</td></tr>\n", $1, CLUSTER, $1, $2, $2, $4, $5, $8 ) }')
+    $(kubectl --kubeconfig ${HOME}/.kube/config get pods --all-namespaces -o wide | \
+      awk -v CLUSTER="${ADDR}" '{ printf("<tr><td>%s</td><td><a target=logs href=\"%s/cgi-bin/logs\?%s&%s\">%s</a></td><td>%s</td><td>%s</td><td>%s</td></tr>\n", $1, CLUSTER, $1, $2, $2, $4, $5, $8 ) }')
     </table>
 </body>
 </html>

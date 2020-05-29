@@ -42,11 +42,11 @@ cat <<%EOF%
 <body>
   <h3>Logs: ${parm[1]}</h3>
     <pre>
-$(kubectl --kubeconfig ${HOME)/.kube/config logs -n ${parm[0]} ${parm[1]})
+$(kubectl --kubeconfig ${HOME}/.kube/config logs -n ${parm[0]} ${parm[1]})
     </pre>
   <h3>Details: ${parm[1]}</h3>
     <pre>
-$(kubectl --kubeconfig ${HOME)/.kube/config describe -n ${parm[0]} pod/${parm[1]})
+$(kubectl --kubeconfig ${HOME}/.kube/config describe -n ${parm[0]} pod/${parm[1]})
     </pre>
 </body>
 </html>

@@ -74,14 +74,15 @@ Optional lohnt es sich dem Raspberry Pi ein Web-UI zu spendieren. Das vereinfach
 
     # Web-UI einrichten
     git clone https://github.com/mc-b/IoTKitV3
-    cd IoTKit3/edge
+    cd IoTKitV3/edge/
     sudo cp cgi-bin/* /usr/lib/cgi-bin/
+    sudo chmod +x /usr/lib/cgi-bin/*
     sudo cp html/* /var/www/html/
     
     # www-data User Zugriff auf Kubernetes erlauben
     sudo mkdir -p /var/www/.kube
     sudo cp /etc/rancher/k3s/k3s.yaml /var/www/.kube/config
-    sudo chown -R pi:pi /var/www/.kube
+    sudo chown -R www-data:www-data /var/www/.kube
     sudo chmod 700 /var/www/.kube    
    
 Nach der Installation der benötigten Grundinfrastruktur können wir loslegen und die eigentliche Software als Container starten.
