@@ -52,7 +52,7 @@ Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je n
 
 **Verfügbar auf dem IoTKit V3 (small)**
 
-* [BMP180](#BMP180)
+* [BMP180](#bmp180)
 * [APDS9930](#APDS9930)
 
 ## VL6180X
@@ -292,7 +292,7 @@ Das mbed Board übernimmt dabei die Verbindung zum Internet und die Feinverteilu
 
 * *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.
 
-## BPM180
+## BMP180
 ***
 
 Der BMP180 Präzisionssensor von Bosch ist die beste kostengünstige (~60cent) Messlösung zur Messung von Luftdruck und Temperatur.
