@@ -50,10 +50,10 @@ Der Bus braucht zur Terminierung zwei Widerstände von ca. 2.2K - 4.7K Ohm (je n
 * [mbed - Arduino Kommunikation](#mbed---Arduino-Kommunikation)
 * [Übungen](#Übungen)
 
-**Nucleo F303RE Board**
+**Verfügbar auf dem IoTKit V3 (small)**
 
-* [bmp180]()
-* [APDS-9930]()
+* [BMP180](#BMP180)
+* [APDS9930](#APDS9930)
 
 ## VL6180X
 ***
@@ -291,3 +291,49 @@ Das mbed Board übernimmt dabei die Verbindung zum Internet und die Feinverteilu
 | CLI (DISCO_L475VG_IOT01A) | `mbed compile -m DISCO_L475VG_IOT01A -f --source . --source ../IoTKitV3/i2c/01-Uebung` |
 
 * *01-Uebung* durch entsprechendes Übung Verzeichnis *02-Uebung* etc. ersetzen.
+
+## BPM180
+***
+
+Der BMP180 Präzisionssensor von Bosch ist die beste kostengünstige (~60cent) Messlösung zur Messung von Luftdruck und Temperatur.
+
+Der BMP180 liefert Temperatur und Luftdruck zurück.
+
+Für Details siehe [Datenblatt](https://www.mouser.ch/datasheet/2/783/BST-BMP180-DS000-1509579.pdf).
+
+### Anwendungen 
+
+* Überwachung von Temperatur und Luftdruck
+* Kann auch als Höhenmesser verwendet werden
+
+
+### Beispiel(e)
+
+**Compilieren**
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | [BMP180Sensor](https://os.mbed.com/compiler/#import:/teams/IoTKitV3/code/BMP180Sensor/) |
+| CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/i2c/BMP180` |
+
+
+## ADPS9930
+***
+
+Der APDS-9930 von [Broadcom](https://www.digikey.ch/de/supplier-centers/b/broadcom) ist ein digitaler, I²C-kompatibler Umgebungslichtsensor (ALS) und Näherungssensor mit IR-LED.
+
+Der APDS-9930 kann Objekte bis 100mm erfassen. Er erkennt Bewegungen links, rechts, nah, fern.
+
+### Anwendungen 
+
+* Erfassung des Menschlichen Auges via Smartphone
+* Erkennung von [Gesten](https://www.youtube.com/watch?v=A3QRyixnEl8).
+
+### Beispiel(e)
+
+
+| Umgebung/Board    | Link/Befehl                      |
+| ----------------- | -------------------------------- |
+| Online Compiler | folgt |
+| CLI (nucleo_f303re) | folgt |
+
