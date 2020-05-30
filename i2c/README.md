@@ -324,6 +324,8 @@ Der APDS-9930 von [Broadcom](https://www.digikey.ch/de/supplier-centers/b/broad
 
 Der APDS-9930 kann Objekte bis 100mm erfassen. Er erkennt Bewegungen links, rechts, nah, fern.
 
+Für Details siehe [Datenblatt](http://www.makerfabs.com/desfile/files/APDS-9930_2015-11-13.pdf).
+
 ### Anwendungen 
 
 * Erfassung des Menschlichen Auges via Smartphone
