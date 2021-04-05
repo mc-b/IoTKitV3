@@ -317,12 +317,12 @@ Für Details siehe [Datenblatt](https://www.mouser.ch/datasheet/2/783/BST-BMP18
 | CLI (nucleo_f303re) | `mbed compile -m nucleo_f303re -f --source . --source ../IoTKitV3/i2c/BMP180` |
 
 
-## ADPS9930
+## ADPS9960
 ***
 
-Der APDS-9930 von [Broadcom](https://www.digikey.ch/de/supplier-centers/b/broadcom) ist ein digitaler, I²C-kompatibler Umgebungslichtsensor (ALS) und Näherungssensor mit IR-LED.
+Der APDS-9960 von [Broadcom](https://www.digikey.ch/de/supplier-centers/b/broadcom) ist ein digitaler, I²C-kompatibler Umgebungslichtsensor (ALS) und Näherungssensor mit IR-LED.
 
-Der APDS-9930 kann Objekte bis 100mm erfassen. Er erkennt Bewegungen links, rechts, nah, fern.
+Der APDS-9960 kann Objekte bis 100mm erfassen. Er erkennt Bewegungen links, rechts, nah, fern.
 
 Für Details siehe [Datenblatt](http://www.makerfabs.com/desfile/files/APDS-9930_2015-11-13.pdf).
 
