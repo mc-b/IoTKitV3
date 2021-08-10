@@ -1,5 +1,5 @@
 TODO
-====
+----
 
 Die Beispiel auf mbed.com können mit folgendem Shellscript mit denen auf GitHub synchronisiert werden:
 
