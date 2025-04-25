@@ -8,6 +8,7 @@ metadata:
   - iotein
   - iotkit
   - iot
+  - mbed
   links:
   - url: https://github.com/mc-b/IoTKitV3
     title: Repository
@@ -17,6 +18,6 @@ metadata:
     backstage.io/source-location: url:https://github.com/mc-b/IoTKitV3
     # backstage.io/techdocs-ref: url:https://github.com/mc-b/IoTKitV3
 spec:
-  type: other
-  lifecycle: production
+  type: education
+  lifecycle: deprecated
   owner: group:mc-b/mc-b
